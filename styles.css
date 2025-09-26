@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+/*colors
+#ff8a00 yellow
+#347433 green
+#ffffff white
+#d9d9d9 light gray
+*/
+
+/*navbar*/  
+
+.navbar{
+    background-color: white;
+    height: 80px;
+}
+
+.user-button{
+    margin: auto 10px;
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: 1.25;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler:focus .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    color: black;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff8a00;
+}
+
+/*hero section*/
+.hero{
+    background: url('assets/sample\ subd.jpg') no-repeat center;
+    background-size: cover;
+    width: 214vh;
+    height: 100vh;
+}
