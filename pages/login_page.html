@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body class="login_body">
     <!--navbar-->
 <div>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -61,19 +61,48 @@
   </nav>
 </div>
 
+<!--login-->
 <div class="login_box">
   <section class="container">
-    <h2><b>Login</b></h2>
-    <br>
-    <input type="text" id="usernameLogin" placeholder="Username" required>
-    <input type="password" id="passwordLogin" placeholder="Password" required>
-    <button type="submit">Login</button>
-    <br>
-    <a href="../pages/registratrion_page.html">Click here to create account</a>
-
+    <form id="loginform">
+      <h2><b>Login</b></h2>
+      <br>
+      <input type="text" id="emailLogin" placeholder="Email Address" required>
+      <input type="password" id="passwordLogin" placeholder="Password" required>
+      <div class="message" id="error_message"></div>
+      <button type="submit">Login</button>
+      <br>
+      <a href="../pages/registratrion_page.html">Click here to create account</a>
+    </form>
   </section>
 
 </div>
+
+<script>
+  const sheetdbSrc = "https://sheetdb.io/api/v1/c2tpy3ag3nb05";
+
+  document.getElementById("loginform").addEventListener("submit", function(e){
+    e.preventDefault();
+    const email = document.getElementById("emailLogin").value;
+    const password = document.getElementById("passwordLogin").value;
+
+    fetch(`${sheetdbSrc}/search?email=${email}&password=${password}`)
+    .then(res => res.json())
+    .then(data => {
+      if(data.length > 0){
+        sessionStorage.setItem("loggedInUser", email);
+        window.location.href="../pages/user_page.html";
+      }
+      else{
+        document.getElementById("error_message").textContent = "Incorrect email or password"
+      }
+    });
+  });
+
+  if(sessionStorage.getItem("loggedInUser")){
+    window.location.href = "../pages/user_page.html";
+  }
+</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
