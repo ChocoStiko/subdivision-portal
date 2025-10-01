@@ -118,3 +118,52 @@
     margin-bottom: 20px;
 }
 /*D PA TAPOS*/
+
+
+
+/*login & registration section*/
+
+.login_box{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 100vh;
+    padding-right: 200px;
+}
+
+@media (max-width: 811px) {
+  .login_box{
+    justify-content: center;
+    margin-inline: 5px;
+    padding-right: 0;
+  }
+}
+
+.container{
+    margin-inline: 10px;
+    text-align: center;
+    background: #ff88004a;
+    padding: 40px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.namefields{
+    display: flex;
+    gap: 10px;
+}
+
+
+.login_box input{
+    border-color: #f0dcc4;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.login_box button{
+    border-radius: 8px;
+    padding: 5px 20px 5px 20px;
+    background-color: #ff8a00;
+}
