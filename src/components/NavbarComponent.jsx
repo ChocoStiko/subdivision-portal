@@ -1,6 +1,9 @@
 import logo from "../assets/wwhs_logo.png";
 import userIcon from "../assets/user.svg";
 import "../styles.css";
+import {Link} from 'react-router-dom';
+import {Nav} from 'react-bootstrap';
+
 
 
 function NavbarComponent(){
@@ -40,9 +43,9 @@ function NavbarComponent(){
                 </ul>
             </div>
             </div>
-            <a href="pages/login_page.html" className="user-button">
+            <Nav.Link as={Link} to="../login" className="user-button">
             <img src={userIcon} alt="User Icon" width="40" height="40" className="d-inline-block align-text-top"/>
-            </a>
+            </Nav.Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>

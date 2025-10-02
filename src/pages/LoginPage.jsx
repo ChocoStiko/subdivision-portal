@@ -1,0 +1,57 @@
+import '../styles.css';
+import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function LoginPage(){
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
+
+  const sheetdbSrc = "https://sheetdb.io/api/v1/c2tpy3ag3nb05";
+
+  useEffect(() => {
+    if(sessionStorage.getItem("loggedInUser")) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const response = await fetch(`${sheetdbSrc}/search?email=${email}&password=${password}`);
+      const data = await response.json();
+      if(data.length > 0){
+        sessionStorage.setItem("loggedInUser", email);
+        navigate("/");
+      }
+      else{
+        setMessage("Incorrect email or password");
+      }
+    }
+    catch (error){
+      console.error("Error:", error);
+      setMessage("Error, please try again later.");
+    }
+  }
+
+  return(
+    <div className="login_box">
+      <section className="container">
+        <form id="loginform" onSubmit={handleSubmit}>
+          <h2><b>Login</b></h2>
+          <br/>
+          <input type="text" id="emailLogin" placeholder="Email Address" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input type="password" id="passwordLogin" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+          <div className="message" id="error_message"></div>
+          <button type="submit">Login</button>
+          <br/>
+          <a href="../pages/registratrion_page.html">Click here to create account</a>
+        </form>
+      </section>
+    </div>
+  );
+}
+
+export default LoginPage;
