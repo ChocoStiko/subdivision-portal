@@ -11,9 +11,7 @@ function NavbarComponent(){
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
             <NavLink as={Link} to={"../home"}>
-            <a className="navbar-brand me-auto" href="index.html">
             <img src={logo} alt="Logo" width="70" height="70" className="d-inline-block align-text-top"/>
-            </a>
             </NavLink>
             
             <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -26,9 +24,7 @@ function NavbarComponent(){
             <div className="offcanvas-body">
                 <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li className="nav-item">
-                    <NavLink as={Link} to={"../home"}>
-                    <a className="nav-link mx-lg-2 active" aria-current="page">Home</a>
-                    </NavLink>
+                    <NavLink as={Link} to="../home" className="nav-link mx-lg-2 active" aria-current="page">Home</NavLink>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="pages/about_us_page.html">About Us</a>
