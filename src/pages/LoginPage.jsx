@@ -1,6 +1,6 @@
 import '../styles.css';
 import React, {useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 function LoginPage(){
 
@@ -47,7 +47,9 @@ function LoginPage(){
           <div className="message" id="error_message"></div>
           <button type="submit">Login</button>
           <br/>
-          <a href="../pages/registratrion_page.html">Click here to create account</a>
+          <NavLink as={Link} to={"../registration"}>
+          <a>Click here to create account</a>
+          </NavLink>
         </form>
       </section>
     </div>

@@ -6,15 +6,18 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import NavbarComponent from './components/NavbarComponent';
 import HeroComponent from './components/HeroComponent';
 import Login from './pages/LoginPage';
+import Home from './pages/HomePage';
+import Registration from './pages/RegistrationPage';
 
 function App() {
   return (
     <div className="App">
         <Router>
           <NavbarComponent/>
-          <HeroComponent/>
           <Routes>
+            <Route path='/home' element={<Home/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path='/registration' element={<Registration/>} />
           </Routes>
         </Router>
     </div>
