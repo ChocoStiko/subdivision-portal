@@ -38,7 +38,7 @@ function LoginPage(){
 
   return(
     <div className="login_box">
-      <section className="container">
+      <section className="container-login">
         <form id="loginform" onSubmit={handleSubmit}>
           <h2><b>Login</b></h2>
           <br/>

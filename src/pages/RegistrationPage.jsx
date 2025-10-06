@@ -4,7 +4,7 @@ function RegistratrionPage(){
 
     return(
         <div className="login_box">
-            <section className="container">
+            <section className="container-login">
             <form id="registrationForm">
             <h2><b>Register</b></h2>
             <br/>
