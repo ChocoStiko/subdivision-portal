@@ -53,6 +53,13 @@ html, body {
     transform: none;
 }
 
+.navbar .nav-link.active,
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background-color: transparent;
+  color: #000
+}
+
 /*footer section*/
 .footer{
     position: sticky;
