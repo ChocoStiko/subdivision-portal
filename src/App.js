@@ -15,6 +15,7 @@ function App() {
         <Router>
           <NavbarComponent/>
           <Routes>
+            <Route path='/' element={<Home/>} />
             <Route path='/homepage' element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path='/registration' element={<Registration/>} />  
