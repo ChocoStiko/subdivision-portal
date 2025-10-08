@@ -10,7 +10,7 @@ function NavbarComponent(){
     return(
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
-            <NavLink as={Link} to={"../"}>
+            <NavLink as={Link} to={"../homepage"} onClick={() => window.scrollTo(0, 0)}>
             <img src={logo} alt="Logo" width="70" height="70" className="d-inline-block align-text-top"/>
             </NavLink>
             
@@ -24,7 +24,7 @@ function NavbarComponent(){
             <div className="offcanvas-body">
                 <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li className="nav-item">
-                    <NavLink as={Link} to="../" className="nav-link mx-lg-2 active" aria-current="page">Home</NavLink>
+                    <NavLink as={Link} to="../homepage" className="nav-link mx-lg-2 active" aria-current="page" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#about-us">About Us</a>
