@@ -47,8 +47,15 @@ html, body {
     font-weight: 500
 }
 
-.dropdown-item{
-
+/*footer*/
+.footer{
+    background-color: #133312;
+    width: 100%;
+    padding: 20px;
+    
+}
+.footer p{
+    color: white;
 }
 
 .navbar-nav .nav-link:hover {
