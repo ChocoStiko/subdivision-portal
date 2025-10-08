@@ -13,7 +13,7 @@ function LoginPage(){
 
   useEffect(() => {
     if(sessionStorage.getItem("loggedInUser")) {
-      navigate("/");
+      navigate("../userhome");
     }
   }, [navigate]);
 
@@ -24,7 +24,7 @@ function LoginPage(){
       const data = await response.json();
       if(data.length > 0){
         sessionStorage.setItem("loggedInUser", email);
-        navigate("/");
+        navigate("../userhome");
       }
       else{
         setMessage("Incorrect email or password");

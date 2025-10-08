@@ -8,6 +8,7 @@ import courtImg from "../assets/court.jpg";
 import poolImg from "../assets/pool.jpg"
 import aerialImg from "../assets/subd-aerial.jpg";
 import parkImg from "../assets/park.jpg";
+import FooterComponent from "../components/FooterComponent";
 
 function HomePage() {
 
@@ -138,6 +139,7 @@ function HomePage() {
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         </section>
+        <FooterComponent/>
         </>
     );
     

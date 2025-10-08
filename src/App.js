@@ -8,6 +8,11 @@ import HeroComponent from './components/HeroComponent';
 import Login from './pages/LoginPage';
 import Home from './pages/HomePage';
 import Registration from './pages/RegistrationPage';
+import UserHome from './pages/UserHomePage';
+import News from './pages/NewsPage';
+import CarSticker from './pages/services/CarStickerPage';
+import Reservation from './pages/services/ReservationPage';
+import Move from './pages/services/MovePage';
 
 function App() {
   return (
@@ -18,7 +23,12 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='/homepage' element={<Home/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path='/registration' element={<Registration/>} />  
+            <Route path='/registration' element={<Registration/>} /> 
+            <Route path='/userhome' element = {<UserHome/>} />
+            <Route path='/news' element = {<News/>} />
+            <Route path='/reservation' element = {<Reservation/>} />
+            <Route path='/car_sticker'element = {<CarSticker/>} />
+            <Route path='/move' element = {<Move/>} />
           </Routes>
         </Router>
     </div>
