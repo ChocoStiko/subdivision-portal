@@ -43,13 +43,12 @@ function UserNavbarComponent(){
             </div>
             </div>
 
-            <ul className="navbar-nav ms-auto me-4">
-            
+            <div className="d-flex align-items-center ms-auto me-1">
                 <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle mx-lg-2 active" href="#" role="button" data-bs-toggle="dropdown"aria-expanded="false">
+                        <a className="nav-link dropdown-toggle mx-lg-2 active" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                             <img src={userIcon} alt="User Icon" width="40" height="40" className="d-inline-block align-text-top"/>
                         </a>
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu dropdown-menu-end">
                             <li><NavLink as={Link} to="../login" className="dropdown-item">Account</NavLink></li>
                             <li><NavLink as={Link} to="../homepage" className="dropdown-item" onClick={() => {
                                 sessionStorage.removeItem("loggedInUser");
@@ -57,7 +56,7 @@ function UserNavbarComponent(){
                             </li>
                         </ul>
                 </li>
-            </ul>
+            </div>
         </div>
         </nav>
     );
