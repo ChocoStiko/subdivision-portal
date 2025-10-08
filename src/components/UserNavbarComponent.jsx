@@ -51,7 +51,9 @@ function UserNavbarComponent(){
                         </a>
                         <ul className="dropdown-menu">
                             <li><NavLink as={Link} to="../login" className="dropdown-item">Account</NavLink></li>
-                            <li><NavLink as={Link} to="../registration" className="dropdown-item">Logout</NavLink>
+                            <li><NavLink as={Link} to="../homepage" className="dropdown-item" onClick={() => {
+                                sessionStorage.removeItem("loggedInUser");
+                            }}>Logout</NavLink>
                             </li>
                         </ul>
                 </li>

@@ -45,6 +45,7 @@ function LoginPage(){
           <input type="text" id="emailLogin" placeholder="Email Address" required value={email} onChange={(e) => setEmail(e.target.value)}/>
           <input type="password" id="passwordLogin" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
           <div className="message" id="error_message"></div>
+          <br/>
           <button type="submit">Login</button>
           <br/>
           <NavLink as={Link} to={"../registration"}>

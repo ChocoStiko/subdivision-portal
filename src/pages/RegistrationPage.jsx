@@ -1,0 +1,78 @@
+import { useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
+function RegistratrionPage(){
+
+    const [regFN, setRegFN] = useState('');
+    const [regLN, setRegLN] = useState('');
+    const [regContact, setRegContact] = useState('');
+    const [regEmail, setRegEmail] = useState('');
+    const [regPassword, setRegPassword] = useState('');
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
+
+    const sheetdbUrl = "https://sheetdb.io/api/v1/c2tpy3ag3nb05";
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+
+        if(regPassword.length < 8) {
+            setMessage("Password length must be atleast 8 characters")
+            return;
+        }
+
+
+        try{
+            const response = await fetch(sheetdbUrl, {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify({data : [{first_name:regFN, last_name:regLN, contact_number:regContact, email:regEmail, password:regPassword}]})
+            });
+
+            if(response.ok){
+                setMessage("Register successfully!");
+                setTimeout(() => {
+                    navigate("../login");
+                }, 1000);
+                
+            }
+        }
+
+        catch (error){
+            console.error("Error:", error);
+            setMessage("Error, please try again later.");
+        }
+    };
+
+    return(
+        <div className="login_box">
+            <section className="container-login">
+            <h2><b>Register</b></h2>
+            <br/>
+        <form id="registrationForm" onSubmit={handleRegister}>
+        <div className="namefields">
+          <input type="text" id="firstName" placeholder="First Name" required value={regFN} onChange={(e) => setRegFN(e.target.value)}/>
+          <input type="text" id="lastName" placeholder="Last Name" required value={regLN} onChange={(e) => setRegLN(e.target.value)}/>
+        </div>
+        <input type="number" id="contactNumber" placeholder="Contact Number" required value={regContact} onChange={(e) => setRegContact(e.target.value)}/>
+        <input type="email" id="email" placeholder="Email Address" required value={regEmail} onChange={(e) => setRegEmail(e.target.value)}/>
+        <input type="password" id="password" placeholder="Password" required value={regPassword} onChange={(e) => setRegPassword(e.target.value)}/>
+        <br/>
+        {message}
+        <br/>
+        <button type="submit">Register</button>
+        <br/>
+        
+        <br/>
+        <NavLink as={Link} to={'../login'}>
+        <a>Already have an account?</a>
+        </NavLink>
+      </form>
+        </section>
+
+        </div>
+    );
+
+}
+
+export default RegistratrionPage;
