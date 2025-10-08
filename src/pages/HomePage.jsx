@@ -9,11 +9,14 @@ import poolImg from "../assets/pool.jpg"
 import aerialImg from "../assets/subd-aerial.jpg";
 import parkImg from "../assets/park.jpg";
 import FooterComponent from "../components/FooterComponent";
+import { NavbarCollapse } from "react-bootstrap";
+import NavbarComponent from "../components/NavbarComponent";
 
 function HomePage() {
 
     return(
         <>
+        <NavbarComponent/>
         <HeroComponent/>
 
         {/* Filinvest Section */}

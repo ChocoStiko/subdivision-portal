@@ -1,0 +1,18 @@
+h {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ff8a00;
+}
+
+
+
+.reservation_cards{
+    margin: 80px 200px;
+    display: flex;
+    height: 500px;
+    gap: 10px;
+}
+
+.reservation_cards a{
+    background-color: #ff8a00;
+}

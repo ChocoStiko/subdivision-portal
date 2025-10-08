@@ -1,6 +1,8 @@
 import '../styles.css';
+import '../loginstyles.css';
 import React, {useState, useEffect} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import NavbarComponent from '../components/NavbarComponent';
 
 function LoginPage(){
 
@@ -37,6 +39,8 @@ function LoginPage(){
   }
 
   return(
+    <>
+    <NavbarComponent/>
     <div className="login_box">
       <section className="container-login">
         <form id="loginform" onSubmit={handleSubmit}>
@@ -54,6 +58,7 @@ function LoginPage(){
         </form>
       </section>
     </div>
+    </>
   );
 }
 

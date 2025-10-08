@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import NavbarComponent from "../components/NavbarComponent";
 
 function RegistratrionPage(){
 
@@ -45,6 +46,8 @@ function RegistratrionPage(){
     };
 
     return(
+        <>
+        <NavbarComponent/>
         <div className="login_box">
             <section className="container-login">
             <h2><b>Register</b></h2>
@@ -71,6 +74,7 @@ function RegistratrionPage(){
         </section>
 
         </div>
+        </>
     );
 
 }
