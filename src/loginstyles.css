@@ -1,13 +1,5 @@
 /*login & registration section*/
 
-.login_body{
-    background-color: #347433;
-}
-
-.registration_body{
-    background-color: #347433;
-}
-
 .login_box{
     display: flex;
     justify-content:flex-end;
