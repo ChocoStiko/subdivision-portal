@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 
-function RegistratrionPage(){
+function RegistrationPage(){
 
     const [regFN, setRegFN] = useState('');
     const [regLN, setRegLN] = useState('');
@@ -79,4 +79,4 @@ function RegistratrionPage(){
 
 }
 
-export default RegistratrionPage;
+export default RegistrationPage;
