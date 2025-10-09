@@ -28,12 +28,12 @@ function NavbarComponent(){
                 </li>
                 <li className="nav-item">
 
-                    <button className="nav-link" href="about_us" onClick={() => {
+                    <a className="nav-link" href="about_us" onClick={() => {
                       const aboutSection = document.getElementById("about_us");
                       if (aboutSection) {
                       aboutSection.scrollIntoView({ behavior: "smooth" });
                       }
-                      }}>About Us</button>
+                      }}>About Us</a>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle mx-lg-2 active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Offices</a>

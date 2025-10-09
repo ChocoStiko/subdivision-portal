@@ -1,4 +1,63 @@
-.header_clubhouse{
-    margin-top: 100px;
-    color: antiquewhite;
+
+
+/*Reservation section*/
+.header{
+    padding: 60px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.header h{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.reservation_cards{
+    
+    margin: 70px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 800px;
+    gap: 15px;
+    
+}
+
+.card_img_top {
+  height: 300px;        
+  object-fit: cover;
+  width: 100%;
+}
+
+.card_body{
+    padding: 40px;
+    
+}
+
+.card{
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+    background-color: #ff8a00;
+    cursor: pointer;
+}
+
+.card p{
+    color: white;
+}
+
+.card h1{
+    font-weight: bold;
+    color: white;
+
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  background-color: #bd6601;
+}
+
+.reservation_cards a{
+    background-color: #ff8a00;
 }
