@@ -1,5 +1,5 @@
 import '../styles.css';
-import '../loginstyles.css';
+import styles from '../css/loginstyles.module.css';
 import login_img from '../assets/sample subd.jpg'; 
 import React, {useState, useEffect} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
@@ -43,13 +43,13 @@ function LoginPage(){
     <>
     <NavbarComponent/>
 
-    <div className="login_body">
-      <div className="image_section">
+    <div className={styles.login_body}>
+      <div className={styles.image_section}>
         <img src={login_img} alt="Login Illustration" />
       </div>
 
-      <div className="login_box">
-        <section className="container-login">
+      <div className={styles.login_box}>
+        <section className={styles.container_login}>
           <form id="loginform" onSubmit={handleSubmit}>
             <h1><b>Login</b></h1>
             <p>Welcome! Please enter your details.</p>
@@ -73,7 +73,7 @@ function LoginPage(){
             {message && <div className="message">{message}</div>}
             <button type="submit">Login</button>
             <br />
-            <NavLink to="/registration" className="register-link">
+            <NavLink to="/registration" className={styles.register_link}>
               Click here to create account
             </NavLink>
           </form>

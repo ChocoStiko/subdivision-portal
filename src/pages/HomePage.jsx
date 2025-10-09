@@ -1,5 +1,5 @@
 import HeroComponent from "../components/HeroComponent";
-import "../styles.css";
+import styles from "../css/homepagestyle.module.css";
 import filinvestLogo from "../assets/filinvest logo.png";
 import wwhsLogo from "../assets/wwhs_logo.png"
 import subdImg from "../assets/sample subd.jpg";
@@ -20,31 +20,31 @@ function HomePage() {
         <HeroComponent/>
 
         {/* Filinvest Section */}
-        <section class="brands">
-        <div class="row">
-            <div class="col">
+        <section className={styles.brands}>
+        <div className={styles.row}>
+            <div className="col">
             <img src={filinvestLogo} alt="Filinvest Logo"/>
             </div>
-            <div class="col">
+            <div className="col">
             <img src={wwhsLogo} alt="Filinvest Logo"/>
             </div>
-            <div class="col">
+            <div className="col">
             <img src={filinvestLogo} alt="Filinvest Logo"/>
             </div>
-            <div class="col">
+            <div className="col">
             <img src={wwhsLogo} alt="Filinvest Logo"/>
             </div>
         </div>
         </section>
         
         {/*About Us Section*/}
-        <section class="about-us" id="about-us">
-        <div class="container">
-            <div class="about-content">
-            <div class="subd-aerial-img">
+        <section className={styles.about_us} id="about_us">
+        <div className="container">
+            <div className={styles.about_content}>
+            <div className={styles.subd_aerial_img}>
                 <img src={aerialImg} alt="subd-aerial"/>
             </div>
-            <div class="about-text">
+            <div className={styles.about_text}>
                 <h2>About Us</h2>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -55,46 +55,46 @@ function HomePage() {
         </section>
 
         {/*about us discover section*/}
-        <section class="discover-sect">
-        <div class="container">
-            <div class="row g-3 no-wrap-row">
+        <section className={styles.discover_sect}>
+        <div className="container">
+            <div className={`${styles.no_wrap_row} row g-3`}>
 
             <div class="col-3">
-                <div class="card text-bg-dark">
-                <img src={clubhouseImg} class="card-img" alt="WWHS Clubhouse"/>
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Clubhouse</h5>
-                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className={`${styles.card} card text-bg-dark`}>
+                <img src={clubhouseImg} className={styles.card_img} alt="WWHS Clubhouse"/>
+                <div className="card-img-overlay">
+                    <h5 className="card-title">Clubhouse</h5>
+                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                </div>
+            </div>
+
+            <div className="col-3">
+                <div className={`${styles.card} card text-bg-dark`}>
+                <img src={poolImg} class={styles.card_img} alt="WWHS Pool"/>
+                <div className="card-img-overlay">
+                    <h5 className="card-title">Community Pool</h5>
+                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 </div>
             </div>
 
             <div class="col-3">
-                <div class="card text-bg-dark">
-                <img src={poolImg} class="card-img" alt="WWHS Pool"/>
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Community Pool</h5>
-                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card text-bg-dark">
+                <div className={`${styles.card} card text-bg-dark`}>
                 <img src={courtImg} class="card-img" alt="WWHS Court"/>
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Basketball Court</h5>
-                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="card-img-overlay">
+                    <h5 classname="card-title">Basketball Court</h5>
+                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card text-bg-dark">
+            <div className="col-3">
+                <div className={`${styles.card} card text-bg-dark`}>
                 <img src={parkImg} class="card-img" alt="WWHS Park"/>
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Park</h5>
-                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="card-img-overlay">
+                    <h5 className="card-title">Park</h5>
+                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 </div>
             </div>
@@ -104,31 +104,31 @@ function HomePage() {
         </section>
 
         {/*About Us Why Choose Us*/}
-        <section class="about-us-choose">
-            <h2 class="title">Why Choose Us?</h2>
+        <section className={styles.about_us_choose}>
+            <h2 className={styles.title}>Why Choose Us?</h2>
 
-            <div class="grid-box">
-            <div class="square">
-            <span class="num">01</span>
+            <div className={styles.grid_box}>
+            <div className={styles.square}>
+            <span className={styles.num}>01</span>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
 
 
-            <div class="square">
-            <span class="num">02</span>
+            <div className={styles.square}>
+            <span className={styles.num}>02</span>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
 
-            <div class="square">
-            <span class="num">03</span>
+            <div className={styles.square}>
+            <span className={styles.num}>03</span>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
 
-            <div class="square">
-            <span class="num">04</span>
+            <div class={styles.square}>
+            <span class={styles.num}>04</span>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
@@ -136,8 +136,8 @@ function HomePage() {
         </section>
 
         {/*get in touch section*/}
-        <section class="get-in-touch">
-        <div class="get-in-touch">
+        <section className={styles.get_in_touch}>
+        <div className={styles.get_in_touch}>
             <h2>Get in Touch</h2>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>

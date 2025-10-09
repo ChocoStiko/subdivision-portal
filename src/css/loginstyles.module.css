@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.container-login {
+.container_login {
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -74,7 +74,7 @@
   background-color: #e47a00;
 }
 
-.register-link {
+.register_link {
   margin-top: 15px;
   display: block;
   color: #347433;
