@@ -98,6 +98,7 @@
   }
 
   .login_box {
+    text-align: center;
     width: 100%;
     min-height: auto;
     padding: 40px 20px;
