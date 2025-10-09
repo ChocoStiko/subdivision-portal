@@ -18,6 +18,7 @@ function HomePage() {
         <>
         <NavbarComponent/>
         <HeroComponent/>
+        
 
         {/* Filinvest Section */}
         <section className={styles.brands}>
@@ -59,7 +60,7 @@ function HomePage() {
         <div className="container">
             <div className={`${styles.no_wrap_row} row g-3`}>
 
-            <div class="col-3">
+            <div className="col-12 col-sm-6 col-md-3">
                 <div className={`${styles.card} card text-bg-dark`}>
                 <img src={clubhouseImg} className={styles.card_img} alt="WWHS Clubhouse"/>
                 <div className="card-img-overlay">
@@ -69,9 +70,9 @@ function HomePage() {
                 </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3">
                 <div className={`${styles.card} card text-bg-dark`}>
-                <img src={poolImg} class={styles.card_img} alt="WWHS Pool"/>
+                <img src={poolImg} className={styles.card_img} alt="WWHS Pool"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Community Pool</h5>
                     <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -79,19 +80,19 @@ function HomePage() {
                 </div>
             </div>
 
-            <div class="col-3">
+            <div className="col-12 col-sm-6 col-md-3">
                 <div className={`${styles.card} card text-bg-dark`}>
-                <img src={courtImg} class="card-img" alt="WWHS Court"/>
+                <img src={courtImg} className="card-img" alt="WWHS Court"/>
                 <div className="card-img-overlay">
-                    <h5 classname="card-title">Basketball Court</h5>
+                    <h5 className="card-title">Basketball Court</h5>
                     <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3">
                 <div className={`${styles.card} card text-bg-dark`}>
-                <img src={parkImg} class="card-img" alt="WWHS Park"/>
+                <img src={parkImg} className="card-img" alt="WWHS Park"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Park</h5>
                     <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -127,8 +128,8 @@ function HomePage() {
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
 
-            <div class={styles.square}>
-            <span class={styles.num}>04</span>
+            <div className={styles.square}>
+            <span className={styles.num}>04</span>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
             </div>
@@ -139,7 +140,7 @@ function HomePage() {
         <section className={styles.get_in_touch}>
         <div className={styles.get_in_touch}>
             <h2>Get in Touch</h2>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         </section>
         <FooterComponent/>

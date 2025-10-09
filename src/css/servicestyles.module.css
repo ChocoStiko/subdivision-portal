@@ -37,6 +37,7 @@
 }
 
 .card{
+    text-decoration: none;
     transition: transform 0.4s ease, box-shadow 0.2s ease;
     background-color: #ff8a00;
     cursor: pointer;

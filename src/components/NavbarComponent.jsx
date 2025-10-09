@@ -14,7 +14,7 @@ function NavbarComponent(){
             <img src={logo} alt="Logo" width="70" height="70" className="d-inline-block align-text-top"/>
             </NavLink>
             
-            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
                 <img src={logo} alt="Logo" width="50" height="50" className="d-inline-block align-text-top"/>

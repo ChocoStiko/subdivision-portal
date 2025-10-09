@@ -21,7 +21,7 @@ function ReservationPage(){
 
         <div className={styles.reservation_cards}>
             <NavLink as={Link} to="../clubhouse" className={styles.card} style={{width: 50 + 'rem'}}>
-                <img src={Clubhouse} className={styles.card_img_top} alt="..."/>
+                <img src={Clubhouse} className={styles.card_img_top} alt="clubhouse_img"/>
                 <div className={styles.card_body}>
                     <h1 className="card-title">Clubhouse</h1>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
@@ -29,7 +29,7 @@ function ReservationPage(){
             </NavLink>
 
             <NavLink as={Link} to="../pool" className={styles.card} style={{width: 50 + 'rem'}}>
-                <img src={Pool} className={styles.card_img_top} alt="..."/>
+                <img src={Pool} className={styles.card_img_top} alt="pool_img"/>
                 <div className={styles.card_body}>
                     <h1 className="card-title">Community Pool</h1>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
@@ -37,7 +37,7 @@ function ReservationPage(){
             </NavLink>
 
             <NavLink as={Link} to="../court" className={styles.card} style={{width: 50 + 'rem'}}>
-                <img src={Court} className={styles.card_img_top} alt="..."/>
+                <img src={Court} className={styles.card_img_top} alt="court_img"/>
                 <div className={styles.card_body}>
                     <h1 className="card-title">Court</h1>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>

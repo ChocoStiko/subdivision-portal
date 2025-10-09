@@ -41,7 +41,7 @@
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
-  display:block;
+
 }
 
 .about_text {
@@ -60,7 +60,16 @@
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
+@media (max-width: 811px){
+  .about_content{
+    flex-direction: column;
+  }
+  .subd_aerial_img{
+    width: auto;
+    height: 100%;
+    align-self: center;
+  }
+}
 
 /* discover section */
 .discover_sect {
