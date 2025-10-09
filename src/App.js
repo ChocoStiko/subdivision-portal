@@ -13,6 +13,8 @@ import News from './pages/NewsPage';
 import CarSticker from './pages/services/CarStickerPage';
 import Reservation from './pages/services/ReservationPage';
 import Move from './pages/services/MovePage';
+import Hoa from './pages/offices/HoaPage';
+import HealthCenter from './pages/offices/HealthCenterPage';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path='/reservation' element = {<Reservation/>} />
             <Route path='/car_sticker'element = {<CarSticker/>} />
             <Route path='/move' element = {<Move/>} />
+            <Route path='/hoa' element={<Hoa/>} />
+            <Route path='/health_center' element={<HealthCenter/>} />
           </Routes>
         </Router>
     </div>

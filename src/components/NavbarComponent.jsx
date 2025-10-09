@@ -32,16 +32,16 @@ function NavbarComponent(){
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle mx-lg-2 active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Offices</a>
                     <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="pages/hoa_page.html">HOA</a></li>
-                    <li><a className="dropdown-item" href="pages/health_center_page.html">Health Center</a></li>
+                    <li><NavLink as={Link} to="/hoa" className="dropdown-item">HOA</NavLink></li>
+                    <li><NavLink as={Link} to="/health_center" className="dropdown-item">Health Center</NavLink></li>
                     <li>
                         <hr className="dropdown-divider"/>
                     </li>
-                    <li><a className="dropdown-item" href="pages/senior_citizen_page.html">Senior Citizens</a></li>
+                    <li>  </li>
                     </ul>
                 </li>
                 </ul>
-            </div>
+            </div>  
             </div>
                 <div className="dropdown user-dropdown">
           <button
