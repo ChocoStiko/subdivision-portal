@@ -1,5 +1,3 @@
-
-
 /*Reservation section*/
 .header{
     background-color: #347433;
@@ -63,6 +61,12 @@
     background-color: #ff8a00;
 }
 
+@media (max-width: 811px){
+    .reservation_cards{
+        flex-direction: column;
+    }
+}
+
 /*Clubhouse section*/
 
 .clubhouse_section {
@@ -86,4 +90,10 @@
 .reserve_btn{
     background-color: #ff8a00;
     color: white;
+}
+
+@media (max-width: 811px){
+    .clubhouse_section{
+        flex-direction: column;
+    }
 }
