@@ -16,7 +16,7 @@ function ReservationPage(){
 
         <div className={styles.header}>
             <h> Reservation Type</h>
-        </div>
+        
 
 
         <div className={styles.reservation_cards}>
@@ -45,7 +45,7 @@ function ReservationPage(){
             </NavLink>
         </div>
 
-
+        </div>
         <FooterComponent/>
         </>
 

@@ -77,7 +77,7 @@ function RegistrationPage(){
         
         <br/>
         <NavLink to="/login" className={styles.register_link}>
-                      Click here to create account
+                      Click here to sign in
                     </NavLink>
       </form>
         </section>
