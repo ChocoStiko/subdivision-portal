@@ -11,6 +11,7 @@ import parkImg from "../assets/park.jpg";
 import FooterComponent from "../components/FooterComponent";
 import { NavbarCollapse } from "react-bootstrap";
 import NavbarComponent from "../components/NavbarComponent";
+import {Container, Row, Col} from "react-bootstrap";
 
 function HomePage() {
 
@@ -144,8 +145,15 @@ function HomePage() {
         </div>
 
         {/*Google map*/}
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.6830461081288!2d120.96423585606694!3d14.328730909159702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d44a01e03809%3A0x5143ca3d77b61191!2s8XH7%2BFQ6%20Winward%20Subdivision%2C%20Main%20Ave%2C%20Dasmari%C3%B1as%2C%204114%20Cavite!5e0!3m2!1sen!2sph!4v1760107149770!5m2!1sen!2sph" width="800" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div className={styles.map_container}>
+        <Container>
+            <Row>
+                <Col xs={12} md={""}>
+                    <iframe  className={styles.map}  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.6830461081288!2d120.96423585606694!3d14.328730909159702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d44a01e03809%3A0x5143ca3d77b61191!2s8XH7%2BFQ6%20Winward%20Subdivision%2C%20Main%20Ave%2C%20Dasmari%C3%B1as%2C%204114%20Cavite!5e0!3m2!1sen!2sph!4v1760107149770!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </Col>
+            </Row>
+            
+        </Container>
         </div>
         </section>
         <FooterComponent/>

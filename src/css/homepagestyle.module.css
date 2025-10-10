@@ -213,3 +213,20 @@
     text-align: center;
     color: #ff8a00;
 }
+
+.map{
+  width: 50%;
+  height: 500px;
+  
+}
+.map_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 811px){
+  .map{
+    width: 100%;
+  }
+}
