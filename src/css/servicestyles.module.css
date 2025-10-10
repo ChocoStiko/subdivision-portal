@@ -1,7 +1,6 @@
 /*Reservation section*/
 
 .header{
-    background-color: #347433;
     padding: 100px 50px 100px 50px;
     margin-top: 80px;
     min-height: 100vh;
@@ -9,8 +8,8 @@
 }
 
 .header h{
-    color: white;
-    font-size: 40px;
+    color:#347433;
+    font-size: 50px;
     font-weight: bold;
 
 }
@@ -47,6 +46,7 @@
 .card h1{
     font-weight: bold;
     color: white;
+    font-size: 30px;
 
 }
 
@@ -118,11 +118,12 @@
 
 /*Reservation form section*/
 .reservation_form{
-    color:#347433
+    color:#347433;
+    font-weight: bold;
 }
 
 .form_title{
-    color: #ff8a00;
+    color:#347433;
     font-weight: bold;
 }
 
@@ -131,7 +132,7 @@
 }
 
 .message_title{
-    color: #ff8a00;
+    color: #347433;
     font-weight: bold;
 }
 
