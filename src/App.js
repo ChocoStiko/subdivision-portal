@@ -13,6 +13,7 @@ import Reservation from './pages/services/ReservationPage';
 import Move from './pages/services/MovePage';
 import Hoa from './pages/offices/HoaPage';
 import HealthCenter from './pages/offices/HealthCenterPage';
+import Seniors from './pages/offices/SeniorsPage';
 import Clubhouse from './pages/reserve/ClubhousePage';
 import Pool from './pages/reserve/PoolPage';
 import Court from './pages/reserve/CourtPage';
@@ -33,6 +34,7 @@ function App() {
             <Route path='/move' element = {<Move/>} />
             <Route path='/hoa' element={<Hoa/>} />
             <Route path='/health_center' element={<HealthCenter/>} />
+            <Route path='/seniors' element={<Seniors/>} />
             <Route path='/clubhouse' element={<Clubhouse/>} />
             <Route path='/pool' element={<Pool/>} />
             <Route path='/court' element={<Court/>} />

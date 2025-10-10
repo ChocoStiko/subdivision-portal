@@ -40,10 +40,7 @@ function NavbarComponent(){
                     <ul className="dropdown-menu">
                     <li><NavLink as={Link} to="/hoa" className="dropdown-item">HOA</NavLink></li>
                     <li><NavLink as={Link} to="/health_center" className="dropdown-item">Health Center</NavLink></li>
-                    <li>
-                        <hr className="dropdown-divider"/>
-                    </li>
-                    <li>  </li>
+                    <li><NavLink as={Link} to="/seniors" className="dropdown-item">Senior Citizens</NavLink></li>
                     </ul>
                 </li>
                 </ul>
