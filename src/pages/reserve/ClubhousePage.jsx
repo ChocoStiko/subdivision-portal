@@ -2,12 +2,19 @@ import FooterComponent from "../../components/FooterComponent";
 import UserNavbarComponent from "../../components/UserNavbarComponent";
 import styles from '../../css/servicestyles.module.css';
 import clubhouseImg from '../../assets/clubhouse_reservation_img.jpg';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+
+import PopupReserveComponent from "../../components/PopupReserveComponent";
 
 
 
 
 
 function ClubhousePage(){
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    
     return(
     <>
     <UserNavbarComponent/>
@@ -25,17 +32,20 @@ function ClubhousePage(){
                 </p>
                 <p className="text-dark">
                     Curabitur ac erat ut magna tempor faucibus id et nisi. Nam imperdiet ornare blandit.
-                </p>
-                <button className={`btn btn-warning fw-bold px-4 py-2 ${styles.reserve_btn}`}>Reserve now</button>
+                </p>              
+                      <PopupReserveComponent/>
+                      
                 </div>
-
                 <div className="col-md-6 position-relative text-center">
                 <img src={clubhouseImg} className="img-fluid rounded shadow" alt="Clubhouse" />
                 </div>
+                
 
             </div>   
             </div>
             </div>
+
+            
         </div>
         
     <FooterComponent/>

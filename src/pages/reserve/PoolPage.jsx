@@ -2,6 +2,7 @@ import FooterComponent from "../../components/FooterComponent";
 import UserNavbarComponent from "../../components/UserNavbarComponent";
 import styles from "../../css/servicestyles.module.css";
 import poolImg from "../../assets/pool_reservation_img.jpg";
+import PopupReserveComponent from "../../components/PopupReserveComponent";
 
 function PoolPage(){
     return(
@@ -22,7 +23,7 @@ function PoolPage(){
                 <p className="text-dark">
                     Curabitur ac erat ut magna tempor faucibus id et nisi. Nam imperdiet ornare blandit.
                 </p>
-                <button className={`btn btn-warning fw-bold px-4 py-2 ${styles.reserve_btn}`}>Reserve now</button>
+                <PopupReserveComponent/>
                 </div>
 
                 <div className="col-md-6 position-relative text-center">

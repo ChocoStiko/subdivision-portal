@@ -94,6 +94,50 @@
 
 @media (max-width: 811px){
     .clubhouse_section{
-        flex-direction: column;
+        display: flex;
+    }
+}
+
+/*Reservation form section*/
+.reservation_form{
+    color:#347433
+}
+
+.form_title{
+    color: #ff8a00;
+    font-weight: bold;
+}
+
+.thank_message{
+    text-align: center;
+}
+
+.message_title{
+    color: #ff8a00;
+    font-weight: bold;
+}
+
+.reserve_msg_btn{
+    background-color: #ff8a00;
+    display: flex;
+    justify-content: center;
+}
+
+.reserve_header{
+    display: flex;
+    justify-content: center;
+}
+
+.reserve_footer{
+    justify-content: center;
+}
+
+@media (max-width: 811px){
+    .reservation_form{
+        align-content: center;
+    }
+
+    .thank_message{
+        align-content: center;
     }
 }
