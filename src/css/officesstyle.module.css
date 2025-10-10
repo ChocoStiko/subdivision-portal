@@ -1,0 +1,184 @@
+/*health center*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+    text-decoration: none;
+}
+
+/*hero section*/
+.hero {
+    width: 100%;
+    height: 98vh;
+    overflow: hidden;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+
+.heroCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+.heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 60px;
+}
+
+.heroText{
+    flex: 1;
+    text-align: left;
+}
+
+.heroText h1 {
+  color: #ff8a00;
+  font-size: 3.5rem;
+  margin-bottom: 0.8rem;
+}
+.heroText p {
+  color: #256342;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 480px;
+}
+
+.heroCarousel {
+  flex: 0 0 400px;
+  height: 98vh;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  
+}
+
+.heroCarousel .carousel-inner,
+.heroCarousel .carousel-item {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero{
+    height: auto;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .heroCarousel{
+    width: 100%;
+    height: 350px;
+    margin-left: 0;
+  }
+
+  .heroText {
+    text-align: center;
+  }
+}
+
+/*profiles section*/
+
+
+.profiles {
+  position: relative;
+  width: 100%;
+  min-height: 95vh;
+  background-color: #ff8a00;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 80px 60px 60px;
+  margin-top: -55px; 
+  z-index: 1;
+}
+
+.profile-container{
+    width: 100%;
+    max-width: 1350px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: start;
+    justify-items: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 1px 0px 0px;
+}
+
+.profile-container img{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+.center h1{
+    color: white;
+    font-weight: 600;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.center p{
+    color: #256342;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+}
+
+.box {
+    width: 95%;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    transition: all .38s ease;
+    max-width: 300px;
+}
+
+.box h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: #256342;
+    margin-bottom: 8px;
+}
+
+.box h5{
+    font-size: 16px;
+    color: #347433;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+
