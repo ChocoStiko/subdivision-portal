@@ -1,8 +1,10 @@
 /*Reservation section*/
+
 .header{
     background-color: #347433;
-    padding: 60px;
+    padding: 100px 50px 100px 50px;
     margin-top: 80px;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -14,24 +16,18 @@
 }
 
 .reservation_cards{
-    margin: 70px 200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 800px;
     gap: 15px;
-    
 }
 
 .card_img_top {
-  height: 300px;        
+  height: 250px;        
   object-fit: cover;
   width: 100%;
 }
 
 .card_body{
-    padding: 40px;
-    
+ 
+    padding: 20px;
 }
 
 .card{
@@ -39,6 +35,9 @@
     transition: transform 0.4s ease, box-shadow 0.2s ease;
     background-color: #ff8a00;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card p{
@@ -64,18 +63,27 @@
 @media (max-width: 811px){
     .reservation_cards{
         flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card_img_top{
+        height: 200px;
     }
 }
 
-/*Clubhouse section*/
+/*Reservation type section*/
 
-.clubhouse_section {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+.reservation_type_section {
+    margin-top: 160px;
+    min-height: 100vh;
+  
 }
 
-.clubhouse_section .btn{
+.reservation_type_section .btn{
     background-color: #ff8a00;
 }
 
@@ -92,8 +100,62 @@
     color: white;
 }
 
+.reservation_text{
+    margin: 30px;
+    
+}
+
+.btn_area{
+    margin-top: 40px;
+    display: flex;
+}
+
 @media (max-width: 811px){
-    .clubhouse_section{
-        flex-direction: column;
+    .btn_area{
+        justify-content: center;
+    }
+}
+
+/*Reservation form section*/
+.reservation_form{
+    color:#347433
+}
+
+.form_title{
+    color: #ff8a00;
+    font-weight: bold;
+}
+
+.thank_message{
+    text-align: center;
+}
+
+.message_title{
+    color: #ff8a00;
+    font-weight: bold;
+}
+
+.reserve_msg_btn{
+    background-color: #ff8a00;
+    display: flex;
+    justify-content: center;
+}
+
+.reserve_header{
+    display: flex;
+    justify-content: center;
+}
+
+.reserve_footer{
+    justify-content: center;
+}
+
+@media (max-width: 811px){
+    .reservation_form{
+        align-content: center;
+    }
+
+    .thank_message{
+        align-content: center;
     }
 }
