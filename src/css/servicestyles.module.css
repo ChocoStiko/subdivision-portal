@@ -75,15 +75,15 @@
     }
 }
 
-/*Clubhouse section*/
+/*Reservation type section*/
 
-.clubhouse_section {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+.reservation_type_section {
+    margin-top: 160px;
+    min-height: 100vh;
+  
 }
 
-.clubhouse_section .btn{
+.reservation_type_section .btn{
     background-color: #ff8a00;
 }
 
@@ -100,9 +100,19 @@
     color: white;
 }
 
+.reservation_text{
+    margin: 30px;
+    
+}
+
+.btn_area{
+    margin-top: 40px;
+    display: flex;
+}
+
 @media (max-width: 811px){
-    .clubhouse_section{
-        display: flex;
+    .btn_area{
+        justify-content: center;
     }
 }
 
