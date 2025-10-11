@@ -8,6 +8,7 @@ function NewsPage(){
     return(
         <>
         <UserNavbarComponent/>
+        
 
 
 
