@@ -14,10 +14,15 @@ function CarStickerPageForm(){
         <UserNavbarComponent/>
 
         <div className={styles.car_sticker_form_section}>
-            <Container fluid>
-                <h1>Vehicle Sticker Form</h1>
+            <Container>
+
+                <div className={styles.title_container}>
+                <h1 className={styles.title}>Vehicle Sticker Form</h1>
+                </div>
+                
+                
                 <br/>
-                <Row>
+                <Row className="justify-content-center text-start">
                     <Col xs={12} md={4}>
                         <h2>Driver's Information</h2>
                         <Form.Group className="mb-6">

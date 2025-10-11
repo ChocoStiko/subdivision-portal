@@ -206,6 +206,12 @@
 }
 
 /*Car Sticker Form*/
+.title_container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
 .car_sticker_form_section{
     min-height: 100vh;
     padding: 150px;
@@ -246,6 +252,11 @@
 @media (max-width: 811px){
     .car_sticker_form_section{
 
+        padding: 130px 0 100px 0;
+    }
+
+    .btn_container{
+        justify-content: center;
     }
 }
 
