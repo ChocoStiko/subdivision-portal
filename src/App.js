@@ -17,6 +17,7 @@ import Seniors from './pages/offices/SeniorsPage';
 import Clubhouse from './pages/reserve/ClubhousePage';
 import Pool from './pages/reserve/PoolPage';
 import Court from './pages/reserve/CourtPage';
+import CarStickerForm from './pages/services/CarStickerPageForm';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='/news' element = {<News/>} />
             <Route path='/reservation' element = {<Reservation/>} />
             <Route path='/car_sticker'element = {<CarSticker/>} />
+            <Route path='/car_sticker_form' element = {<CarStickerForm/>} />
             <Route path='/move' element = {<Move/>} />
             <Route path='/hoa' element={<Hoa/>} />
             <Route path='/health_center' element={<HealthCenter/>} />

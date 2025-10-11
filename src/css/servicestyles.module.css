@@ -204,3 +204,48 @@
         padding-bottom: 430px;
     }
 }
+
+/*Car Sticker Form*/
+.car_sticker_form_section{
+    min-height: 100vh;
+    padding: 150px;
+}
+
+.car_sticker_form_section h1 {
+    font-size: 50px;
+    color:#ff8a00;
+    font-weight: bold;
+
+}
+
+.car_sticker_form_section h2{
+    font-size: 40px;
+    color:#347433;
+    font-weight: bold;
+
+
+}
+
+.car_sticker_form_section input{
+    margin: 5px 0;
+}
+
+.btn_container{
+    display: flex;
+    justify-content: end;
+}
+
+.car_sticker_form_btn{
+    background-color:#ff8a00;
+}
+
+.car_sticker_form_section p{
+    text-align: center;
+}
+
+@media (max-width: 811px){
+    .car_sticker_form_section{
+
+    }
+}
+
