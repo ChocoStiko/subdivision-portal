@@ -46,7 +46,7 @@ function NavbarComponent(){
                 </ul>
             </div>  
             </div>
-                <div className="dropdown user-dropdown">
+                <div className="dropdown user-dropdown ms-auto me-2">
           <button
             className="btn user-button"
             type="button"

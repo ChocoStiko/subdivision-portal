@@ -160,3 +160,47 @@
         align-content: center;
     }
 }
+
+
+/*Car sticker section*/
+
+.car_sticker_section{
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    min-height: 100vh;
+    background-position: 200% center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.car_header{
+    font-size: 50px;
+    font-weight: bold;
+    color: #ff8a00;
+}
+
+.car_header_2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #347433;
+}
+
+.car_btn{
+    background-color: #ff8a00;
+    
+}
+
+.car_btn_container{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 811px){
+    .car_sticker_section{
+        background-size: 140%;
+        background-position: center bottom;
+        padding-bottom: 430px;
+    }
+}

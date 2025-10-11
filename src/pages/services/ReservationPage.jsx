@@ -18,7 +18,7 @@ function ReservationPage(){
 
         <Container fluid>
             <div className={styles.header}>
-                <h> Reservation Type</h>
+                <h>Reservation Type</h>
 
                 <Row className="justify-content-center g-3 mt-4">
                     <Col xs={12} md={4} className={styles.reservation_cards}>
