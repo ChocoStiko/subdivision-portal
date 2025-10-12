@@ -69,12 +69,17 @@ function NavbarComponent(){
           >
             <li>
               <NavLink className="dropdown-item" to="/login">
-                Login
+                User Login
               </NavLink>
             </li>
             <li>
               <NavLink className="dropdown-item" to="../registration">
                 Register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="dropdown-item" to="../admin_login">
+                Admin Login
               </NavLink>
             </li>
           </ul>

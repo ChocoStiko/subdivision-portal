@@ -18,6 +18,8 @@ import Clubhouse from './pages/reserve/ClubhousePage';
 import Pool from './pages/reserve/PoolPage';
 import Court from './pages/reserve/CourtPage';
 import CarStickerForm from './pages/services/CarStickerPageForm';
+import AdminLogin from './pages/AdminLoginPage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
             <Route path='/clubhouse' element={<Clubhouse/>} />
             <Route path='/pool' element={<Pool/>} />
             <Route path='/court' element={<Court/>} />
+            <Route path='/admin_login' element={<AdminLogin/>} />
+            <Route path='/admin_page' element={<AdminPage/>} />
           </Routes>
         </Router>
     </div>
