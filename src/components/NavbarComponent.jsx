@@ -3,6 +3,7 @@ import userIcon from "../assets/user.svg";
 import "../styles.css";
 import { Link, NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import {HashLink} from 'react-router-hash-link';
 
 function NavbarComponent() {
   return (
@@ -33,12 +34,9 @@ function NavbarComponent() {
               </li>
 
               <li className="nav-item">
-                <button className="nav-link" href="about_us" onClick={() => {
-                  const aboutSection = document.getElementById("about_us");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}>About Us</button>
+        <HashLink smooth to="/homepage#about_us" className="nav-link">
+    About Us
+  </HashLink>
               </li>
 
               <li className="nav-item dropdown">
