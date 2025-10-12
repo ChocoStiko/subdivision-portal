@@ -78,7 +78,7 @@
 /*Reservation type section*/
 
 .reservation_type_section {
-    margin-top: 160px;
+    margin-top: 300px;
     min-height: 100vh;
   
 }
@@ -173,6 +173,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    color: black;
 }
 
 .car_header{
@@ -215,6 +216,12 @@
 .car_sticker_form_section{
     min-height: 100vh;
     padding: 150px;
+    color: black;
+}
+
+.car_sticker_form_section li{
+    color: black;
+
 }
 
 .car_sticker_form_section h1 {
@@ -264,6 +271,7 @@
 .move_section{
     min-height: 100vh;
     padding: 150px 0;
+    color: black;
 }
 
 .move_section h1{
