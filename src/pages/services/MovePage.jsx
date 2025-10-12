@@ -2,6 +2,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import FooterComponent from '../../components/FooterComponent';
 import UserNavbarComponent from '../../components/UserNavbarComponent';
 import styles from '../../css/servicestyles.module.css';
+import form from '../../downloads/move_form_template.pdf'
 
 function MovePage(){
     return(
@@ -33,7 +34,7 @@ function MovePage(){
                             </ol>
                         </div>
                             <div className="text-center mt-4">
-                                <a href="move_form" className={styles.download_link}>Click here to download the form template</a>
+                                <a href={form} className={styles.download_link} download={"move_form_template"}>Click here to download the form template</a>
                             </div>
                 </Col>
             </Row>
