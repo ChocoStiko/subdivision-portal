@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "League Spartan", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+header{
+    z-index: 1100;
+    background: #347433;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.icon{
+    width: 100px;
+    margin-left: 45px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.sidebar{
+    width: 240px;
+    background: #347433;
+    position: fixed;
+    height: 100vh;
+    padding: 20px;
+    transition: all 1s;
+    left: -240px;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidebar.active{
+    left: 0;
+}
+
+
+.sidebarLinks{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarLinks li{
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.sidebarLinks a{
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+ul li a:hover,
+ul li a.active{
+    background: #ff8a00;
+}
