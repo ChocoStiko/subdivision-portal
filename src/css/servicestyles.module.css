@@ -260,3 +260,36 @@
     }
 }
 
+/*Move In & Move Out Section*/
+.move_section{
+    min-height: 100vh;
+    padding: 150px 0;
+}
+
+.move_section h1{
+    color: #347433;
+    font-weight: bold;
+    text-align: center;
+}
+
+.move_section h2{
+    color: #347433;
+    font-weight: bold;
+}
+
+.move_body{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.download_link{
+    font-size: 20px;
+}
+
+@media (max-width: 811px){
+    .move_section{
+        padding: 150px 10px;
+    }
+
+}
+
