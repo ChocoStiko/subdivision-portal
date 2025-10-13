@@ -26,7 +26,7 @@ function ClubhousePage(){
                     Surrounded by landscaped greenery, the clubhouse provides a relaxing setting for both daytime and evening events.
                     </p>
                     <div className={styles.btn_area}>
-                        <PopupReserveComponent/> 
+                        <PopupReserveComponent type="Clubhouse"/> 
                     </div>   
                 </Col>
                 <Col xs={12} md={6} className="position-relative text-center">
