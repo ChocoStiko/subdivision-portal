@@ -34,9 +34,7 @@ function NavbarComponent() {
               </li>
 
               <li className="nav-item">
-        <HashLink smooth to="/homepage#about_us" className="nav-link">
-    About Us
-  </HashLink>
+                <HashLink smooth to="/homepage#about_us" className="nav-link">About Us</HashLink>
               </li>
 
               <li className="nav-item dropdown">
@@ -51,9 +49,9 @@ function NavbarComponent() {
                 </a>
 
                 <ul className="dropdown-menu">
-                  <li><NavLink as={Link} to="/hoa" className="dropdown-item">HOA</NavLink></li>
-                  <li><NavLink as={Link} to="/health_center" className="dropdown-item">Health Center</NavLink></li>
-                  <li><NavLink as={Link} to="/seniors" className="dropdown-item">Senior Citizens</NavLink></li>
+                  <li><NavLink as={Link} to="/hoa" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>HOA</NavLink></li>
+                  <li><NavLink as={Link} to="/health_center" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Health Center</NavLink></li>
+                  <li><NavLink as={Link} to="/seniors" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Senior Citizens</NavLink></li>
                 </ul>
               </li>
             </ul>
