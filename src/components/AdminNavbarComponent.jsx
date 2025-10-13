@@ -8,9 +8,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 function AdminNavbarComponent() {
     const [isActive, setIsActive] = useState(false);
 
-    const toggleSidebar = () => {
-    setIsActive(!isActive);
-    }
+    const toggleSidebar = () => setIsActive(!isActive);
+    const closeSidebar = () => setIsActive(false);
   return (
     
     <>

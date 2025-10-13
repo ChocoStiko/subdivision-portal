@@ -70,6 +70,7 @@ function AdminReservationPage(){
 
       <Container mt={5}>
           <h1>Manage Reservations</h1>
+          <div className='table-responsive'>
           <Table>
             <thead>
               <tr>
@@ -171,6 +172,7 @@ function AdminReservationPage(){
           ))}
             </tbody>
           </Table>
+          </div>
                 <nav>
         <ul className="pagination">
           {[...Array(totalPages)].map((_, i) => (

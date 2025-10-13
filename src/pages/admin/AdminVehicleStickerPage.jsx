@@ -71,6 +71,7 @@ function AdminVehicleStickerPage(){
 
       <Container mt={5}>
           <h1>Manage Vehicle Stickers</h1>
+          <div className='table-responsive'>
           <Table>
             <thead>
               <tr>
@@ -212,6 +213,7 @@ function AdminVehicleStickerPage(){
           ))}
             </tbody>
           </Table>
+          </div>
                 <nav>
         <ul className="pagination">
           {[...Array(totalPages)].map((_, i) => (
