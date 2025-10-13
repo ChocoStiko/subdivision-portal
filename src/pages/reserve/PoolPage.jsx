@@ -22,7 +22,7 @@ function PoolPage(){
                     Whether for swimming practice, family bonding, or private poolside parties, residents can reserve the pool exclusively on selected schedules approved by the HOA.
                     </p>
                     <div className={styles.btn_area}>
-                        <PopupReserveComponent/> 
+                        <PopupReserveComponent type = "Pool"/> 
                     </div>   
                 </Col>
                 <Col xs={12} md={6} className="position-relative text-center">

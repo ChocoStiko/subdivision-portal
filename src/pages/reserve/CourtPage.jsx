@@ -26,7 +26,7 @@ function CourtPage(){
                     Whether for casual play, team practice, or special events, residents can reserve the court exclusively through the HOA office or online system.
                     </p>
                     <div className={styles.btn_area}>
-                        <PopupReserveComponent/> 
+                        <PopupReserveComponent type="Court"/> 
                     </div>   
                 </Col>
                 <Col xs={12} md={6} className="position-relative text-center">
