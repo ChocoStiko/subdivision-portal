@@ -48,7 +48,9 @@ function AdminNavbarComponent() {
           <NavLink as={Link} to={"/manage_news"}>News</NavLink>
         </li>
           <li>
-          <NavLink as={Link} to={"/"}>Logout</NavLink>
+          <NavLink as={Link} to={"/"} onClick={() => {
+                  sessionStorage.removeItem("loggedInAdmin");
+                }}>Logout</NavLink>
         </li>
       </ul>
     </div>

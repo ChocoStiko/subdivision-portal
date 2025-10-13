@@ -14,7 +14,7 @@ function RegistrationPage(){
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
-    const sheetdbUrl = "https://sheetdb.io/api/v1/c2tpy3ag3nb05";
+    const sheetdbUrl = 'https://sheetdb.io/api/v1/y3gntqh4y7qn8';
 
     const handleRegister = async (e) => {
         e.preventDefault();

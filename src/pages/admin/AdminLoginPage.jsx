@@ -3,6 +3,7 @@ import styles from '../../css/loginstyles.module.css';
 import login_img from '../../assets/sample subd.jpg'; 
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavbarComponent from '../../components/NavbarComponent';
 
 
 function AdminLoginPage(){
@@ -41,6 +42,7 @@ function AdminLoginPage(){
 
   return (
     <>
+    <NavbarComponent/>
 
     <div className={styles.login_body}>
       <div className={styles.image_section}>
