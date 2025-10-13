@@ -17,10 +17,13 @@ function CourtPage(){
         <Container fluid className={`container ${styles.reservation_container}`}>
             <Row className="align-items-center">
                 <Col xs={{order : 1}} md={{order : 2}} className={styles.reservation_text}>
-                    <h2 className={`fw-bold text-success ${styles.text_title}`}>Lorem ipsum dolor sit</h2>
+                    <h2 className={`fw-bold text-success ${styles.text_title}`}>Court</h2>
                     <p className="text-dark">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ornare blandit.
-                    Aliquam bibendum diam leo, sit amet luctus tellus consectetur at. Aenean mollis fringilla justo eget malesuada.
+                    The Windward Hills Sports Court is a versatile open-air facility designed for residents who enjoy active recreation.
+                    It features a well-maintained playing surface suitable for basketball, volleyball, or badminton, surrounded by safety fencing and ample lighting for both daytime and evening use.
+                    Benches and shaded waiting areas are available nearby for players and spectators, creating a comfortable space for friendly matches and community tournaments.
+
+                    Whether for casual play, team practice, or special events, residents can reserve the court exclusively through the HOA office or online system.
                     </p>
                     <div className={styles.btn_area}>
                         <PopupReserveComponent/> 

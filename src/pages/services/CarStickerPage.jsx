@@ -17,9 +17,13 @@ function CarStickerPage(){
                     <br/>
                     <h className={styles.car_header_2}>Procedure</h>
                     <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ornare blandit.</li>
-                        <li>Aliquam bibendum diam leo, sit amet luctus tellus consectetur at. Aenean mollis fringilla justo eget malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ac erat ut magna tempor faucibus id et nisi.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ornare blandit.</li>
+                        <li>Secure a Vehicle Sticker Application Form from the HOA office or download it from the subdivision website.</li>
+                        <li>Fill out the form completely and attach all required documents (photocopy of driver’s license, OR/CR, and proof of residence).</li>
+                        <li>Submit the accomplished form and documents to the Homeowners Association Office for verification.</li>
+                        <li>Once verified, proceed to the cashier for payment of the sticker fee.</li>
+                        <li>Wait for confirmation and schedule of sticker release.</li>
+                        <li>Claim your sticker at the HOA office and have it installed by authorized personnel only.</li>
+                        <li>Stickers must be affixed on the upper-right corner of the vehicle’s windshield for visibility.</li>
                     </ol>
                     <div className={styles.car_btn_container}>
                         <NavLink as={Link} to='../car_sticker_form'><Button className={styles.car_btn}>Apply now</Button></NavLink>

@@ -14,16 +14,8 @@ function AdminNavbarComponent() {
   return (
     
     <>
-        <header style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 1100 }}>
-            <GiHamburgerMenu
-              style={{
-                fontSize: "30px",
-                cursor: "pointer",
-                color: "white",
-                marginLeft: "20px",
-              }}
-              onClick={toggleSidebar}
-            />
+        <header className={styles.header}>
+            <GiHamburgerMenu className={styles.hamburger} onClick={toggleSidebar}/>
         </header>
 
       <div className={`${styles.sidebar} ${isActive ? styles.active : ""}`}>

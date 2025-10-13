@@ -13,10 +13,13 @@ function PoolPage(){
         <Container fluid className={`container ${styles.reservation_container}`}>
             <Row className="align-items-center">
                 <Col xs={{order : 1}} md={{order : 2}} className={styles.reservation_text}>
-                    <h2 className={`fw-bold text-success ${styles.text_title}`}>Lorem ipsum dolor sit</h2>
+                    <h2 className={`fw-bold text-success ${styles.text_title}`}>Community Pool</h2>
                     <p className="text-dark">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ornare blandit.
-                    Aliquam bibendum diam leo, sit amet luctus tellus consectetur at. Aenean mollis fringilla justo eget malesuada.
+                    The Windward Hills Community Pool offers a refreshing escape for residents and guests.
+                    Surrounded by palm trees and landscaped gardens, the pool area provides a relaxing environment for both leisure and private gatherings.
+                    It features a spacious deck with shaded seating areas, clean shower and changing rooms, and a designated children’s pool for family-friendly enjoyment.
+                
+                    Whether for swimming practice, family bonding, or private poolside parties, residents can reserve the pool exclusively on selected schedules approved by the HOA.
                     </p>
                     <div className={styles.btn_area}>
                         <PopupReserveComponent/> 

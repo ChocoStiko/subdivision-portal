@@ -23,38 +23,42 @@ function CarStickerPageForm(){
                     <Col xs={12} md={4}>
                         <h2>Driver's Information</h2>
                         <Form.Group className="mb-6">
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Full Name</Form.Label>
                             <Form.Control type="text" ></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Homeowner's Name</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Address / Block & Lot</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Driver's License Number</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <br/><br/>
                         
                         <h2>Car Information</h2>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Plate Number</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Car Brand</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Model</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Year Model</Form.Label>
+                            <Form.Control type="text"></Form.Control>
+                        </Form.Group>
+                            <Form.Group>
+                            <Form.Label>Vehicle Color</Form.Label>
                             <Form.Control type="text"></Form.Control>
                         </Form.Group>
                     </Col>
@@ -62,11 +66,11 @@ function CarStickerPageForm(){
                     <Col xs={12} md={4}>
                         <h2>Required Documents</h2>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>OR/CR Copy</Form.Label>
                             <Form.Control type="file"></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Lorem Ipsum</Form.Label>
+                            <Form.Label>Valid ID</Form.Label>
                             <Form.Control type="file"></Form.Control>
                         </Form.Group>
                         <br/>

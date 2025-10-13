@@ -17,20 +17,24 @@ function MovePage(){
                         <div className={styles.move_body}>
                             <h2>Requirements</h2>
                             <ul>
-                                <li>Donec eget tellus.</li>
-                                <li>Vestibulum vitae mauris semper tempus urna.</li>
-                                <li>Morbi aliquet purus.</li>
+                                <li>Duly accomplished Move In/Out application form.</li>
+                                <li>Photocopy of valid government-issued ID (homeowner and/or tenant).</li>
+                                <li>Clearance from the Homeowners Association (no pending dues).</li>
+                                <li>Inventory list of furniture/appliances to be moved.</li>
+                                <li>Gate pass for security check (to be issued upon approval).</li>
                             </ul>
                             <br/><br/>
 
                             <h2>Instructions</h2>
                             <ol>
-                                <li>Ut non ligula quis elit dignissim aliquam ac eu dui.</li>
-                                <li>Aenean ullamcorper nisi eu ultricies rhoncus.</li>
-                                <li>Nam scelerisque velit a urna pretium luctus.</li>
-                                <li>Nam vitae turpis tristique, facilisis lacus ac, varius purus.</li>
-                                <li>Donec in arcu viverra, scelerisque metus eget, iaculis tellus.</li>
-                                <li>Donec eget lectus nec metus convallis viverra.</li>
+                                <li>Secure a Move In/Out form from the HOA office or download it using the link below.</li>
+                                <li>Fill out all required information completely and accurately.</li>
+                                <li>Attach all necessary supporting documents listed above.</li>
+                                <li>Submit your application at least 3 days before the scheduled move.</li>
+                                <li>Wait for HOA verification and approval before proceeding.</li>
+                                <li>Upon approval, present your gate pass to the security guard during moving day.</li>
+                                <li>Moving hours are strictly between 8:00 AM to 5:00 PM only.</li>
+                                <li>Ensure no damage or obstruction is caused within subdivision premises during the move.</li>
                             </ol>
                         </div>
                             <div className="text-center mt-4">

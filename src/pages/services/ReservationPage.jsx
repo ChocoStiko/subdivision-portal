@@ -26,7 +26,7 @@ function ReservationPage(){
                             <img src={Clubhouse} className={styles.card_img_top} alt="clubhouse_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Clubhouse</h1>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <p className="card-text">The clubhouse may be reserved for private events such as birthdays, meetings, or gatherings.Residents must book at least five (5) days in advance and ensure the venue is returned in clean condition after use.</p>
                             </div>
                         </NavLink>
                     </Col>
@@ -36,7 +36,7 @@ function ReservationPage(){
                             <img src={Pool} className={styles.card_img_top} alt="pool_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Community Pool</h1>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <p className="card-text">The community pool can be reserved for exclusive family or small group use. Proper swimwear and pool regulations must be observed. Reservations are open from 8:00 AM to 6:00 PM, subject to approval by the HOA office.</p>
                             </div>
                         </NavLink>                
                     </Col>
@@ -46,7 +46,7 @@ function ReservationPage(){
                             <img src={Court} className={styles.card_img_top} alt="court_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Court</h1>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <p className="card-text">The subdivision court is available for basketball, volleyball, or other recreational activities. Reservations may be made per hour, with priority given to residents. Please observe courtesy and proper conduct while using the facility.</p>
                                 </div>
                         </NavLink>
                     </Col>
