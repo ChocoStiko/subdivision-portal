@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 function CarStickerPageForm(){
 
-    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
     const [licenseNum, setLicenseNum] = useState('');
@@ -30,7 +30,7 @@ function CarStickerPageForm(){
             const response = await fetch(sheetdbUrl, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify({data : [{full_name:fullName, homeowner_name:homeownerName, address:address, license_number:licenseNum, plate_number:plateNum, car_brand:carBrand, model:model, year_model:yearModel, vehicle_color:color}]})
+                body: JSON.stringify({data : [{email:email, homeowner_name:homeownerName, address:address, license_number:licenseNum, plate_number:plateNum, car_brand:carBrand, model:model, year_model:yearModel, vehicle_color:color}]})
             });
 
             if(response.ok){
@@ -62,8 +62,8 @@ function CarStickerPageForm(){
                         <h2>Driver's Information</h2>
                             
                                 <Form.Group className="mb-6">
-                                    <Form.Label>Driver's Full Name</Form.Label>
-                                    <Form.Control type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)}></Form.Control>
+                                    <Form.Label>Email Address</Form.Label>
+                                    <Form.Control type="text" required value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Homeowner's Name</Form.Label>
