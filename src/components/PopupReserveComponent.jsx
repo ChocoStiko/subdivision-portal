@@ -12,6 +12,7 @@ function PopupReserveComponent({type}){
     const msgHandleClose = () => setShowMsg (false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const id = Date.now();
     const [email, setEmail] = useState('');
     const [date, setDate] = useState('');
     const [fromTime, setFromTime] = useState('');
@@ -35,7 +36,7 @@ function PopupReserveComponent({type}){
             await fetch(sheetdbUrl, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify({data : [{email:email, reservation_type:type, date:date, time_from:fromTime, time_to:toTime}]})
+                body: JSON.stringify({data : [{id:id, email:email, reservation_type:type, date:date, time_from:fromTime, time_to:toTime}]})
             });
 
             setShow(false);

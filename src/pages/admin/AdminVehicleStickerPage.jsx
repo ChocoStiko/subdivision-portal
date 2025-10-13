@@ -201,11 +201,10 @@ function AdminVehicleStickerPage(){
               <td>
                 {editingUser === user.email ? (
                   <>
-                    <button className="btn btn-secondary btn-sm" onClick={() => setEditingUser(null)}>Cancel</button>
                   </>
                 ) : (
                   <>
-                    <button className="btn btn-danger btn-sm" onClick={() => handleDelete(user.email)}>Delete</button>
+                    <button className="btn btn-success btn-sm" onClick={() => handleDelete(user.email)}>Approve</button>
                   </>
                 )}
               </td>
@@ -225,8 +224,6 @@ function AdminVehicleStickerPage(){
         </ul>
       </nav>
       </Container>
-
-
     </div>
     </>
   );
