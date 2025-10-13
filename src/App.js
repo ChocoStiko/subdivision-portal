@@ -50,7 +50,7 @@ function App() {
             <Route path='/admin_page' element={<AdminPage/>} />
             <Route path='/manage_users' element={<AdminManageUser/>} />
             <Route path='/manage_news' element={<AdminNews/>} />
-            <Route path='/manage_sticker' element={<AdminVehicleSticker/>} />
+            <Route path='/manage_stickers' element={<AdminVehicleSticker/>} />
             <Route path='/manage_reservation'element={<AdminReservation/>} />
           </Routes>
         </Router>
