@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {useState} from 'react';
 import Login from './pages/LoginPage';
 import Home from './pages/HomePage';
 import Registration from './pages/RegistrationPage';
@@ -26,6 +27,24 @@ import AdminVehicleSticker from './pages/admin/AdminVehicleStickerPage';
 import AdminReservation from './pages/admin/AdminReservationPage';
 
 function App() {
+
+  //mock news
+  const[news, setNews] = useState([
+    {
+      id: 1,
+      title: 'Windward Hills Subdivision Portal',
+      content: 'Stay updated with us!',
+      date: new Date().toLocaleDateString(),
+      author: 'Admin'
+    },
+    {
+      id: 2,
+      title: 'HOA Meeting',
+      content: 'Join us on October 18 for the community meeting',
+      date: new Date().toLocaleDateString(),
+      author: 'Admin'
+    }
+  ])
   return (
     <div className="App">
         <Router>
@@ -35,7 +54,8 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path='/registration' element={<Registration/>} /> 
             <Route path='/userhome' element = {<UserHome/>} />
-            <Route path='/news' element = {<News/>} />
+
+            <Route path='/news' element = {<News news={news}/>} />
             <Route path='/reservation' element = {<Reservation/>} />
             <Route path='/car_sticker'element = {<CarSticker/>} />
             <Route path='/car_sticker_form' element = {<CarStickerForm/>} />
@@ -49,7 +69,7 @@ function App() {
             <Route path='/admin_login' element={<AdminLogin/>} />
             <Route path='/admin_page' element={<AdminPage/>} />
             <Route path='/manage_users' element={<AdminManageUser/>} />
-            <Route path='/manage_news' element={<AdminNews/>} />
+            <Route path='/manage_news' element={<AdminNews news={news} setNews={setNews} />} />
             <Route path='/manage_stickers' element={<AdminVehicleSticker/>} />
             <Route path='/manage_reservation'element={<AdminReservation/>} />
           </Routes>

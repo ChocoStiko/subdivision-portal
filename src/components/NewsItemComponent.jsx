@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from '../../css/newsstyles.module.css';
+import styles from '../css/newsstyles.module.css';
+
 
 function NewsItemComponent({ newsItem, onEdit, onDelete }) {
     return (

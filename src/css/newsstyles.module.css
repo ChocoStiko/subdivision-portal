@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+/*colors
+#ff8a00 yellow
+#347433 green
+#ffffff white
+#d9d9d9 light gray
+*/
+
+.newsSection{
+    padding: 2rem 0;
+    background-color: white;
+}
+
+.newsList{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.newsTitle{
+    color: #ff8a00;
+    font-size: 2rem;
+    font-family: "League Spartan", sans-serif;
+}
+
+.noNews{
+    text-align: center;
+    padding: 10rem;
+    font-family: "League Spartan", sans-serif;
+    font-size: 25px;
+}
+
+.card{
+    border: none;
+    box-shadow:0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover{
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.cardBody{
+    padding: 1.5rem;
+}
+
+.cardTitle{
+    color:#ff8a00;
+    font-weight: bold;
+    font-family: "League Spartan", sans-serif;
+}
+
+.cardSubtitle{
+    font-size: 0.875rem;
+}
+
+.cardText{
+    line-height: 1.5;
+    color: #347433;
+}
+
+.cardActions{
+    justify-content: flex-end;
+}

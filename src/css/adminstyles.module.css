@@ -1,6 +1,45 @@
-
+/*colors
+#ff8a00 yellow
+#347433 green
+#ffffff white
+#d9d9d9 light gray
+*/
 .admin_page_section{
     min-height: 100vh;
     padding-top: 200px;
     color: #347433;
+}
+
+/*news*/
+.addButton{
+    background-color: #347433 !important;
+    border: #347433 !important;
+}
+
+.addButon:hover{
+    background-color: #347433 !important;
+}
+
+.newsList {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.newsTitle {
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.noNews {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+}
+.newsCard {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: box-shadow 0.3s;
+}
+.newsCard:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
