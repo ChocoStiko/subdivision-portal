@@ -13,32 +13,19 @@ function NoticePopupComponent(){
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const form = e.target;
-
-        if (form.checkValidity()) {
-            setShow(false);
-            navigate("./");
-        }
-    }
-
     return(
         <>       
-        <Button variant="primary" className={styles.reserve_btn} onClick={handleShow}>Submit</Button>
+        <Button variant="primary" className={styles.reserve_btn} type='submit' onClick={handleShow}>Submit</Button>
             <Modal show={show} onHide={handleClose} className={styles.reservation_form}>
                 <Modal.Header className={styles.reserve_header} closeButton>
                 <Modal.Title className={styles.form_title}>Application sent</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form>
                         <p>A confirmation will be sent at user@email.com</p>
                 <Modal.Footer className={styles.reserve_footer}>       
-                <Button variant="primary" className={styles.reserve_btn} type='submit'>Close</Button>
+                <Button variant="primary" className={styles.reserve_btn} onClick={() => navigate("/userhome")}>Close</Button>
                 </Modal.Footer>
-                    </form>
-                    </Modal.Body>
+                </Modal.Body>
                 </Modal>
         </>
     )

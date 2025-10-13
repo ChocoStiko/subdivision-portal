@@ -7,13 +7,16 @@ body{
     font-family: "League Spartan", sans-serif;
 }
 
-header{
-    z-index: 1100;
-    background: #347433;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    color: white;
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #356b34;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
 }
 
 .icon{
@@ -30,9 +33,8 @@ header{
     height: 100vh;
     padding: 20px;
     transition: all 1s;
-    left: -240px;
+    left: 0;
     top: 0;
-    z-index: 1000;
 }
 
 .sidebar.active{
@@ -58,6 +60,14 @@ header{
     padding: 10px 15px;
     border-radius: 6px;
     text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 ul li a:hover,
