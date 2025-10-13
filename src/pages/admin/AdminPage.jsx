@@ -20,7 +20,7 @@ function AdminPage(){
 
       <AdminNavbarComponent isActive={isActive} />
 
-      <Container>
+      <Container flex>
           <h1>Welcome, Admin!</h1>
       </Container>
 

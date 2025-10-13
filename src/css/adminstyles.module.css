@@ -14,6 +14,15 @@
 .addButton{
     background-color: #347433 !important;
     border: #347433 !important;
+    
+}
+
+.addButton_container{
+  display: flex;
+}
+
+.form_container{
+  display: flex;
 }
 
 .addButon:hover{
@@ -42,4 +51,23 @@
 }
 .newsCard:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 811px){
+  .admin_page_section{
+    padding-top: 100px;
+  }
+
+  .admin_page_section h1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .addButton_container{
+    justify-content: center;
+  }
+
+  .form_container{
+    justify-content: center;
+  }
 }

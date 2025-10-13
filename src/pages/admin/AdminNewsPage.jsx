@@ -74,9 +74,12 @@ function AdminNewsPage({news, setNews}) {
           <h1>Edit News</h1>
 
           {/*add button*/}
+          <div className={styles.addButton_container}>
           <Button variant="success" onClick={toggleForm} className={`${styles.addButton} mb-3`}>{showForm ? 'Cancel' : '+ Add New Post'}</Button>
+          </div>
 
           {/*form add/edit*/}
+          <div className={styles.form_container}>
           {showForm && (
             <form onSubmit={editingItem ? handleEdit : handleAdd} className={styles.form}>
               <h3>{editingItem ? 'Edit Post' : 'Add New Post'}</h3>
@@ -102,11 +105,15 @@ function AdminNewsPage({news, setNews}) {
                   className={styles.textarea}
                 />
               </div>
+              
               <Button type="submit" variant="primary" className={styles.submitButton}>
                 {editingItem ? 'Update Post' : 'Add Post'}
               </Button>
+              
             </form>
+            
           )}
+          </div>
 
           
       </Container>

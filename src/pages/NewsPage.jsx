@@ -17,10 +17,8 @@ function NewsPage({ news }){
                 />
                 
         </section>
-
-         </>
-        
-
+        <FooterComponent/>
+        </>
     )
     
 }
