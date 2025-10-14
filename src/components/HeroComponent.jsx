@@ -5,7 +5,7 @@ function HeroComponent(){
         <section class="hero">
             <div class="title">
                 <h1>Windward Hills<br/>Subdivision</h1>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error laborum, ratione nemo aperiam, odit, non quos qui impedit minima expedita quis. At ex eaque ipsam natus? Repudiandae, natus vitae! Placeat!</p>
+                <p class="description">Welcome to Windward Hills Subdivision, a close-knit community where comfort and convenience come together. With nearby schools, supermarkets, and the parish just a short distance away, residents enjoy a peaceful lifestyle with the advantage of easy access through the public road. It’s a place where families grow, connect, and truly belong.</p>
             </div>
         </section>
     );
