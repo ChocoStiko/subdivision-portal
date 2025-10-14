@@ -49,7 +49,7 @@ function HomePage() {
             <div className={styles.about_text}>
                 <h2>About Us</h2>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Windward Hills Subdivision is a residential community located in Barangay Burol 1, Dasmariñas City, Cavite. Nestled in one of the city’s older barrios, Windward Hills stands on terrain that has long held historical significance—including remnants of old stone structures and sugar mills that mark Burol’s heritage.</p> <p>Over time, this land transitioned from rural estates and agricultural uses into a well-planned subdivision, with multiple phases (A, B, C, D, E) developed to accommodate growing families seeking both accessibility and serene living.
                 </p>
             </div>
             </div>
@@ -66,7 +66,7 @@ function HomePage() {
                 <img src={clubhouseImg} className={styles.card_img} alt="WWHS Clubhouse"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Clubhouse</h5>
-                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="card-desc">A welcoming space for gatherings, celebrations, and community events.</p>
                 </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@ function HomePage() {
                 <img src={poolImg} className={styles.card_img} alt="WWHS Pool"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Community Pool</h5>
-                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="card-desc">A relaxing spot for families to unwind and enjoy sunny days.</p>
                 </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@ function HomePage() {
                 <img src={courtImg} className="card-img" alt="WWHS Court"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Basketball Court</h5>
-                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="card-desc">A lively area for sports and recreation where residents can play and stay active.</p>
                 </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ function HomePage() {
                 <img src={parkImg} className="card-img" alt="WWHS Park"/>
                 <div className="card-img-overlay">
                     <h5 className="card-title">Park</h5>
-                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className="card-desc">A peaceful green space perfect for morning walks, family picnics, or quiet moments surrounded by nature.</p>
                 </div>
                 </div>
             </div>
@@ -112,27 +112,27 @@ function HomePage() {
             <div className={styles.grid_box}>
             <div className={styles.square}>
             <span className={styles.num}>01</span>
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
+            <h3>Convenient Location</h3>
+            <p>Close to universities, supermarkets, and the parish church; everything you need is just minutes away.</p>
             </div>
 
 
             <div className={styles.square}>
             <span className={styles.num}>02</span>
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
+            <h3>Peaceful Community</h3>
+            <p>Enjoy a quiet and secure environment perfect for families who value safety and comfort.</p>
             </div>
 
             <div className={styles.square}>
             <span className={styles.num}>03</span>
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
+            <h3>Quality Amenities</h3>
+            <p>From the clubhouse and pool to the basketball court and park, residents enjoy spaces that support leisure and connection.</p>
             </div>
 
             <div className={styles.square}>
             <span className={styles.num}>04</span>
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At a, quo labore quis nam modi?</p>
+            <h3>Strong Sense of Belonging</h3>
+            <p>Windward Hills is a community where neighbors become friends and every family feels at home.</p>
             </div>
         </div>
         </section>

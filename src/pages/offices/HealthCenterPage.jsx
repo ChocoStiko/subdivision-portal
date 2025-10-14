@@ -18,7 +18,7 @@ function HealthCenterPage() {
             <div className={styles.heroContent}>
                 <div className={styles.heroText}>
                     <h1>Welcome to our Health Center!</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos dolores eos sit eveniet, voluptates corrupti, aperiam inventore provident illum, similique nemo nostrum. Minima, iure quae aspernatur consequatur autem provident.</p>
+                    <p>The Health Care Office is dedicated to promoting the well-being and safety of all residents. It provides basic first aid services, health monitoring, and assistance during emergencies. The office also maintains partnerships with nearby clinics and hospitals to ensure quick medical response and access to proper care when needed. Regular health programs, such as check-ups and awareness campaigns, help residents stay informed and healthy within the community.</p>
                 </div>
 
 
@@ -55,7 +55,7 @@ function HealthCenterPage() {
             <section className={styles.profiles}>
                 <div className={styles.center}>
                     <h1>Health Center Staff</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>From first aid assistance to health awareness programs, they help create a safe and nurturing environment where everyone’s well-being comes first.</p>
                 </div>
 
                 <div className={styles["profile-container"]}>

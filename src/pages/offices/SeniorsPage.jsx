@@ -17,7 +17,7 @@ function SeniorsPage() {
             <div className={styles.heroContent}>
                 <div className={styles.heroText}>
                     <h1>Senior Citizen's Office</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos dolores eos sit eveniet, voluptates corrupti, aperiam inventore provident illum, similique nemo nostrum. Minima, iure quae aspernatur consequatur autem provident.</p>
+                    <p>The Senior Citizens Office supports the welfare of elderly residents by offering programs that encourage active, engaged, and healthy living. It provides access to benefits, health services, and community activities tailored for senior citizens. The office also fosters a warm and inclusive environment where older residents can connect with others, share experiences, and continue contributing to the community’s growth and spirit.</p>
                 </div>
 
 
@@ -54,7 +54,7 @@ function SeniorsPage() {
             <section className={styles.profiles}>
                 <div className={styles.center}>
                     <h1>Senior Citizen's Board Officers</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Offering assistance, health services, and engagement programs. It upholds the dignity and importance of seniors in our community, promoting an active and fulfilling lifestyle for all.</p>
                 </div>
 
                 <div className={styles["profile-container"]}>

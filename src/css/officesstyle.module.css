@@ -224,7 +224,10 @@
     transition: all .38s ease;
     max-width: 300px;
 }
-
+.box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
 .box h3{
     font-size: 23px;
     font-weight: 600;

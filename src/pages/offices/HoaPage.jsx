@@ -18,7 +18,7 @@ function HoaPage() {
             <div className={styles.heroContent}>
                 <div className={styles.heroText}>
                     <h1>Home Owners Association</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quos dolores eos sit eveniet, voluptates corrupti, aperiam inventore provident illum, similique nemo nostrum. Minima, iure quae aspernatur consequatur autem provident.</p>
+                    <p>The Windward Hills Homeowners Association (HOA) serves as the heart of community leadership and management. It oversees daily operations, maintenance, and the implementation of subdivision rules to ensure a safe, organized, and harmonious environment for all residents. The HOA also manages community events, coordinates improvement projects, and provides assistance for resident concerns — fostering a spirit of cooperation and shared responsibility across the neighborhood.</p>
                 </div>
 
 
@@ -55,7 +55,7 @@ function HoaPage() {
             <section className={styles.profiles}>
                 <div className={styles.center}>
                     <h1>HOA Officers</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Their role is to uphold community standards, promote transparency, and lead initiatives that ensure the continued growth and well-being of all residents.</p>
                 </div>
 
                 <div className={styles["profile-container"]}>
