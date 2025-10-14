@@ -12,9 +12,27 @@
   gap: 1rem;
 }
 .brands img {
+  background: repeat;
   max-height: 200px;   
-  width: auto;        
+  width: auto;
+  animation: brandAnimation 2s ease;     
 }
+
+@keyframes brandAnimation{
+  from{
+    transform: translateX(40px);
+    opacity: 0;  
+  }
+
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
 
 /*about us section*/
 
@@ -41,12 +59,29 @@
   height: 450px;
   object-fit: cover;
   border-radius: 10px;
+  
+}
 
+.subd_aerial_img:hover img{
+  transform: scale(1.03);
+  transition: 0.5s ease;
 }
 
 .about_text {
   max-width: 500px;
-    font-family: "League Spartan", sans-serif;
+  font-family: "League Spartan", sans-serif;
+  animation: aboutAnimation 0.7s ease-out;
+}
+
+@keyframes aboutAnimation{
+  from{
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .about_text h2 {
@@ -140,7 +175,6 @@
     color: white;
     padding: 4rem 2rem;
     text-align: center;
-
 }
 
 .about_us_choose h2{
@@ -149,9 +183,17 @@
     font-weight: bold;
     margin-bottom: 1rem;
     font-family: "League Spartan", sans-serif;
-   
+    animation: aboutusAnimation 1s ease;
 }
 
+@keyframes aboutusAnimation{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
 
 .grid_box {
   display: grid;
@@ -162,13 +204,13 @@
   margin: 0 auto;
   justify-content: center;
   align-items: start;
+  
 }
 
 .square {
   padding: 1.5rem;
   border-radius: 15px;
   text-align: left;
-
 }
 
 .num{

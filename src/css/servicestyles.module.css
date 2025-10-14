@@ -10,6 +10,9 @@
 }
 
 @keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
     to{
         opacity: 1;
     }
@@ -24,6 +27,7 @@
 
 .reservation_cards{
     gap: 15px;
+    animation: cardAnimation 1s alternate ease;
 }
 
 .card_img_top {
@@ -33,7 +37,6 @@
 }
 
 .card_body{
- 
     padding: 20px;
 }
 
@@ -68,6 +71,18 @@
     background-color: #ff8a00;
 }
 
+@keyframes cardAnimation{
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
 @media (max-width: 811px){
     .reservation_cards{
         flex-direction: column;
@@ -88,7 +103,7 @@
 .reservation_type_section {
     margin-top: 300px;
     min-height: 100vh;
-  
+    animation: reservationAnimation 0.7s ease-out;
 }
 
 .reservation_type_section .btn{
@@ -110,7 +125,10 @@
 
 .reserve_btn:hover {
   background-color: #e47a00;
-  transition: 0.3s ease;
+}
+
+.reserve_btn:active{
+    background-color: #e47a00;
 }
 
 .reservation_text{
@@ -121,6 +139,18 @@
 .btn_area{
     margin-top: 40px;
     display: flex;
+}
+
+@keyframes reservationAnimation{
+    from{
+        opacity: 0;
+        transform: translatex(60px);
+
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 811px){
@@ -160,6 +190,10 @@
   transition: 0.3s ease;
 }
 
+.reserve_msg_btn:focus{
+    background-color: #e47a00;
+}
+
 .reserve_header{
     display: flex;
     justify-content: center;
@@ -192,7 +226,19 @@
     align-items: center;
     justify-content: flex-start;
     color: black;
+    transform: translatex(20px);
+    opacity: 0;
+    animation: animateCar 0.5s ease forwards;
 }
+
+@keyframes animateCar{
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+
 
 .car_header{
     font-size: 50px;

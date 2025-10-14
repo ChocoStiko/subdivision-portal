@@ -12,6 +12,7 @@
     background-color: white;
     margin-top: 120px;
     min-height: 100vh;
+    
 }
 
 .newsList{
@@ -36,6 +37,18 @@
     border: none;
     box-shadow:0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     transition: box-shadow 0.3s;
+    animation: newsAnimation 0.7s ease;
+}
+
+@keyframes newsAnimation{
+    from{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .card:hover{

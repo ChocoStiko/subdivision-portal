@@ -11,15 +11,9 @@ html, body {
   padding: 0;
   overflow-x: hidden; 
   scroll-behavior: smooth;
-  opacity: 0;
   animation: fadeIn 0.5s forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 
 
 
@@ -54,11 +48,7 @@ html, body {
 .navbar-nav .nav-link:focus {
   color: #ff8a00 !important; 
   background-color: transparent !important;
-}
-
-.navbar-nav .nav-link:not(.home-link).active {
-  color: #ff8a00 !important; 
-  background-color: transparent !important;
+  
 }
 
 .navbar-nav .nav-link.home-link,
@@ -173,6 +163,17 @@ html, body {
     padding-left: 4%;
     align-items:center;
     color: white;
+    animation: heroAnimation 0.5s ease;
+}
+
+@keyframes heroAnimation{
+  from{
+    opacity: 0;
+
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 .hero h1{
@@ -182,10 +183,7 @@ html, body {
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     font-family: "League Spartan", sans-serif;
     
-}
 
-.hero:{
-  transform: ;
 }
 .hero .description {
     font-size: 1rem;
@@ -205,6 +203,18 @@ html, body {
   padding: 50px;
   max-width: 700px;
   margin-top: 10%;
+  animation: fadeUp 1.0s ease-out;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 811px){

@@ -53,7 +53,7 @@ function PopupReserveComponent({type}){
 
     return(
         <>
-            <Button variant="primary" className={styles.reserve_btn} onClick={handleShow}> Reserve now</Button>
+            <Button variant="light" className={styles.reserve_btn} onClick={handleShow} aria-pressed="true"> Reserve now</Button>
                 <Modal show={show} onHide={handleClose} className={styles.reservation_form}>
                     <Modal.Header className={styles.reserve_header} closeButton>
                     <Modal.Title className={styles.form_title}>Reservation Form</Modal.Title>

@@ -47,12 +47,14 @@
 .heroText{
     flex: 1;
     text-align: left;
+    animation: heroTextAnimation 0.7s ease;
 }
 
 .heroText h1 {
   color: #ff8a00;
   font-size: 3.5rem;
   margin-bottom: 0.8rem;
+  animation: heroTextAnimation 1s ease;
 }
 .heroText p {
   color: #256342;
@@ -70,7 +72,30 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  animation: carouselAnimation 0.7s ease-in;
   
+}
+
+@keyframes heroTextAnimation{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes carouselAnimation{
+  from{
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .heroCarousel .carousel-inner,
@@ -128,6 +153,36 @@
     gap: 2rem;
     text-align: center;
     padding: 1px 0px 0px;
+    animation: profileAnimation 1s ease;
+}
+
+.profile-container:hover{
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+
+@keyframes profileAnimation{
+  from{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes profileTxtAnimation{
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 }
 
 .profile-container img{
@@ -136,6 +191,10 @@
     border-radius: 10px;
     margin-bottom: 10px;
     object-fit: cover;
+}
+
+.center{
+  animation: profileTxtAnimation 1.3s ease;
 }
 .center h1{
     color: white;
