@@ -4,7 +4,15 @@
 .login_body {
   display: flex;
   min-height: 100vh;
-  background-color: #347433; 
+  background-color: #347433;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
 }
 
 .image_section {
@@ -13,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .image_section img {
@@ -68,10 +77,12 @@
   border: none;
   cursor: pointer;
   margin-top: 10px;
+  
 }
 
 .login_box button:hover {
   background-color: #e47a00;
+  transition: 0.3s ease;
 }
 
 .register_link {
@@ -82,9 +93,9 @@
   font-weight: bold;
 }
 
-.register-link:hover {
-  text-decoration: underline;
-  color: #285b28;
+.register_link:hover {
+  transition: 0.3s ease;
+  color: #194419;
 }
 
 @media (max-width: 811px) {

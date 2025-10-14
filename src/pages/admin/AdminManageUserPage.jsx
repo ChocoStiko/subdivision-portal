@@ -107,6 +107,7 @@ function AdminManageUserPage(){
 
       <Container mt={5}>
           <h1>Manage Users</h1>
+          <div className='table-responsive'>
           <Table>
             <thead>
               <tr>
@@ -198,6 +199,7 @@ function AdminManageUserPage(){
           ))}
             </tbody>
           </Table>
+          </div>
                 <nav>
         <ul className="pagination">
           {[...Array(totalPages)].map((_, i) => (
