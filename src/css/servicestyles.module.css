@@ -186,7 +186,8 @@
     background-repeat: no-repeat;
     padding: 100px 0;
     min-height: 100vh;
-    background-position: -120% center;
+    background-position: center left 50vw;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: flex-start;
