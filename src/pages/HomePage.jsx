@@ -21,9 +21,10 @@ function HomePage() {
         <HeroComponent/>
         
 
-        {/* Filinvest Section */}
+        {/* Brand Filinvest Section */}
         <section className={styles.brands}>
         <div className={styles.row}>
+
             <div className="col">
             <img src={filinvestLogo} alt="Filinvest Logo"/>
             </div>
@@ -36,6 +37,33 @@ function HomePage() {
             <div className="col">
             <img src={wwhsLogo} alt="Filinvest Logo"/>
             </div>
+
+            <div className="col">
+            <img src={filinvestLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={wwhsLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={filinvestLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={wwhsLogo} alt="Filinvest Logo"/>
+            </div>
+
+            <div className="col">
+            <img src={filinvestLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={wwhsLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={filinvestLogo} alt="Filinvest Logo"/>
+            </div>
+            <div className="col">
+            <img src={wwhsLogo} alt="Filinvest Logo"/>
+            </div>
+
         </div>
         </section>
         

@@ -4,29 +4,31 @@
     background-color: #f5f5f5;
     padding: 1rem 0;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .row {
    display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-}
-.brands img {
-  background: repeat;
-  max-height: 200px;   
-  width: auto;
-  animation: brandAnimation 2s ease;     
+  animation: brandContinuousAnimation 45s linear infinite;
+  white-space: nowrap;
 }
 
-@keyframes brandAnimation{
+.brands img {
+  max-height: 200px;   
+  width: auto;
+  background: repeat;  
+}
+
+@keyframes brandContinuousAnimation{
   from{
-    transform: translateX(40px);
-    opacity: 0;  
+    transform: translateX(0);
   }
 
   to{
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(-100%);
   }
 }
 
