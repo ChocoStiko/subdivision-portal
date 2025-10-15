@@ -8,6 +8,9 @@ import courtImg from "../assets/court.jpg";
 import poolImg from "../assets/pool.jpg"
 import aerialImg from "../assets/subd-aerial.jpg";
 import parkImg from "../assets/park.jpg";
+import HoaIcon from '../assets/home.svg';
+import emaillIcon from '../assets/email.svg';
+import addresslIcon from '../assets/address.svg';
 import FooterComponent from "../components/FooterComponent";
 import { NavbarCollapse } from "react-bootstrap";
 import NavbarComponent from "../components/NavbarComponent";
@@ -165,29 +168,68 @@ function HomePage() {
         </div>
         </section>
 
-        {/*get in touch section*/}
-        <section className={styles.get_in_touch}>
-        <div className={styles.get_in_touch}>
-            <h2>Get in Touch</h2>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+         {/* Get in Touch Section */}
+      <section className={styles.get_in_touch}>
+        <div className={styles.get_in_touch_content}>
+          <h2>Get in Touch</h2>
+          <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
 
-        {/*Google map*/}
-        <div className={styles.map_container}>
-        <Container>
-            <Row>
-                <Col xs={12} md={""}>
-                    <iframe  className={styles.map}  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.6830461081288!2d120.96423585606694!3d14.328730909159702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d44a01e03809%3A0x5143ca3d77b61191!2s8XH7%2BFQ6%20Winward%20Subdivision%2C%20Main%20Ave%2C%20Dasmari%C3%B1as%2C%204114%20Cavite!5e0!3m2!1sen!2sph!4v1760107149770!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div className={styles.container_git}>
+          <div className={styles.contact_info}>
+            <div className={styles.contact_box}>
+              <div className={styles.contact_icon}>
+                <img src={HoaIcon} alt="Home" width="30" height="30" />
+              </div>
+              <div className={styles.contact_text}>
+                <h3>HOA</h3>
+                <p>0928 382 8983</p>
+              </div>
+            </div>
+
+            <div className={styles.contact_box}>
+              <div className={styles.contact_icon}>
+                <img src={emaillIcon} alt="Email" width="30" height="30" />
+              </div>
+              <div className={styles.contact_text}>
+                <h3>Email</h3>
+                <p>wwhs@gmail.com</p>
+              </div>
+            </div>
+
+            <div className={styles.contact_box}>
+              <div className={styles.contact_icon}>
+                <img src={addresslIcon} alt="Address" width="30" height="30" />
+              </div>
+              <div className={styles.contact_text}>
+                <h3>Address</h3>
+                <p>Congressional Ave, Dasmarinas, 4115 Cavite</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.map_container}>
+            <Container>
+              <Row>
+                <Col xs={12} md={12}>
+                  <iframe 
+                    className={styles.map} 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.6830461081288!2d120.96423585606694!3d14.328730909159702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d44a01e03809%3A0x5143ca3d77b61191!2s8XH7%2BFQ6%20Winward%20Subdivision%2C%20Main%20Ave%2C%20Dasmari%C3%B1as%2C%204114%20Cavite!5e0!3m2!1sen!2sph!4v1760107149770!5m2!1sen!2sph" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </Col>
-            </Row>
-            
-        </Container>
+              </Row>
+            </Container>
+          </div>
         </div>
-        </section>
-        <FooterComponent/>
-        </>
-    );
-    
+      </section>
+
+       <FooterComponent />
+    </>
+  );
 }
+
 
 export default HomePage;
