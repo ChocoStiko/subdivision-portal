@@ -1,6 +1,6 @@
 import '../styles.css';
 import styles from '../css/loginstyles.module.css';
-import login_img from '../assets/sample subd.jpg'; 
+import login_img from '../assets/login_subd.jpg'; 
 import React, {useState, useEffect} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import NavbarComponent from '../components/NavbarComponent';

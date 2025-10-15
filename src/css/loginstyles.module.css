@@ -3,7 +3,8 @@
 
 .login_body {
   display: flex;
-  min-height: 100vh;
+  padding-top: 45px;
+  height: 100vh;
   background-color: #347433;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
@@ -26,7 +27,7 @@
 
 .image_section img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -103,10 +104,10 @@
     flex-direction: column;
   }
 
-  .image_section img {
-    height: 250px;
-    border-bottom: 4px solid #093708;
-  }
+    .image_section img {
+      height: 300px;
+      border-bottom: 4px solid #093708;
+    }
 
   .login_box {
     text-align: center;
@@ -127,11 +128,82 @@
 }
 
 
-.login_box input{
-    border-color: #f0dcc4;
+/*register*/
+
+.reg_body {
+  display: flex;
+  padding-top: 45px;
+  min-height: 100vh;
+  background-color: #347433;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.reg_box{
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.container_reg {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.reg_box h1 {
+  color: #347433;
+  margin: 0;
+  text-align: left;
+  font-size: 3rem;
+}
+.reg_box p {
+  color: #347433;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 1rem;
+}
+.reg_box input {
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+.reg_box button {
+  border-radius: 8px;
+  padding: 10px 25px;
+  background-color: #ff8a00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.reg_box button:hover {
+  background-color: #e47a00;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 811px) {
+  .login_body {
+    flex-direction: column;
+  }
+  .image_section img {
+    height: 300px;
+    border-bottom: 4px solid #093708;
+  }
+  .reg_box {
+    text-align: center;
     width: 100%;
-    border-radius: 8px;
-    padding: 8px;
-    margin-bottom: 20px;
+    min-height: auto;
+    padding: 40px 20px;
+  }
 }
 

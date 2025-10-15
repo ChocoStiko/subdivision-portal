@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from '../css/loginstyles.module.css';
-import registration_img from '../assets/sample subd.jpg'; 
+import registration_img from '../assets/registration_subd.jpg'; 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 
@@ -51,13 +51,13 @@ function RegistrationPage(){
         <>
         <NavbarComponent/>
 
-         <div className={styles.login_body}>
+         <div className={styles.reg_body}>
       <div className={styles.image_section}>
         <img src={registration_img} alt="Login Illustration" />
       </div>
 
-        <div className={styles.login_box}>
-            <section className="container-login">
+        <div className={styles.reg_box}>
+            <section className={styles.container_reg}>
             <h1><b>Register</b></h1>
             <p>Please enter your credentials</p>
             <br/>
