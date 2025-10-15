@@ -1,6 +1,8 @@
 import styles from "../../css/officesstyle.module.css";
-import iconImg from "../../assets/icon.png";
-import subdImg from "../../assets/sample subd.jpg";
+import icon1 from "../../assets/health_i_1.png";
+import icon2 from "../../assets/health_i_2.png";
+import icon3 from "../../assets/health_i_3.png";
+import icon4 from "../../assets/health_i_4.png";
 import health1Img from "../../assets/health1.jpg";
 import health2Img from "../../assets/health2.jpg";
 import health3Img from "../../assets/health3.jpg";
@@ -60,25 +62,25 @@ function HealthCenterPage() {
 
                 <div className={styles["profile-container"]}>
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon1} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon2} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon3} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon4} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>

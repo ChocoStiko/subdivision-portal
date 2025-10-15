@@ -1,6 +1,8 @@
 import styles from "../../css/officesstyle.module.css";
-import iconImg from "../../assets/icon.png";
-import subdImg from "../../assets/sample subd.jpg";
+import icon1 from "../../assets/icon1.png";
+import icon2 from "../../assets/icon2.png";
+import icon3 from "../../assets/icon3.png";
+import icon4 from "../../assets/icon4.png";
 import hoa1Img from "../../assets/hoa1.jpg";
 import hoa2Img from "../../assets/hoa2.jpg";
 import hoa3Img from "../../assets/hoa3.jpg";
@@ -60,25 +62,25 @@ function HoaPage() {
 
                 <div className={styles["profile-container"]}>
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon1} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon2} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon3} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon4} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>

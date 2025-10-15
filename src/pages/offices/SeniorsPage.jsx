@@ -1,5 +1,8 @@
 import styles from "../../css/officesstyle.module.css";
-import iconImg from "../../assets/icon.png";
+import icon1 from "../../assets/icon1.png";
+import icon2 from "../../assets/icon2.png";
+import icon3 from "../../assets/icon3.png";
+import icon4 from "../../assets/icon4.png";
 import senior1Img from "../../assets/senior1.jpg";
 import senior2Img from "../../assets/senior2.jpg";
 import senior3Img from "../../assets/senior3.jpg";
@@ -59,25 +62,25 @@ function SeniorsPage() {
 
                 <div className={styles["profile-container"]}>
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon1} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon2} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon3} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
 
                     <div className={styles.box}>
-                        <img src={iconImg} alt="icon" />
+                        <img src={icon4} alt="icon" />
                         <h3>Lorem Ipsum</h3>
                         <h5>Position</h5>
                     </div>
