@@ -14,9 +14,6 @@ html, body {
   animation: fadeIn 0.5s forwards;
 }
 
-
-
-
 /* navbar */
 .navbar {
   background-color: white;
@@ -190,13 +187,14 @@ html, body {
     font-weight: normal;
     margin-top: 8px;
     max-width: 600px;
-    background: white ;
+    background-color: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
     padding: 25px 16px;
     border-radius: 6px;
     font-size: 1rem;
     max-width: 600px;
     display: inline-block;
-    color: #347433;
+    color: white;
 }
 
 .hero .title{

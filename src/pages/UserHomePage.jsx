@@ -1,7 +1,6 @@
 import FooterComponent from '../components/FooterComponent';
-import HeroComponent from '../components/HeroComponent';
 import UserNavbarComponent from '../components/UserNavbarComponent';
-import '../styles.css';
+import style from '../css/userhomestyles.module.css';
 
 
 
@@ -9,8 +8,12 @@ function UserHomePage(){
     return(
         <>
         <UserNavbarComponent/>
-        <HeroComponent/>
-
+      
+        <section className={style.hero_user}>
+            <div className={style.hero_content}>
+                <h1>Welcome to the WWHS Portal</h1>
+            </div>
+        </section>
         <FooterComponent/>
         </>
     )

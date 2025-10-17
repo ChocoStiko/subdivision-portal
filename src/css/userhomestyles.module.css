@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+/* Colors
+#ff8a00 - Yellow
+#347433 - Green
+#ffffff - White
+#d9d9d9 - Light Gray
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;  
+  text-decoration: none;  
+}
+
+.hero_user {
+  background: url('/assets/user_home.jpg') no-repeat center;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 7rem 0;
+  min-height: 100vh;
+  color: white;  
+}
+
+.hero_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero_content h1 {
+  font-size: 2.5rem;  
+  font-weight: 500;
+  color: #ff8a00;  
+}
