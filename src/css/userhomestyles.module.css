@@ -63,3 +63,59 @@ body {
   color: white;  
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
+
+.road_advisories {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  background-color: white;
+  min-height: 400px;
+  height: auto;
+  overflow: visible;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+
+.road_advisories .section_title{
+  font-size: 3rem;
+  color: #ff8a00;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.road_advisories .card{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: auto;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.road_advisories .card:hover {
+  transform: scale(1.05);
+}
+
+.road_advisories .card_img_top {
+  height: 250px; 
+  width: 100%;
+  aspect-ratio: 3/4; 
+  object-fit: cover; 
+  object-position: center;
+  border-radius: 8px;
+}
+
+.road_advisories .card .card_body .card_text{
+  color: #347433;
+  text-align:center;
+  padding-top: 20%;
+}
