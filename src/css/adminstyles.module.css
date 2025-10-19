@@ -53,6 +53,10 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.content{
+  margin-left: 40px;
+}
+
 @media (max-width: 811px){
   .admin_page_section{
     padding-top: 100px;
@@ -69,5 +73,9 @@
 
   .form_container{
     justify-content: center;
+  }
+
+  .content{
+    margin: 0;
   }
 }

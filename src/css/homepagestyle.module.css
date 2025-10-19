@@ -339,11 +339,12 @@
     align-items: center;
   }
 
-  .container_git .contact_info, .map_container{
-    width: 100;
-    min-width: auto;
-  }
-  .map{
+  .map_container{
     width: 100%;
+    justify-content: center;
+  }
+
+  .map{
+    padding: 0;
   }
 }

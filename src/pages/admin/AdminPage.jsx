@@ -17,17 +17,12 @@ function AdminPage(){
     return (
     <>
     <div className={styles.admin_page_section}>
-
-      <AdminNavbarComponent isActive={isActive} />
-
       <Container flex>
+      <AdminNavbarComponent isActive={isActive} />
+      <div className={styles.content}>
           <h1>Welcome, Admin!</h1>
+          </div>
       </Container>
-
-      <main style={{ marginTop: "100px", padding: "20px" }}>
-        
-      </main>
-
     </div>
     </>
   );
