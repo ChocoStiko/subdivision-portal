@@ -102,10 +102,10 @@
 @media (max-width: 811px) {
   .login_body {
     flex-direction: column;
+    height: auto;
   }
 
     .image_section img {
-      height: 300px;
       border-bottom: 4px solid #093708;
     }
 
@@ -192,11 +192,11 @@
 }
 
 @media (max-width: 811px) {
-  .login_body {
+  .reg_body {
     flex-direction: column;
   }
   .image_section img {
-    height: 300px;
+    height: 200px;
     border-bottom: 4px solid #093708;
   }
   .reg_box {
