@@ -92,11 +92,13 @@ function HomePage() {
             <div className={styles.subd_aerial_img}>
                 <img src={aerialImg} alt="subd-aerial"/>
             </div>
+            <div className={styles.about_text_animation}>
             <div className={styles.about_text}>
                 <h2>About Us</h2>
                 <p>
                 Windward Hills Subdivision is a residential community located in Barangay Burol 1, Dasmariñas City, Cavite. Nestled in one of the city’s older barrios, Windward Hills stands on terrain that has long held historical significance—including remnants of old stone structures and sugar mills that mark Burol’s heritage.</p> <p>Over time, this land transitioned from rural estates and agricultural uses into a well-planned subdivision, with multiple phases (A, B, C, D, E) developed to accommodate growing families seeking both accessibility and serene living.
                 </p>
+            </div>
             </div>
             </div>
         </div>
