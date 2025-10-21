@@ -3,6 +3,7 @@ import userIcon from "../assets/user.svg";
 import "../styles.css";
 import { Link, NavLink } from "react-router-dom";
 
+
 function UserNavbarComponent() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -31,17 +32,17 @@ function UserNavbarComponent() {
                 <a className="nav-link dropdown-toggle mx-lg-2 active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink as={Link} to="../reservation" className="dropdown-item">
+                    <NavLink as={Link} to="../reservation" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                       Reservation
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink as={Link} to="../car_sticker" className="dropdown-item">
+                    <NavLink as={Link} to="../car_sticker" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                       Car Sticker
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink as={Link} to="../move" className="dropdown-item">
+                    <NavLink as={Link} to="../move" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                       Move In & Move Out
                     </NavLink>
                   </li>
@@ -49,7 +50,7 @@ function UserNavbarComponent() {
               </li>
 
               <li className="nav-item">
-                <NavLink as={Link} to="../news" className="nav-link mx-lg-2 active">News</NavLink>
+                <NavLink as={Link} to="../news" className="nav-link mx-lg-2 active" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>News</NavLink>
               </li>
             </ul>
           </div>
@@ -62,9 +63,6 @@ function UserNavbarComponent() {
           </button>
 
           <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDrop">
-            <li>
-              <NavLink as={Link} to="../login" className="dropdown-item"> Account</NavLink>
-            </li>
             <li>
               <NavLink as={Link} to="../homepage" className="dropdown-item" onClick={() => {
                   sessionStorage.removeItem("loggedInUser");

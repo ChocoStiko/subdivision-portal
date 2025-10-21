@@ -6,29 +6,39 @@
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 .row {
-   display: flex;
+   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  animation: brandContinuousAnimation 45s linear infinite;
-  white-space: nowrap;
+  animation: brandContinuousAnimation 30s linear infinite;
 }
 
 .brands img {
   max-height: 200px;   
   width: auto;
-  background: repeat;  
+  display: inline-block;
 }
 
 @keyframes brandContinuousAnimation{
   from{
+    opacity: 0;
     transform: translateX(0);
   }
 
   to{
-    transform: translateX(-100%);
+    transform: translateX(-50%);
+  }
+  5%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
 

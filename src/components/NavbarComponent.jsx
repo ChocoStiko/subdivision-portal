@@ -49,9 +49,9 @@ function NavbarComponent() {
                 </a>
 
                 <ul className="dropdown-menu">
-                  <li><NavLink as={Link} to="/hoa" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>HOA</NavLink></li>
-                  <li><NavLink as={Link} to="/health_center" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Health Center</NavLink></li>
-                  <li><NavLink as={Link} to="/seniors" className="dropdown-item" onClick={() => window.scrollTo(0, 0)}>Senior Citizens</NavLink></li>
+                  <li><NavLink as={Link} to="/hoa" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>HOA</NavLink></li>
+                  <li><NavLink as={Link} to="/health_center" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>Health Center</NavLink></li>
+                  <li><NavLink as={Link} to="/seniors" className="dropdown-item" onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>Senior Citizens</NavLink></li>
                 </ul>
               </li>
             </ul>
