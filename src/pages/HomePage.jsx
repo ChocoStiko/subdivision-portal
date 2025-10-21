@@ -15,8 +15,10 @@ import FooterComponent from "../components/FooterComponent";
 import { NavbarCollapse } from "react-bootstrap";
 import NavbarComponent from "../components/NavbarComponent";
 import {Container, Row, Col} from "react-bootstrap";
+import useScrollAnimation from '../scrollAnimation';
 
 function HomePage() {
+  useScrollAnimation();
 
     return(
         <>
@@ -155,32 +157,39 @@ function HomePage() {
 
         {/*About Us Why Choose Us*/}
         <section className={styles.about_us_choose}>
-            <h2 className={styles.title}>Why Choose Us?</h2>
+            <h2 className={styles.about_us_choose_animation}>Why Choose Us?</h2>
 
             <div className={styles.grid_box}>
+            <div className={styles.choose_section_animation}>
             <div className={styles.square}>
-            <span className={styles.num}>01</span>
+            <span className={styles.num}>01</span> 
             <h3>Convenient Location</h3>
             <p>Close to universities, supermarkets, and the parish church; everything you need is just minutes away.</p>
             </div>
+            </div>
 
-
+            <div className={styles.choose_section_animation}>
             <div className={styles.square}>
             <span className={styles.num}>02</span>
             <h3>Peaceful Community</h3>
             <p>Enjoy a quiet and secure environment perfect for families who value safety and comfort.</p>
             </div>
+            </div>
 
+            <div className={styles.choose_section_animation}>
             <div className={styles.square}>
             <span className={styles.num}>03</span>
             <h3>Quality Amenities</h3>
             <p>From the clubhouse and pool to the basketball court and park, residents enjoy spaces that support leisure and connection.</p>
             </div>
+            </div>
 
+            <div className={styles.choose_section_animation}>
             <div className={styles.square}>
             <span className={styles.num}>04</span>
             <h3>Strong Sense of Belonging</h3>
             <p>Windward Hills is a community where neighbors become friends and every family feels at home.</p>
+            </div>
             </div>
         </div>
         </section>
