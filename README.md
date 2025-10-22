@@ -51,9 +51,10 @@ It is a responsive and modern platform that provides an intuitive and clean inte
 
 
 ## Technologies Used
-- **Front End**: JSX, CSS, Bootstrap
+- **Front End**: HTML, CSS, Bootstrap, JS, ReactJS
 - **Back End**: NodeJS, API
 - **Storage**: SheetDB.io, CRUD Operations
+- **Tools**: Visual Studio Code
 
 ## Authors
 - Elhjun Angelo S. Angcanan, BIT33, DLSU-D
