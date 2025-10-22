@@ -1,5 +1,7 @@
 # Project Title: Windward Hills Subdivision Portal
 
+![alt text](/src/assets/wwhs_logo.png)
+
 ## Description of Project
 This is a project for the Website Development 2 Subject in DLSU-Dasmarinas. It is a **Subdivision Portal of the Windward Hills Subdivision** in Burol Uno, Dasmarinas Cavite.
 
