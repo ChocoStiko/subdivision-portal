@@ -10,6 +10,7 @@ function AdminVehicleStickerPage(){
 
     const [users, setUsers] = useState([]);
     const [editingUser, setEditingUser] = useState(null);
+    const [updatedId, setUpdatedId] = useState('');
     const [updatedEmail, setUpdatedEmail] = useState('');
     const [updatedHomeownerName, setUpdatedHomeownerName] = useState('');
     const [updatedAddress, setUpdatedAddress] = useState('');
@@ -42,9 +43,9 @@ function AdminVehicleStickerPage(){
     }
   };
 
-  const handleDelete = async (email) => {
+  const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${sheetdbUrl}/email/${email}`, {
+      const response = await fetch(`${sheetdbUrl}/id/${id}`, {
         method: 'DELETE'
       });
       if (response.ok) {
@@ -76,6 +77,7 @@ function AdminVehicleStickerPage(){
           <Table>
             <thead>
               <tr>
+                <th>ID</th>
                 <th>email</th>
                 <th>homeowner name</th>
                 <th>address</th>
@@ -91,10 +93,22 @@ function AdminVehicleStickerPage(){
             <tbody>
               {currentUsers.map((user, index) => (
             <tr key={index}>
+              
+              {/*ID table*/}
+              <td>
+                {editingUser === user.id ? (
+                  <input
+                    value={updatedId}
+                    onChange={(e) => setUpdatedId(e.target.value)}
+                  />
+                ) : (
+                  user.id
+                )}
+              </td>
 
               {/*Email table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedEmail}
                     onChange={(e) => setUpdatedEmail(e.target.value)}
@@ -106,7 +120,7 @@ function AdminVehicleStickerPage(){
 
               {/*Homeowner table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedHomeownerName}
                     onChange={(e) => setUpdatedHomeownerName(e.target.value)}
@@ -118,7 +132,7 @@ function AdminVehicleStickerPage(){
 
               {/*Address table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedAddress}
                     onChange={(e) => setUpdatedAddress(e.target.value)}
@@ -130,7 +144,7 @@ function AdminVehicleStickerPage(){
 
               {/*License Number table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedLicenseNum}
                     onChange={(e) => setUpdatedLicenseNum(e.target.value)}
@@ -142,7 +156,7 @@ function AdminVehicleStickerPage(){
 
               {/*Password table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedPlateNum}
                     onChange={(e) => setUpdatedPlateNum(e.target.value)}
@@ -154,7 +168,7 @@ function AdminVehicleStickerPage(){
 
               {/*Car Brand table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedCarBrand}
                     onChange={(e) => setUpdatedCarBrand(e.target.value)}
@@ -166,7 +180,7 @@ function AdminVehicleStickerPage(){
 
               {/*Model table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedModel}
                     onChange={(e) => setUpdatedModel(e.target.value)}
@@ -178,7 +192,7 @@ function AdminVehicleStickerPage(){
 
               {/*Year Model table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedYearModel}
                     onChange={(e) => setUpdatedYearModel(e.target.value)}
@@ -190,7 +204,7 @@ function AdminVehicleStickerPage(){
 
               {/*Vehicle Color table*/}
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <input
                     value={updatedColor}
                     onChange={(e) => setUpdatedColor(e.target.value)}
@@ -201,7 +215,7 @@ function AdminVehicleStickerPage(){
 
               </td>
               <td>
-                {editingUser === user.email ? (
+                {editingUser === user.id ? (
                   <>
                   </>
                 ) : (

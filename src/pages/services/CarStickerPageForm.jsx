@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 
 function CarStickerPageForm(){
-
     const [email, setEmail] = useState('');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
@@ -26,11 +25,17 @@ function CarStickerPageForm(){
 
         const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!email | !address | !licenseNum) {
+            return;
+        }
+        
         try{
+            const id = Date.now();
             const response = await fetch(sheetdbUrl, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify({data : [{email:email, homeowner_name:homeownerName, address:address, license_number:licenseNum, plate_number:plateNum, car_brand:carBrand, model:model, year_model:yearModel, vehicle_color:color}]})
+                body: JSON.stringify({data : [{id:id, email:email, homeowner_name:homeownerName, address:address, license_number:licenseNum, plate_number:plateNum, car_brand:carBrand, model:model, year_model:yearModel, vehicle_color:color}]})
             });
 
             if(response.ok){
@@ -56,7 +61,7 @@ function CarStickerPageForm(){
                 <h1 className={styles.title}>Vehicle Sticker Form</h1>
                 </div>             
                 <br/>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} id="carForm">
                 <Row className="justify-content-center text-start">
                     <Col xs={12} md={4}>
                         <h2>Driver's Information</h2>
@@ -116,7 +121,7 @@ function CarStickerPageForm(){
                         <br/>
                         
                         <div className={styles.btn_container}>
-                            <NoticePopupComponent/>
+                            <NoticePopupComponent formId="carForm"/>
                         </div>
                     </Col>
                 </Row>

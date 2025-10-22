@@ -6,16 +6,30 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function NoticePopupComponent(){
+function NoticePopupComponent({formId}){
     const [show, setShow] = useState(false);
     const [showMsg, setShowMsg] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
 
+    const handleClick = () => {
+    const form = document.getElementById(formId);
+
+    requestAnimationFrame(() => {
+        if (form && form.checkValidity()) {
+        form.requestSubmit();
+        setShow(true);
+        } else {
+        form.reportValidity();
+        }
+    });
+
+  };
+
     return(
         <>       
-        <Button variant="primary" className={styles.reserve_btn} type='submit' onClick={handleShow}>Submit</Button>
+        <Button variant="primary" className={styles.reserve_btn} type='button' onClick={handleClick}>Submit</Button>
             <Modal show={show} onHide={handleClose} className={styles.reservation_form}>
                 <Modal.Header className={styles.reserve_header} closeButton>
                 <Modal.Title className={styles.form_title}>Application sent</Modal.Title>
