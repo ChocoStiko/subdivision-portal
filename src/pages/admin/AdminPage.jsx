@@ -16,13 +16,14 @@ function AdminPage(){
 
     return (
     <>
-    <div className={styles.admin_page_section}>
-      <Container flex>
-      <AdminNavbarComponent isActive={isActive} />
-      <div className={styles.content}>
+    <AdminNavbarComponent isActive={isActive} />
+    <div className={styles.admin_page_container}>
+      <div className={styles.content_container}>
+        <Container>
           <h1>Welcome, Admin!</h1>
-          </div>
-      </Container>
+        </Container>
+      </div>
+      
     </div>
     </>
   );

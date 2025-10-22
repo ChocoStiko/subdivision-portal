@@ -104,7 +104,6 @@
 /*Reservation type section*/
 
 .reservation_type_section {
-    margin-top: 300px;
     min-height: 100vh;
     animation: reservationAnimation 0.7s ease-out;
 }

@@ -22,7 +22,7 @@ function ReservationPage(){
 
                 <Row className="justify-content-center g-3 mt-4">
                     <Col xs={12} md={4} className={styles.reservation_cards}>
-                        <NavLink as={Link} to="../clubhouse" className={styles.card}>
+                        <NavLink as={Link} to="../clubhouse" className={styles.card} onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                             <img src={Clubhouse} className={styles.card_img_top} alt="clubhouse_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Clubhouse</h1>
@@ -32,7 +32,7 @@ function ReservationPage(){
                     </Col>
 
                     <Col xs={12} md={4} className={styles.reservation_cards}>
-                        <NavLink as={Link} to="../pool" className={styles.card}>
+                        <NavLink as={Link} to="../pool" className={styles.card} onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                             <img src={Pool} className={styles.card_img_top} alt="pool_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Community Pool</h1>
@@ -42,7 +42,7 @@ function ReservationPage(){
                     </Col>
 
                     <Col xs={12} md={4} className={styles.reservation_cards}>
-                        <NavLink as={Link} to="../court" className={styles.card}>
+                        <NavLink as={Link} to="../court" className={styles.card} onClick={() => setTimeout(() => {window.scrollTo(0, 0);}, 100)}>
                             <img src={Court} className={styles.card_img_top} alt="court_img"/>
                             <div className={styles.card_body}>
                                 <h1 className="card-title">Court</h1>

@@ -101,10 +101,9 @@ function AdminManageUserPage(){
 
     return (
     <>
-    <div className={styles.admin_page_section}>
-
-      <AdminNavbarComponent/>
-
+    <AdminNavbarComponent/>
+    <div className={styles.admin_page_container}>
+      <div className={styles.content_container}>
       <Container mt={5}>
           <h1>Manage Users</h1>
           <div className='table-responsive'>
@@ -183,6 +182,7 @@ function AdminManageUserPage(){
                 )}
               </td>
               <td>
+                <div className={styles.user_button_container}>
                 {editingUser === user.email ? (
                   <>
                     <button className="btn btn-success btn-sm me-2" onClick={handleUpdate}>Save</button>
@@ -194,6 +194,7 @@ function AdminManageUserPage(){
                     <button className="btn btn-danger btn-sm" onClick={() => handleDelete(user.email)}>Delete</button>
                   </>
                 )}
+                </div>
               </td>
             </tr>
           ))}
@@ -212,6 +213,7 @@ function AdminManageUserPage(){
         </ul>
       </nav>
       </Container>
+      </div>
     </div>
     </>
   );

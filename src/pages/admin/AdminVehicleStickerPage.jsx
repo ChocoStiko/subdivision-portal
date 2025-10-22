@@ -65,10 +65,11 @@ function AdminVehicleStickerPage(){
 
     return (
     <>
-    <div className={styles.admin_page_section}>
+    <AdminNavbarComponent/>
+    <div className={styles.admin_page_container}>
 
-      <AdminNavbarComponent/>
-
+    
+      <div className={styles.content_container}>
       <Container mt={5}>
           <h1>Manage Vehicle Stickers</h1>
           <div className='table-responsive'>
@@ -226,6 +227,7 @@ function AdminVehicleStickerPage(){
         </ul>
       </nav>
       </Container>
+      </div>
     </div>
     </>
   );

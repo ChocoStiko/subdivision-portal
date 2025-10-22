@@ -66,17 +66,19 @@ function AdminNewsPage({news, setNews}) {
 
     return (
     <>
-    <div className={styles.admin_page_section}>
+    <AdminNavbarComponent isActive={isActive} />
+    <div className={styles.admin_page_container}>
 
-      <AdminNavbarComponent isActive={isActive} />
-
+      <div className={styles.content_container}>
       <Container>
+        <div className={styles.news_header_container}>
           <h1>Edit News</h1>
 
           {/*add button*/}
           <div className={styles.addButton_container}>
           <Button variant="success" onClick={toggleForm} className={`${styles.addButton} mb-3`}>{showForm ? 'Cancel' : '+ Add New Post'}</Button>
           </div>
+        </div>
 
           {/*form add/edit*/}
           <div className={styles.form_container}>
@@ -115,9 +117,7 @@ function AdminNewsPage({news, setNews}) {
           )}
           </div>
 
-          
-      </Container>
-
+                <div className={styles.newslist_container}>
       <main style={{ marginTop: "100px", padding: "20px" }}>
         
         <NewsListComponent
@@ -125,7 +125,11 @@ function AdminNewsPage({news, setNews}) {
         onEdit={startEdit}
         onDelete={handleDelete}/>
       </main>
+      </div>
 
+          
+      </Container>
+      </div>
     </div>
     </>
   );
