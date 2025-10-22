@@ -9,7 +9,7 @@ This is a project for the Website Development 2 Subject in DLSU-Dasmarinas. It i
 
 This website is designed to offer residents of the Windward Hills Subdivision (WWHS) services for their community and to show visitors a glimpse of the subdivision.
 
-It is a responsive and modern platform that provides an intuitive and clean interface, featuring a design with an orange, green, and white color palette that represents the vibrant community of the WWHS (insert color hex codes: <span style="color:#ff8a00">⬛</span> `#ff8a00` for yellow, <span style="color:#347433">⬛</span> `#ff8a00` #347433 for green, <span style="color:#FFFFFF">⬛</span> `#ff8a00` for white). The website is interactive, with a fully implemented backend that you can view in the **Technologies Used** section of this README file.
+It is a responsive and modern platform that provides an intuitive and clean interface, featuring a design with an orange, green, and white color palette that represents the vibrant community of the WWHS (insert color hex codes: #ff8a00 for yellow, #347433 for green, #FFFFFF for white). The website is interactive, with a fully implemented backend that you can view in the **Technologies Used** section of this README file.
 
 ## Pages
 - **Guest Page**:
