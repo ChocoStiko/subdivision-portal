@@ -39,7 +39,7 @@ function AdminNewsPage({news, setNews}) {
       title: formData.title,
       content: formData.content
     };
-    setNews(news.map(item => (item.id === editingItem.id ? updatedPost : item)));  // Replace in array
+    setNews(news.map(item => (item.id === editingItem.id ? updatedPost : item)));  
     setEditingItem(null);  
     setShowForm(false);  
   };
