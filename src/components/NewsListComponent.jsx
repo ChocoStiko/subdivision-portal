@@ -4,6 +4,8 @@ import styles from "../css/newsstyles.module.css";
 
 function NewsListComponent({ news, onEdit, onDelete }) {
     return (
+
+        
         <div className={styles.newsList}>
             <h2 className={`${styles.newsTitle} mb-4 text-center`}>Latest News</h2>
             {news.length === 0 ? (
@@ -15,6 +17,7 @@ function NewsListComponent({ news, onEdit, onDelete }) {
                     {news.map((item) => (
                         <div key={item.id} className="col-lg-6 col-md-12">
                             <NewsItemComponent
+                            
                                 newsItem={item}
                                 onEdit={onEdit}
                                 onDelete={onDelete}

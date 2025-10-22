@@ -11,8 +11,8 @@ function NewsItemComponent({ newsItem, onEdit, onDelete }) {
                 <p className={`${styles.cardText} card-text`}>{newsItem.content}</p>
                  {onEdit && (
                     <div className={`${styles.cardActions} d-flex gap-2 mt-3`}>
-                        <button className="btn btn-warning btn-sm" onClick={() => onEdit(newsItem)}>Edit</button>
-                        <button className="btn btn-danger btn-sm" onClick={() => onDelete(newsItem.id)}>Delete</button>
+                        <button className={styles.editButton} onClick={() => onEdit(newsItem)}>Edit</button>
+                        <button className= {styles.deleteButton} onClick={() => onDelete(newsItem.id)}>Delete</button>
                     </div>
                  )}
         </div>

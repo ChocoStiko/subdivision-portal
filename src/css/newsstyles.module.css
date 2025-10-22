@@ -77,3 +77,39 @@
 .cardActions{
     justify-content: flex-end;
 }
+
+.submitButton {
+  color: white;
+  background-color: #347433;
+  border: none;
+}
+
+.submitButton:hover{
+  background-color: #ff8a00;
+}
+
+.editButton {
+  background-color: #347433; 
+  border-color: #347433;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3 ease;
+}
+.editButton:hover {
+  background-color: #e69500; 
+  border-color: #e69500;
+}
+
+.deleteButton {
+  background-color: #DC3545; 
+  border-color: #DC3545;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3 ease;
+}
+.deleteButton:hover {
+  background-color: #c82333; 
+  border-color: #c82333;
+}
