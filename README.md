@@ -40,6 +40,10 @@ It is a responsive and modern platform that provides an intuitive and clean inte
   4. Access portal via http://localhost:3000.
 
 - **Mobile**:
+  1. Launch application: `npm start`.
+  2. Open Command Prompt and type: `ipconfig`.
+  3. Find and copy the IPv4 Address: `(192.168.xxx.xxx)`.
+  4. Paste the IPv4 address at mobile web browser with the port number at the end: `192.168.xxx.xxx:3000`.
 
 
 ## Technologies Used
@@ -48,5 +52,5 @@ It is a responsive and modern platform that provides an intuitive and clean inte
 - **Storage**: SheetDB.io, CRUD Operations
 
 ## Authors
-- Elhjun Angelo Angcanan, BIT33, DLSU-D
+- Elhjun Angelo S. Angcanan, BIT33, DLSU-D
 - Fiona Marie G. Martizano, BIT33, DLSU-D
