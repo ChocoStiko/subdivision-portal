@@ -3,7 +3,6 @@
 
 .login_body {
   display: flex;
-  padding-top: 45px;
   height: 100vh;
   background-color: #347433;
   opacity: 0;
