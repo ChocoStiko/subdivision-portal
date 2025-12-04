@@ -63,6 +63,15 @@ function UserNavbarComponent() {
           </button>
 
           <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDrop">
+
+            <li>
+              <NavLink as={Link} to="../account_details" className="dropdown-item" onClick={() => {
+                 
+                }}
+              >Account Details
+              </NavLink>
+            </li>
+            
             <li>
               <NavLink as={Link} to="../homepage" className="dropdown-item" onClick={() => {
                   sessionStorage.removeItem("loggedInUser");
@@ -70,6 +79,7 @@ function UserNavbarComponent() {
               >Logout
               </NavLink>
             </li>
+
           </ul>
         </div>
 
