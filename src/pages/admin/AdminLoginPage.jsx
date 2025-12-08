@@ -42,8 +42,6 @@ function AdminLoginPage(){
 
   return (
     <>
-    <NavbarComponent/>
-
     <div className={styles.login_body}>
       <div className={styles.image_section}>
         <img src={login_img} alt="Login Illustration" />

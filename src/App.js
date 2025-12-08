@@ -25,6 +25,8 @@ import AdminManageUser from './pages/admin/AdminManageUserPage';
 import AdminNews from './pages/admin/AdminNewsPage';
 import AdminVehicleSticker from './pages/admin/AdminVehicleStickerPage';
 import AdminReservation from './pages/admin/AdminReservationPage';
+import AccountDetails from './pages/AccountPage';
+
 
 function App() {
 
@@ -71,6 +73,7 @@ function App() {
             <Route path='/manage_news' element={<AdminNews news={news} setNews={setNews} />} />
             <Route path='/manage_stickers' element={<AdminVehicleSticker/>} />
             <Route path='/manage_reservation'element={<AdminReservation/>} />
+            <Route path='/account_details'element={<AccountDetails/>} />
           </Routes>
         </Router>
     </div>
