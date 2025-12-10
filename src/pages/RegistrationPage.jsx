@@ -24,6 +24,11 @@ function RegistrationPage(){
       return;
     }
 
+    if (regContact.length != 11 ){
+      setMessage("Invalid phone number, the digits must be 11");
+      return;
+    }
+
     const payload = {
       first_name: regFN.trim(),
       last_name: regLN.trim(),
@@ -34,10 +39,8 @@ function RegistrationPage(){
 
     try {
       setSubmitting(true);
-      console.log("POST payload:", payload);
 
       const res = await api.post("/user.php", payload);
-      console.log("server response:", res);
 
       const ok = res?.data?.success ?? res?.data?.ok ?? (res?.status === 200);
       const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";
