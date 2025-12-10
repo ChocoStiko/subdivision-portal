@@ -24,7 +24,7 @@ function LoginPage(){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const res = await api.post("/read_user.php", { email: email, password });
+      const res = await api.post("/login_user.php", { email: email, password });
 
       console.log("response", res.data);
 
