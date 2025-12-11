@@ -2,6 +2,7 @@ import { Container, Table } from 'react-bootstrap';
 import styles from '../css/accountpage.module.css';
 import UserNavbarComponent from "../components/UserNavbarComponent";
 import { useState, useEffect } from 'react';
+import api from '../api/axiosConfig'; 
 
 function AccountPage() {
     const [reservations, setReservations] = useState([]);
@@ -11,39 +12,35 @@ function AccountPage() {
     const [currentPageApp, setCurrentPageApp] = useState(1);
     const itemsPerPage = 5;
 
-    const userEmail = 'user@example.com';
-    const sheetdbUrl = 'https://sheetdb.io/api/v1/4qurz55lumbus';
+    const userId = localStorage.getItem('userId'); 
 
     useEffect(() => {
-        fetchUserData();
-    }, []);
+        if (userId) { 
+            fetchUserData();
+        } else {
+            setError("User not logged in.");
+        }
+    }, [userId]);
 
     const fetchUserData = async () => {
         try {
+            const resResponse = await api.get(`/reservations?user_id=${userId}`);
+            setReservations(resResponse.data); 
 
-            const response = await fetch(sheetdbUrl);
-            const data = await response.json();
-            const userReservations = data.filter(item => item.email === userEmail && item.reservation_type);
-            const userApplications = data.filter(item => item.email === userEmail && item.sticker_type);
-
-            setReservations(userReservations);
-            setApplications(userApplications);
+            const appResponse = await api.get(`/applications?user_id=${userId}`);
+            setApplications(appResponse.data); 
         } catch (err) {
             console.error("Fetch error:", err);
-            setError("Failed to load user data.");
+            setError("Failed to load your data.");
         }
     };
 
     const handleCancelReservation = async (id) => {
         if (window.confirm('Are you sure you want to cancel your reservation?')) {
             try {
-                await fetch(`${sheetdbUrl}/id/${id}`, {
-                    method: 'PATCH',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ status: 'canceled' })
-                });
-                alert('Reservation cancceled');
-                fetchUserData();
+                await api.patch(`/reservations/${id}`, { status: 'canceled' });
+                alert('Reservation canceled');
+                fetchUserData(); 
             } catch (err) {
                 console.error("Cancel error:", err);
                 setError("Error canceling reservation.");
@@ -55,6 +52,7 @@ function AccountPage() {
         alert(`Resubmit functionality for application ${id} – redirect to form or API call here.`);
 
     };
+
 
     const indexOfLastRes = currentPageRes * itemsPerPage;
     const indexOfFirstRes = indexOfLastRes - itemsPerPage;
@@ -91,12 +89,11 @@ function AccountPage() {
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Reservation Type</th>
+                                        <th>Venue</th>
                                         <th>Date</th>
                                         <th>From Time</th>
                                         <th>To Time</th>
                                         <th>Status</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -114,14 +111,13 @@ function AccountPage() {
                                                         Cancel
                                                     </button>
                                                 )}
-                                                
                                             </td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </Table>
                         </div>
-                        {/* Pagination for Reservations */}
+
                         <nav>
                             <ul className="pagination">
                                 {[...Array(totalPagesRes)].map((_, i) => (
@@ -134,25 +130,30 @@ function AccountPage() {
                             </ul>
                         </nav>
 
-                        {/* Applications Table */}
+                        {/* Vehicle Stickers Table */}
                         <h2>Your Sticker Applications</h2>
                         <div className='table-responsive'>
                             <Table>
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Sticker Type</th>
-                                        <th>Date</th>
+                                        <th>Email</th>
+                                        <th>Homeowner Name</th>
+                                        <th>Address</th>
+                                        <th>License no.</th>
+                                        <th>Plate no.</th>
+                                        <th>Car Brand</th>
+                                        <th>Model</th>
+                                        <th>Year Model</th>
+                                        <th>Vehicle Color</th>
                                         <th>Status</th>
-                                        <th>Reason (if denied)</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {currentApplications.map((app, index) => (
                                         <tr key={index}>
                                             <td>{app.id}</td>
-                                            <td>{app.sticker_type}</td> 
+                                            <td>{app.sticker_type}</td>
                                             <td>{app.date}</td>
                                             <td style={getStatusStyle(app.status)}>{app.status || 'N/A'}</td>
                                             <td>{app.reason || 'N/A'}</td>
@@ -162,7 +163,6 @@ function AccountPage() {
                                                         Resubmit
                                                     </button>
                                                 )}
-                                                
                                             </td>
                                         </tr>
                                     ))}
@@ -187,6 +187,5 @@ function AccountPage() {
         </>
     );
 }
-
 
 export default AccountPage;
