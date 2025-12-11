@@ -4,12 +4,14 @@ import login_img from '../assets/login_subd.jpg';
 import React, {useState, useEffect} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import NavbarComponent from '../components/NavbarComponent';
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import api from "../api/axiosConfig";
 
 function LoginPage(){
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
@@ -70,14 +72,33 @@ function LoginPage(){
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+
+            <div style={{ position: "relative" }}>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="passwordLogin"
               placeholder="Password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+              style={{ paddingRight: "35px" }}
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "35%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  fontSize: "20px",
+                  color: "#555"
+                }}
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </span>
+            </div>
+          
             {message && <div className="message">{message}</div>}
             <button type="submit">Login</button>
             <br />
