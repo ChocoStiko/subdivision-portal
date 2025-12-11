@@ -4,6 +4,7 @@ import login_img from '../../assets/sample subd.jpg';
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavbarComponent from '../../components/NavbarComponent';
+import api from '../../api/axiosConfig';
 
 
 function AdminLoginPage(){
@@ -13,7 +14,7 @@ function AdminLoginPage(){
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
-  const sheetdbSrc = "https://sheetdb.io/api/v1/7fgbs5k566r91";
+  //const sheetdbSrc = "https://sheetdb.io/api/v1/7fgbs5k566r91";
 
   useEffect(() => {
     if(sessionStorage.getItem("loggedInAdmin")) {
@@ -24,9 +25,11 @@ function AdminLoginPage(){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch(`${sheetdbSrc}/search?email=${email}&password=${password}`);
-      const data = await response.json();
-      if(data.length > 0){
+      const res = await api.post("/login_admin.php", {email:email, password:password})
+
+      console.log("response", res.data);
+      
+      if(res.data.valid){
         sessionStorage.setItem("loggedInAdmin", email);
         navigate("/admin_page");
       }

@@ -4,6 +4,7 @@ import login_img from '../assets/login_subd.jpg';
 import React, {useState, useEffect} from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import NavbarComponent from '../components/NavbarComponent';
+import api from "../api/axiosConfig";
 
 function LoginPage(){
 
@@ -12,7 +13,7 @@ function LoginPage(){
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
 
-  const sheetdbSrc = 'https://sheetdb.io/api/v1/y3gntqh4y7qn8';
+  //const sheetdbSrc = 'https://sheetdb.io/api/v1/y3gntqh4y7qn8';
 
   useEffect(() => {
     if(sessionStorage.getItem("loggedInUser")) {
@@ -23,14 +24,21 @@ function LoginPage(){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch(`${sheetdbSrc}/search?email=${email}&password=${password}`);
-      const data = await response.json();
-      if(data.length > 0){
+      const res = await api.post("/login_user.php", { email: email, password });
+
+      console.log("response", res.data);
+
+
+      //const matchedUser = user.find(u => u.email === email && u.password === password);
+
+      if (res.data.valid) {
         sessionStorage.setItem("loggedInUser", email);
         navigate("../userhome");
       }
+
       else{
         setMessage("Incorrect email or password");
+        return;
       }
     }
     catch (error){
