@@ -57,12 +57,12 @@ function CarStickerPageForm(){
             const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";
 
             if(ok){
-                setMessage(serverMsg || "Registered successfully!");
+                setMessage(serverMsg || "Added successfully!");
                 setId(""); setEmail(""); setHomeownerName(""); setAddress(""); setLicenseNum(""); setPlateNum(""); setCarBrand(""); setModel(""); setYearModel(""); setColor("");
                 setTimeout(() => navigate("/login"), 700);
             }
             else{
-                setMessage(serverMsg || "Registration failed");
+                setMessage(serverMsg || "Failed adding data");
             }
         }
 

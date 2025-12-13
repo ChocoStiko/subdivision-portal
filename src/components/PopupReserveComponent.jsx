@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../css/servicestyles.module.css';
 import { useNavigate } from 'react-router-dom';
-
+import api from '../api/axiosConfig';
 
 
 function PopupReserveComponent({type}){
@@ -18,29 +18,46 @@ function PopupReserveComponent({type}){
     const [fromTime, setFromTime] = useState('');
     const [toTime, setToTime] = useState('');
     const navigate = useNavigate();
+    const [submitting, setSubmitting] = useState(false);
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
     const userEmail = sessionStorage.getItem('loggedInUser');
     if (userEmail) setEmail(userEmail);
     }, []);
 
-    const sheetdbUrl = "https://sheetdb.io/api/v1/4qurz55lumbus";
+    //const sheetdbUrl = "https://sheetdb.io/api/v1/4qurz55lumbus";
 
     const handleSubmit = async (e) => {
+        const payload = {
+                uid: id,
+                reservation_type: type,
+                email: email.trim(),
+                date: date.trim(),
+                from: fromTime.trim(),
+                to: toTime.trim()
+            };
         e.preventDefault();
 
         if (!date || !fromTime || !toTime) return;
 
 
         try{
-            await fetch(sheetdbUrl, {
-                method: "POST",
-                headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify({data : [{id:id, email:email, reservation_type:type, date:date, time_from:fromTime, time_to:toTime}]})
-            });
+            setSubmitting(true);
 
-            setShow(false);
-            setShowMsg(true);
+            const res = await api.post("/reservation.php", payload);
+
+            const ok = res?.data?.success ?? res?.data?.ok ?? (res?.status === 200);
+            const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";
+
+            if(ok){
+                setMessage(serverMsg || "Added successfully!");
+                setEmail(""); setDate(""); setFromTime(""); setToTime("");
+                setTimeout(() => navigate("/login"), 700);
+            }
+            else{
+                setMessage(serverMsg || "Failed adding data");
+            }
         }
         
 
