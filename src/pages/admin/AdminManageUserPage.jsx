@@ -2,6 +2,7 @@ import { Container, Table } from 'react-bootstrap';
 import styles from '../../css/adminstyles.module.css';
 import AdminNavbarComponent from '../../components/AdminNavbarComponent';
 import {useEffect, useState } from 'react';
+import api from '../../api/axiosConfig';
 
 
 
@@ -14,11 +15,12 @@ function AdminManageUserPage(){
   const [updatedContactNum, setUpdatedContactNum] = useState('');
   const [updatedEmail, setUpdatedEmail] = useState('');
   const [updatedPassword, setUpdatedPassword] = useState('');
-  const [error, setError] = useState('');
+  const [msg, setMsg] = useState('');
+    const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 5;
 
-  const sheetdbUrl = 'https://sheetdb.io/api/v1/y3gntqh4y7qn8';
+  //const sheetdbUrl = 'https://sheetdb.io/api/v1/y3gntqh4y7qn8';
 
   useEffect(() => {
     fetchUsers();
@@ -27,31 +29,32 @@ function AdminManageUserPage(){
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch(sheetdbUrl);
-      const data = await response.json();
-      setUsers(data);
+      const res = await api.get("/read_user.php");
+      setUsers(res.data.data || []);
+    } catch (err) {
+      console.error(err);
+      setMsg("Failed to fetch users");
     }
-    
-    catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to load user data.");
+      finally {
+      setLoading(false);
     }
   };
 
   const handleDelete = async (email) => {
+    if (!window.confirm("Delete this user?")) 
+    return;
+    setMsg("");
     try {
-      const response = await fetch(`${sheetdbUrl}/email/${email}`, {
-        method: 'DELETE'
-      });
-      if (response.ok) {
-        fetchUsers();
-      } else {
-        setError("Failed to delete user.");
-      }
+      const res = await api.post("/delete_user.php", { email });
+      setMsg(res.data.message || "Deleted");
+
+      setUsers(prev => prev.filter(u => u.email !== email));
     } catch (err) {
-      console.error("Delete error:", err);
-      setError("Error deleting user.");
+      console.error(err);
+      setMsg("Delete failed");
+      console.log("delete failed");
     }
+
   };
 
   const handleEdit = (user) => {
@@ -64,34 +67,7 @@ function AdminManageUserPage(){
   };
 
   const handleUpdate = async () => {
-    console.log("Saving user:", editingUser);
-    try {
-      const response = await fetch(`${sheetdbUrl}/email/${editingUser}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          data: {
-            first_name: updatedFirstname,
-            last_name: updatedLastname,
-            contact_number: updatedContactNum,
-            email: updatedEmail,
-            password: updatedPassword
-          }
-        })
-      });
 
-      if (response.ok) {
-        setEditingUser(null);
-        fetchUsers();
-      } else {
-        setError("Failed to update user.");
-      }
-    } catch (err) {
-      console.error("Update error:", err);
-      setError("Error updating user.");
-    }
   };
 
   const indexOfLastUser = currentPage * usersPerPage;
