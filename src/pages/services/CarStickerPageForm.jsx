@@ -5,11 +5,12 @@ import styles from "../../css/servicestyles.module.css";
 import NoticePopupComponent from "../../components/NoticePopupComponent";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import api from "../../api/axiosConfig";
 
 
 
 function CarStickerPageForm(){
+    const [id, setId] = useState('');
     const [email, setEmail] = useState('');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
@@ -19,11 +20,28 @@ function CarStickerPageForm(){
     const [model, setModel] = useState('');
     const [yearModel, setYearModel] = useState('');
     const [color, setColor] = useState('');
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
+    const [submitting, setSubmitting] = useState(false);
 
-    const sheetdbUrl = 'https://sheetdb.io/api/v1/c61zc8oy73ti6';
+    //const sheetdbUrl = 'https://sheetdb.io/api/v1/c61zc8oy73ti6';
 
         const handleSubmit = async (e) => {
+            const id = Date.now();
+
+            const payload = {
+                id: id,
+                email: email.trim(),
+                homeowner_name: homeownerName.trim(),
+                address: address.trim(),
+                license_number: licenseNum.trim(),
+                plate_number: plateNum.trim(),
+                car_brand: carBrand.trim(),
+                model: model.trim(),
+                year_model: yearModel.trim(),
+                vehicle_color: color.trim()
+
+            };
         e.preventDefault();
 
         if (!email | !address | !licenseNum) {
@@ -31,23 +49,30 @@ function CarStickerPageForm(){
         }
         
         try{
-            const id = Date.now();
-            const response = await fetch(sheetdbUrl, {
-                method: "POST",
-                headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify({data : [{id:id, email:email, homeowner_name:homeownerName, address:address, license_number:licenseNum, plate_number:plateNum, car_brand:carBrand, model:model, year_model:yearModel, vehicle_color:color}]})
-            });
+            setSubmitting(true);
 
-            if(response.ok){
-                setTimeout(() => {
-                    navigate("/userhome");
-                }, 1000);
-                
+            const res = await api.post("/car_sticker.php", payload);
+
+            const ok = res?.data?.success ?? res?.data?.ok ?? (res?.status === 200);
+            const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";
+
+            if(ok){
+                setMessage(serverMsg || "Registered successfully!");
+                setId(""); setEmail(""); setHomeownerName(""); setAddress(""); setLicenseNum(""); setPlateNum(""); setCarBrand(""); setModel(""); setYearModel(""); setColor("");
+                setTimeout(() => navigate("/login"), 700);
+            }
+            else{
+                setMessage(serverMsg || "Registration failed");
             }
         }
 
-        catch (error){
-            console.error("Error:", error);
+        catch (err){
+            console.error("Registration error:", err);
+            const serverMsg = err?.response?.data?.message || err?.response?.data?.error || err?.message;
+            setMessage(serverMsg || "Network or server error. Check console / server logs.");
+        }
+        finally {
+            setSubmitting(false);
         }
     };
     
