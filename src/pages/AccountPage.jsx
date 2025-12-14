@@ -28,11 +28,11 @@ function AccountPage() {
 
     const fetchUserData = async () => {
         try {
-            const resResponse = await api.get(`/read_reservation.php?email=${userId}`);
+            const resResponse = await api.get(`/read_user_reservation.php?email=${userId}`);
             
             setReservations(resResponse.data.data || []); 
 
-            const appResponse = await api.get(`/read_car_sticker.php?email=${userId}`);
+            const appResponse = await api.get(`/read_user_car_sticker.php?email=${userId}`);
             setApplications(appResponse.data.data || []); 
         } catch (err) {
             console.error("Fetch error:", err);
@@ -40,11 +40,15 @@ function AccountPage() {
         }
     };
 
-    const handleCancelReservation = async (id) => {
+    const handleCancelReservation = async (uid, action) => {
         if (window.confirm('Are you sure you want to cancel your reservation?')) {
             try {
-                await api.patch(`/reservations/${id}`, { status: 'canceled' });
-                alert('Reservation canceled');
+
+                const res = await api.post("/update_reservation_status.php", {
+                    uid,
+                    status: action
+                });
+                
                 fetchUserData(); 
             } catch (err) {
                 console.error("Cancel error:", err);
@@ -53,10 +57,24 @@ function AccountPage() {
         }
     };
 
-    const handleResubmitApplication = (id) => {
-        alert(`Resubmit functionality for application ${id} – redirect to form or API call here.`);
+    const handleCancelCarSticker = async (empid, action) => {
+        if (window.confirm('Are you sure you want to cancel your application?')) {
+            try {
 
+                const res = await api.post("/update_car_sticker_status.php", {
+                    empid,
+                    status: action
+                });
+                
+                fetchUserData(); 
+            } catch (err) {
+                console.error("Cancel error:", err);
+                setError("Error canceling sticker application.");
+            }
+        }
     };
+
+
 
 
     const indexOfLastRes = currentPageRes * itemsPerPage;
@@ -73,7 +91,7 @@ function AccountPage() {
         switch (status?.toLowerCase()) {
             case 'pending': return { color: 'orange' };
             case 'approved': return { color: 'green' };
-            case 'denied': return { color: 'red' };
+            case 'rejected': return { color: 'red' };
             default: return {};
         }
     };
@@ -112,7 +130,7 @@ function AccountPage() {
                                             <td style={getStatusStyle(res.status)}>{res.status || 'N/A'}</td>
                                             <td>
                                                 {res.status === 'pending' && (
-                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelReservation(res.uid)}>
+                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelReservation(res.uid, 'cancelled')}>
                                                         Cancel
                                                     </button>
                                                 )}
@@ -167,12 +185,17 @@ function AccountPage() {
                                             <td>{app.model}</td>
                                             <td>{app.year_model}</td>
                                             <td>{app.vehicle_color}</td>
-                                            <td>{app.status}</td>
                                             <td style={getStatusStyle(app.status)}>{app.status || 'N/A'}</td>
-                                            <td>{app.reason || 'N/A'}</td>
                                             <td>
-                                                {app.status === 'denied' && (
-                                                    <button className="btn btn-warning btn-sm" onClick={() => handleResubmitApplication(app.id)}>
+                                                {app.status === 'pending' && (
+                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelCarSticker(app.empid, 'cancelled')}>
+                                                        Cancel
+                                                    </button>
+                                                )}
+                                            </td>
+                                            <td>
+                                                {app.status === 'rejected' && (
+                                                    <button className="btn btn-warning btn-sm">
                                                         Resubmit
                                                     </button>
                                                 )}

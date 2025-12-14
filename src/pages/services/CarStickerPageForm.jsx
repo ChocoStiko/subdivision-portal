@@ -1,16 +1,15 @@
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import UserNavbarComponent from "../../components/UserNavbarComponent";
 import FooterComponent from "../../components/FooterComponent";
 import styles from "../../css/servicestyles.module.css";
 import NoticePopupComponent from "../../components/NoticePopupComponent";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import api from "../../api/axiosConfig";
 
 
 
 function CarStickerPageForm(){
-    const [id, setId] = useState('');
+    const [, setId] = useState('');
     const email = sessionStorage.getItem('loggedInUser');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
@@ -21,8 +20,7 @@ function CarStickerPageForm(){
     const [yearModel, setYearModel] = useState('');
     const [color, setColor] = useState('');
     const [message, setMessage] = useState('');
-    const navigate = useNavigate();
-    const [submitting, setSubmitting] = useState(false);
+    const [, setSubmitting] = useState(false);
 
     //const sheetdbUrl = 'https://sheetdb.io/api/v1/c61zc8oy73ti6';
 
@@ -60,7 +58,6 @@ function CarStickerPageForm(){
             if(ok){
                 setMessage(serverMsg || "Added successfully!");
                 setId(""); setHomeownerName(""); setAddress(""); setLicenseNum(""); setPlateNum(""); setCarBrand(""); setModel(""); setYearModel(""); setColor("");
-                setTimeout(() => navigate("/login"), 700);
             }
             else{
                 setMessage(serverMsg || "Failed adding data");

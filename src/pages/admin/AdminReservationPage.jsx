@@ -88,12 +88,12 @@ function AdminReservationPage(){
             <thead>
               <tr>
                 <th>ID</th>
-                <th>email</th>
-                <th>reservation type</th>
-                <th>date</th>
-                <th>from</th>
-                <th>to</th>
-                <th>status</th>
+                <th>Email</th>
+                <th>Reservation Type</th>
+                <th>Date</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Status</th>
               </tr>
             </thead>
 

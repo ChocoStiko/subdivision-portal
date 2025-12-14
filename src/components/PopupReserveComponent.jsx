@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../css/servicestyles.module.css';
@@ -18,13 +18,8 @@ function PopupReserveComponent({type}){
     const [fromTime, setFromTime] = useState('');
     const [toTime, setToTime] = useState('');
     const navigate = useNavigate();
-    const [submitting, setSubmitting] = useState(false);
+    const [, setSubmitting] = useState(false);
     const [message, setMessage] = useState('');
-
-    useEffect(() => {
-    const userEmail = sessionStorage.getItem('loggedInUser');
-    if (userEmail) setEmail(userEmail);
-    }, []);
 
     //const sheetdbUrl = "https://sheetdb.io/api/v1/4qurz55lumbus";
 
@@ -52,11 +47,13 @@ function PopupReserveComponent({type}){
 
             if(ok){
                 setMessage(serverMsg || "Added successfully!");
+                setShow(false);
+                setShowMsg(true);
                 setEmail(""); setDate(""); setFromTime(""); setToTime("");
-                setTimeout(() => navigate("/login"), 700);
             }
             else{
                 setMessage(serverMsg || "Failed adding data");
+                setEmail(""); setDate(""); setFromTime(""); setToTime("");
             }
         }
         
@@ -145,7 +142,7 @@ function PopupReserveComponent({type}){
                     
 
                     <Modal.Footer className={styles.reserve_footer}>
-                        <Button variant='primary' className={styles.reserve_msg_btn} onClick={msgHandleClose}>Close</Button>
+                        <Button variant='primary' className={styles.reserve_msg_btn} onClick={() => {setShowMsg(false); navigate("/userhome")}}>Close</Button>
                     </Modal.Footer>
                     </form>
                     </Modal.Body>
