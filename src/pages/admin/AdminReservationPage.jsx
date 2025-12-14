@@ -83,7 +83,7 @@ function AdminReservationPage(){
       <div className={styles.content_container}>
       <Container mt={5}>
           <h1>Manage Reservations</h1>
-          <div className='table-responsive'>
+          <div className='d-flex table-responsive'>
           <Table>
             <thead>
               <tr>

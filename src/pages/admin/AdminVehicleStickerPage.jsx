@@ -90,7 +90,6 @@ function AdminVehicleStickerPage(){
                 <th>Year Model</th>
                 <th>Vehicle Color</th>
                 <th>Status</th>
-                <th>Actions</th>
               </tr>
             </thead>
 
@@ -111,21 +110,23 @@ function AdminVehicleStickerPage(){
               <td>
                     {user.status === 'pending' ? ( 
                       <>
-                        <button
-                          className="btn btn-success btn-sm me-2"
-                          onClick={() => handleAction(user.empid, 'approved')}
-                        >
-                          Approve
-                        </button>
-                        <button
-                          className="btn btn-danger btn-sm"
-                          onClick={() => handleAction(user.empid, 'rejected')}
-                        >
-                          Reject
-                        </button>
+                        <div className='d-flex'>
+                          <button
+                            className="btn btn-success btn-sm me-2"
+                            onClick={() => handleAction(user.empid, 'approved')}
+                          >
+                            Approve
+                          </button>
+                          <button
+                            className="btn btn-danger btn-sm"
+                            onClick={() => handleAction(user.empid, 'rejected')}
+                          >
+                            Reject
+                          </button>
+                        </div>
                       </>
                     ) : (
-                      <span>{user.status}</span>
+                      <></>
                     )}
                   </td>
                 </tr>
