@@ -11,7 +11,7 @@ import api from "../../api/axiosConfig";
 
 function CarStickerPageForm(){
     const [id, setId] = useState('');
-    const [email, setEmail] = useState('');
+    const email = sessionStorage.getItem('loggedInUser');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
     const [licenseNum, setLicenseNum] = useState('');
@@ -26,12 +26,13 @@ function CarStickerPageForm(){
 
     //const sheetdbUrl = 'https://sheetdb.io/api/v1/c61zc8oy73ti6';
 
+
         const handleSubmit = async (e) => {
             const id = Date.now();
 
             const payload = {
                 id: id,
-                email: email.trim(),
+                email: email,
                 homeowner_name: homeownerName.trim(),
                 address: address.trim(),
                 license_number: licenseNum.trim(),
@@ -58,7 +59,7 @@ function CarStickerPageForm(){
 
             if(ok){
                 setMessage(serverMsg || "Added successfully!");
-                setId(""); setEmail(""); setHomeownerName(""); setAddress(""); setLicenseNum(""); setPlateNum(""); setCarBrand(""); setModel(""); setYearModel(""); setColor("");
+                setId(""); setHomeownerName(""); setAddress(""); setLicenseNum(""); setPlateNum(""); setCarBrand(""); setModel(""); setYearModel(""); setColor("");
                 setTimeout(() => navigate("/login"), 700);
             }
             else{
@@ -91,10 +92,10 @@ function CarStickerPageForm(){
                     <Col xs={12} md={4}>
                         <h2>Driver's Information</h2>
                             
-                                <Form.Group className="mb-6">
+                                {/* <Form.Group className="mb-6">
                                     <Form.Label>Email Address</Form.Label>
                                     <Form.Control type="text" required value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
-                                </Form.Group>
+                                </Form.Group> */}
                                 <Form.Group>
                                     <Form.Label>Homeowner's Name</Form.Label>
                                     <Form.Control type="text" required value={homeownerName} onChange={(e) => setHomeownerName(e.target.value)}></Form.Control>

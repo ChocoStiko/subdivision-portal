@@ -12,7 +12,11 @@ function AccountPage() {
     const [currentPageApp, setCurrentPageApp] = useState(1);
     const itemsPerPage = 5;
 
-    const userId = localStorage.getItem('userId'); 
+    const userId = sessionStorage.getItem('loggedInUser'); 
+
+    
+
+    console.log(userId);
 
     useEffect(() => {
         if (userId) { 
@@ -24,11 +28,12 @@ function AccountPage() {
 
     const fetchUserData = async () => {
         try {
-            const resResponse = await api.get(`/reservations?user_id=${userId}`);
-            setReservations(resResponse.data); 
+            const resResponse = await api.get(`/read_reservation.php?email=${userId}`);
+            
+            setReservations(resResponse.data.data || []); 
 
-            const appResponse = await api.get(`/applications?user_id=${userId}`);
-            setApplications(appResponse.data); 
+            const appResponse = await api.get(`/read_car_sticker.php?email=${userId}`);
+            setApplications(appResponse.data.data || []); 
         } catch (err) {
             console.error("Fetch error:", err);
             setError("Failed to load your data.");
@@ -98,8 +103,8 @@ function AccountPage() {
                                 </thead>
                                 <tbody>
                                     {currentReservations.map((res, index) => (
-                                        <tr key={index}>
-                                            <td>{res.id}</td>
+                                        <tr key={res.uid}>
+                                            <td>{res.uid}</td>
                                             <td>{res.reservation_type}</td>
                                             <td>{res.date}</td>
                                             <td>{res.time_from}</td>
@@ -107,7 +112,7 @@ function AccountPage() {
                                             <td style={getStatusStyle(res.status)}>{res.status || 'N/A'}</td>
                                             <td>
                                                 {res.status === 'pending' && (
-                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelReservation(res.id)}>
+                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelReservation(res.uid)}>
                                                         Cancel
                                                     </button>
                                                 )}
@@ -151,10 +156,18 @@ function AccountPage() {
                                 </thead>
                                 <tbody>
                                     {currentApplications.map((app, index) => (
-                                        <tr key={index}>
-                                            <td>{app.id}</td>
-                                            <td>{app.sticker_type}</td>
-                                            <td>{app.date}</td>
+                                        <tr key={app.empid}>
+                                            <td>{app.empid}</td>
+                                            <td>{app.email}</td>
+                                            <td>{app.homeowner_name}</td>
+                                            <td>{app.address}</td>
+                                            <td>{app.license_no}</td>
+                                            <td>{app.plate_no}</td>
+                                            <td>{app.carbrand}</td>
+                                            <td>{app.model}</td>
+                                            <td>{app.year_model}</td>
+                                            <td>{app.vehicle_color}</td>
+                                            <td>{app.status}</td>
                                             <td style={getStatusStyle(app.status)}>{app.status || 'N/A'}</td>
                                             <td>{app.reason || 'N/A'}</td>
                                             <td>
