@@ -2,18 +2,21 @@ import { Container, Table } from 'react-bootstrap';
 import styles from '../../css/adminstyles.module.css';
 import AdminNavbarComponent from '../../components/AdminNavbarComponent';
 import { useState, useEffect } from 'react';
+import api from '../../api/axiosConfig';
 
 
 
 
 function AdminVehicleStickerPage(){
 
-   const [applications, setApplications] = useState([]);
-   const [error, setError] = useState('');
-   const [currentPage, setCurrentPage] = useState(1);
-   const applicationsPerPage = 5;
+  const [applications, setApplications] = useState([]);
+  const [error, setError] = useState('');
+  const [msg, setMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const applicationsPerPage = 5;
 
-    const apiUrl = 'http://localhost/api/get_applications.php';
+  //const apiUrl = 'http://localhost/api/get_applications.php';
     
     useEffect(() => {
       fetchApplications();
@@ -21,34 +24,37 @@ function AdminVehicleStickerPage(){
 
     const fetchApplications = async () => {
     try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error('Failed to fetch');
-      const data = await response.json();
-      setApplications(data);
+      const res = await api.get("/read_car_sticker.php");
+      setApplications(res.data.data || []);
+    } catch (err) {
+      console.error(err);
+      setMsg("Failed to fetch data");
     }
-    
-    catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to load user data.");
+      finally {
+      setLoading(false);
     }
   };
 
   const handleAction = async (id, action) => {
-    try {
-      const response = await fetch('http://localhost/api/update_application.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ id: id, action: action })
-      });
-      if (response.ok) {
-        fetchApplications();
-      } else {
-        setError("Failed to update application.");
-      }
-    } catch (err) {
-      console.error("Update error:", err);
-      setError("Error updating application.");
-    }
+     try {
+    const res = await api.post("/update_car_sticker_status.php", {
+      id,
+      status: action
+    });
+
+    setMsg(res.data.message || "Status updated");
+
+    setApplications(prev =>
+      prev.map(app =>
+        app.id === id
+          ? { ...app, status: action }
+          : app
+      )
+    );
+  } catch (err) {
+    console.error(err.response ?? err);
+    setMsg("Failed to update status");
+  }
   };
 
   const indexOfLastApp = currentPage * applicationsPerPage;
@@ -86,37 +92,37 @@ function AdminVehicleStickerPage(){
             </thead>
 
             <tbody>
-              {currentApplications.map((app, index) => (
-            <tr key={app.id || index}>
-              <td>{app.id}</td>
-              <td>{app.email}</td>
-              <td>{app.homeowner_name}</td>
-              <td>{app.address}</td>
-              <td>{app.license_no}</td>
-              <td>{app.plate_no}</td>
-              <td>{app.carbrand}</td>
-              <td>{app.model}</td>
-              <td>{app.year_model}</td>
-              <td>{app.vehicle_color}</td>
-              <td>{app.status}</td>  
+              {currentApplications.map((user, index) => (
+            <tr key={user.id}>
+              <td>{user.empid}</td>
+              <td>{user.email}</td>
+              <td>{user.homeowner_name}</td>
+              <td>{user.address}</td>
+              <td>{user.license_no}</td>
+              <td>{user.plate_no}</td>
+              <td>{user.carbrand}</td>
+              <td>{user.model}</td>
+              <td>{user.year_model}</td>
+              <td>{user.vehicle_color}</td>
+              <td>{user.status}</td>  
               <td>
-                    {app.status === 'pending' ? ( 
+                    {user.status === 'pending' ? ( 
                       <>
                         <button
                           className="btn btn-success btn-sm me-2"
-                          onClick={() => handleAction(app.id, 'approve')}
+                          onClick={() => handleAction(user.id, 'approved')}
                         >
                           Approve
                         </button>
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={() => handleAction(app.id, 'reject')}
+                          onClick={() => handleAction(user.id, 'rejected')}
                         >
                           Reject
                         </button>
                       </>
                     ) : (
-                      <span>{app.status}</span>
+                      <span>{user.status}</span>
                     )}
                   </td>
                 </tr>

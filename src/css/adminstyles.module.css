@@ -136,3 +136,7 @@
     flex-direction: row;
   }
 }
+
+.text-info{
+  color: black;
+}

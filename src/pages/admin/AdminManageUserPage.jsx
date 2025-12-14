@@ -16,7 +16,7 @@ function AdminManageUserPage(){
   const [updatedEmail, setUpdatedEmail] = useState('');
   const [updatedPassword, setUpdatedPassword] = useState('');
   const [msg, setMsg] = useState('');
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 5;
 
@@ -66,8 +66,38 @@ function AdminManageUserPage(){
     setUpdatedPassword(user.password);
   };
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (id) => {
+    try {
+    const payload = {
+      id,
+      first_name: updatedFirstname,
+      last_name: updatedLastname,
+      contact_number: updatedContactNum,
+      email: updatedEmail
+    };
 
+    const res = await api.post("/update_user.php", payload);
+    setMsg(res.data.message || "Updated");
+
+    setUsers(prev =>
+      prev.map(u =>
+        u.id === id
+          ? {
+              ...u,
+              first_name: updatedFirstname,
+              last_name: updatedLastname,
+              contact_number: updatedContactNum,
+              email: updatedEmail
+            }
+          : u
+      )
+    );
+
+    setEditingUser(null);
+  } catch (err) {
+    console.error(err.response ?? err);
+    setMsg(err.response?.data?.message || "Update failed");
+  }
   };
 
   const indexOfLastUser = currentPage * usersPerPage;
@@ -83,20 +113,24 @@ function AdminManageUserPage(){
       <Container mt={5}>
           <h1>Manage Users</h1>
           <div className='table-responsive'>
+          {msg && <p>{msg}</p>}
           <Table>
             <thead>
               <tr>
-                <th>first name</th>
-                <th>last name</th>
-                <th>contact number</th>
-                <th>email address</th>
-                <th>password</th>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact Number</th>
+                <th>Email Address</th>
               </tr>
             </thead>
 
             <tbody>
               {currentUsers.map((user, index) => (
             <tr key={index}>
+
+              {/*ID table*/}
+              <td>{user.id}</td>
 
               {/*First name table*/}
               <td>
@@ -148,20 +182,10 @@ function AdminManageUserPage(){
 
               {/*Password table*/}
               <td>
-                {editingUser === user.email ? (
-                  <input
-                    value={updatedPassword}
-                    onChange={(e) => setUpdatedPassword(e.target.value)}
-                  />
-                ) : (
-                  user.password
-                )}
-              </td>
-              <td>
                 <div className={styles.user_button_container}>
                 {editingUser === user.email ? (
                   <>
-                    <button className="btn btn-success btn-sm me-2" onClick={handleUpdate}>Save</button>
+                    <button className="btn btn-success btn-sm me-2" onClick={() => handleUpdate(user.id)}>Save</button>
                     <button className="btn btn-secondary btn-sm" onClick={() => setEditingUser(null)}>Cancel</button>
                   </>
                 ) : (

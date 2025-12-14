@@ -2,6 +2,7 @@ import { Container, Table } from 'react-bootstrap';
 import styles from '../../css/adminstyles.module.css';
 import AdminNavbarComponent from '../../components/AdminNavbarComponent';
 import { useState, useEffect } from 'react';
+import api from '../../api/axiosConfig';
 
 
 
@@ -16,11 +17,13 @@ function AdminReservationPage(){
   const [updatedDate, setUpdatedDate] = useState('');
   const [updatedFromTime, setUpdatedFromTime] = useState('');
   const [updatedToTime, SetUpdatedToTime] = useState('');
+  const [msg, setMsg] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 5;
 
-  const sheetdbUrl = 'https://sheetdb.io/api/v1/4qurz55lumbus';
+  //const sheetdbUrl = 'https://sheetdb.io/api/v1/4qurz55lumbus';
 
     useEffect(() => {
       fetchUsers();
@@ -28,31 +31,19 @@ function AdminReservationPage(){
 
     const fetchUsers = async () => {
     try {
-      const response = await fetch(sheetdbUrl);
-      const data = await response.json();
-      setUsers(data);
-    }
-    
-    catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to load user data.");
-    }
+        const res = await api.get("/read_reservation.php");
+        setUsers(res.data.data || []);
+      } catch (err) {
+        console.error(err);
+        setMsg("Failed to fetch users");
+      }
+        finally {
+        setLoading(false);
+      }
   };
 
   const handleDelete = async (id) => {
-    try {
-      const response = await fetch(`${sheetdbUrl}/id/${id}`, {
-        method: 'DELETE'
-      });
-      if (response.ok) {
-        fetchUsers();
-      } else {
-        setError("Failed to delete user.");
-      }
-    } catch (err) {
-      console.error("Delete error:", err);
-      setError("Error deleting user.");
-    }
+
   };
 
   const indexOfLastUser = currentPage * usersPerPage;
@@ -80,6 +71,7 @@ function AdminReservationPage(){
                 <th>date</th>
                 <th>from</th>
                 <th>to</th>
+                <th>status</th>
               </tr>
             </thead>
 
@@ -88,16 +80,7 @@ function AdminReservationPage(){
             <tr key={index}>
 
               {/*ID table*/}
-              <td>
-                {editingUser === user.id ? (
-                  <input
-                    value={updatedId}
-                    onChange={(e) => setUpdatedId(e.target.value)}
-                  />
-                ) : (
-                  user.id
-                )}
-              </td>
+              <td>{user.uid}</td>
 
               {/*Email table*/}
               <td>
@@ -156,6 +139,17 @@ function AdminReservationPage(){
                   />
                 ) : (
                   user.time_to
+                )}
+              </td>
+
+              <td>
+                {editingUser === user.id ? (
+                  <input
+                    value={updatedToTime}
+                    onChange={(e) => SetUpdatedToTime(e.target.value)}
+                  />
+                ) : (
+                  user.status
                 )}
               </td>
               <td>
