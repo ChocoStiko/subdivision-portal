@@ -42,7 +42,29 @@ function AdminReservationPage(){
       }
   };
 
-  const handleDelete = async (id) => {
+  const handleAction = async (uid, action) => {
+    try {
+    const res = await api.post("/update_reservation_status.php", {
+      uid,
+      status: action
+    });
+
+    setMsg(res.data.message || "Status updated");
+
+    setUsers(prev =>
+      prev.map(app =>
+        app.uid === uid
+          ? { ...app, status: action }
+          : app
+      )
+    );
+  } catch (err) {
+    console.error(err.response ?? err);
+    setMsg("Failed to update status");
+  }
+    finally {
+    setLoading(false);
+  }
 
   };
 
@@ -141,27 +163,31 @@ function AdminReservationPage(){
                   user.time_to
                 )}
               </td>
-
-              <td>
-                {editingUser === user.id ? (
-                  <input
-                    value={updatedToTime}
-                    onChange={(e) => SetUpdatedToTime(e.target.value)}
-                  />
-                ) : (
-                  user.status
-                )}
-              </td>
-              <td>
-                {editingUser === user.id ? (
-                  <>
-                  </>
-                ) : (
-                  <>
-                    <button className="btn btn-success btn-sm" onClick={() => handleDelete(user.id)}>Approve</button>
-                  </>
-                )}
-              </td>
+              
+              {/*Status table*/}
+              <td>{user.status}</td>
+              
+              {/*Approve and reject button*/}
+                <td>
+                  {user.status === 'pending' ? (
+                    <>
+                      <button
+                        className="btn btn-success btn-sm me-2"
+                        onClick={() => handleAction(user.uid, 'approved')}
+                      >
+                        Approve
+                      </button>
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={() => handleAction(user.uid, 'rejected')}
+                      >
+                        Reject
+                      </button>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                  </td>
             </tr>
           ))}
             </tbody>

@@ -35,10 +35,10 @@ function AdminVehicleStickerPage(){
     }
   };
 
-  const handleAction = async (id, action) => {
+  const handleAction = async (empid, action) => {
      try {
     const res = await api.post("/update_car_sticker_status.php", {
-      id,
+      empid,
       status: action
     });
 
@@ -46,7 +46,7 @@ function AdminVehicleStickerPage(){
 
     setApplications(prev =>
       prev.map(app =>
-        app.id === id
+        app.empid === empid
           ? { ...app, status: action }
           : app
       )
@@ -54,6 +54,9 @@ function AdminVehicleStickerPage(){
   } catch (err) {
     console.error(err.response ?? err);
     setMsg("Failed to update status");
+  }
+    finally {
+    setLoading(false);
   }
   };
 
@@ -93,7 +96,7 @@ function AdminVehicleStickerPage(){
 
             <tbody>
               {currentApplications.map((user, index) => (
-            <tr key={user.id}>
+            <tr key={user.empid}>
               <td>{user.empid}</td>
               <td>{user.email}</td>
               <td>{user.homeowner_name}</td>
@@ -110,13 +113,13 @@ function AdminVehicleStickerPage(){
                       <>
                         <button
                           className="btn btn-success btn-sm me-2"
-                          onClick={() => handleAction(user.id, 'approved')}
+                          onClick={() => handleAction(user.empid, 'approved')}
                         >
                           Approve
                         </button>
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={() => handleAction(user.id, 'rejected')}
+                          onClick={() => handleAction(user.empid, 'rejected')}
                         >
                           Reject
                         </button>
@@ -141,7 +144,7 @@ function AdminVehicleStickerPage(){
                   ))}
                 </ul>
               </nav>
-      </Container>
+      </Container>  
       </div>
     </div>
     </>
