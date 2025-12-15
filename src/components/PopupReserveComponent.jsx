@@ -14,6 +14,7 @@ function PopupReserveComponent({type}){
     const handleShow = () => setShow(true);
     const id = Date.now();
     const [email, setEmail] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const [date, setDate] = useState('');
     const [fromTime, setFromTime] = useState('');
     const [toTime, setToTime] = useState('');
@@ -46,6 +47,7 @@ function PopupReserveComponent({type}){
             const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";
 
             if(ok){
+                setUserEmail(res.data.email);
                 setMessage(serverMsg || "Added successfully!");
                 setShow(false);
                 setShowMsg(true);
@@ -138,7 +140,7 @@ function PopupReserveComponent({type}){
                     </Modal.Header>
                     <Modal.Body>
                         <form className={styles.thank_message}>
-                        <p>A confirmation will be sent at user@email.com</p>
+                        <p>A confirmation will be sent at <strong>{userEmail}</strong></p>
                     
 
                     <Modal.Footer className={styles.reserve_footer}>
