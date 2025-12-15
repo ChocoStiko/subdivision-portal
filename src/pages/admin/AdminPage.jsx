@@ -11,9 +11,9 @@ function AdminPage(){
     const [isActive, setIsActive] = useState(false);
 
     const [stats, setStats] = useState({
-      total_users: 0,
-      pending_reservations: 0,
-      pending_stickers: 0
+      totalUsers: 0,
+      pendingReservations: 0,
+      pendingStickers: 0
     });
 
     const toggleSidebar = () => {
@@ -21,7 +21,7 @@ function AdminPage(){
     };
 
     useEffect(() => {
-      axios.get("http://localhost/subdivision-portal-local/backend/api/admin_dashboard.php")
+      axios.get("/admin_dashboard.php")
       .then(res => {
         setStats(res.data);
       })
@@ -43,17 +43,17 @@ function AdminPage(){
           <div className={styles.admin_cards}>
             <div className={styles.card}>
               <h5>Total Users</h5>
-              <h2>{stats.total_users}</h2>
+              <h2>{stats.totalUsers}</h2>
             </div>
 
             <div className={styles.card}>
               <h5>Pending Reservations</h5>
-              <h2>{stats.pending_reservations}</h2>
+              <h2>{stats.pendingReservations}</h2>
             </div>
 
             <div className={styles.card}>
               <h5>Pending Car Stickers</h5>
-              <h2>{stats.pending_stickers}</h2>
+              <h2>{stats.pendingStickers}</h2>
             </div>
           </div>
 

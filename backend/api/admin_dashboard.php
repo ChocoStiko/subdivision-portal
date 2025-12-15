@@ -39,7 +39,7 @@ $stmtReservations->close();
 
 /*pending car stickers*/
 $stmtStickers = $conn->prepare(
-    "SELECT COUNT(*) AS pending_stickers FROM car_sticker WHERE status = 'pending'"
+    "SELECT COUNT(*) AS pending_stickers FROM vehicle_stickers WHERE status = 'pending'"
 );
 $stmtStickers->execute();
 $resultStickers = $stmtStickers->get_result();
