@@ -4,6 +4,34 @@
 #ffffff white
 #d9d9d9 light gray
 */
+/*admin dashboard*/
+
+.dashboard_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card h5 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/*layout*/
 .content_container{
   margin-top: 150px;
   margin-left: 240px;
