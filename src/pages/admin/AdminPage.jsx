@@ -65,7 +65,7 @@ function AdminPage(){
                   }}
                 >
                   <h5>Total Users</h5>
-                  <h2>{stats.totalUsers}</h2>
+                  <h2>{stats.total_users}</h2>
                 </div>
 
                 <div
@@ -76,7 +76,7 @@ function AdminPage(){
                   }}
                 >
                   <h5>Pending Reservations</h5>
-                  <h2>{stats.pendingReservations}</h2>
+                  <h2>{stats.pending_reservations}</h2>
                 </div>
 
                 <div
@@ -87,7 +87,7 @@ function AdminPage(){
                   }}
                 >
                   <h5>Pending Car Stickers</h5>
-                  <h2>{stats.pendingStickers}</h2>
+                  <h2>{stats.pending_stickers}</h2>
                 </div>
               </div>
 
