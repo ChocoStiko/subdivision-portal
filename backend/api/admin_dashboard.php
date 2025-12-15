@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$local = "http://localhost:3000";;
+$local = "http://localhost:3000";
 header("Access-Control-Allow-Origin: $local");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
@@ -10,14 +10,8 @@ header("Content-Type: application/json");
 
 require_once "../config.php";
 
-// $adminEmail = $_SESSION["email"] ?? null;
+$adminEmail = $_SESSION["email"] ?? null;
 
-// if (!$adminEmail) {
-//     echo json_encode([
-//         "message" => "Not authenticated"
-//     ]);
-//     exit;
-// }
 
 /*total users*/
 $stmtUsers = $conn->prepare(
@@ -35,7 +29,7 @@ $stmtReservations = $conn->prepare(
 $stmtReservations->execute();
 $resultReservations = $stmtReservations->get_result();
 $pendingReservations = $resultReservations->fetch_assoc()["pending_reservations"];
-$stmtReservations->close();
+$stmtReservations->close();                                                                 
 
 /*pending car stickers*/
 $stmtStickers = $conn->prepare(
@@ -46,12 +40,17 @@ $resultStickers = $stmtStickers->get_result();
 $pendingStickers = $resultStickers->fetch_assoc()["pending_stickers"];
 $stmtStickers->close();
 
+<<<<<<< HEAD
 $conn->close();
 
 
 
+=======
+>>>>>>> 5c7841134108f27ecbbc8005764abf6c86760bec
 echo json_encode([
-    "totalUsers" => $totalUsers,
-    "pendingReservations" => $pendingReservations,
-    "pendingStickers" => $pendingStickers,
+    "total_users" => $totalUsers,
+    "pending_reservations" => $pendingReservations,
+    "pending_stickers" => $pendingStickers,
 ]);
+
+$conn->close();

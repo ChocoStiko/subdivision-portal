@@ -30,7 +30,10 @@ $stmt->bind_param("ssssss", $id, $type, $email, $date, $fromTime, $toTime);
 
 
 if ($stmt->execute()) {
-    echo json_encode(["message" => "Data saved successfully"]);
+    echo json_encode([
+        "message" => "Data saved successfully",
+        "email" => $email
+    ]);
 } else {
     echo json_encode(["message" => "Failed to save data", "error" => $stmt->error]);
 }
