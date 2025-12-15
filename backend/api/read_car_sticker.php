@@ -1,9 +1,7 @@
 <?php
 session_start();
 $local = "http://localhost:3000";
-$web_url = "http://subdivision-portal.chocostiko-lobby.com";
 header("Access-Control-Allow-Origin: $local");
-header("Access-Control-Allow-Origin: $web_url");
 header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application/json");
 

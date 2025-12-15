@@ -1,8 +1,6 @@
 <?php
 $local = "http://localhost:3000";
-$web_url = "http://subdivision-portal.chocostiko-lobby.com";
 header("Access-Control-Allow-Origin: $local");
-header("Access-Control-Allow-Origin: $web_url");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: POST, OPTIONS");

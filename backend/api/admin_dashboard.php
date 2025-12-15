@@ -1,11 +1,8 @@
 <?php
 session_start();
 
-$allowedOrigins = ["http://localhost:3000", "http://subdivision-portal.chocostiko-lobby.com"];
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $allowedOrigins)) {
-    header("Access-Control-Allow-Origin: $origin");
-}
+$local = "http://localhost:3000";;
+header("Access-Control-Allow-Origin: $local");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -13,14 +10,14 @@ header("Content-Type: application/json");
 
 require_once "../config.php";
 
-$adminEmail = $_SESSION["admin_email"] ?? null;
+// $adminEmail = $_SESSION["email"] ?? null;
 
-if (!$adminEmail) {
-    echo json_encode([
-        "message" => "Not authenticated"
-    ]);
-    exit;
-}
+// if (!$adminEmail) {
+//     echo json_encode([
+//         "message" => "Not authenticated"
+//     ]);
+//     exit;
+// }
 
 /*total users*/
 $stmtUsers = $conn->prepare(
