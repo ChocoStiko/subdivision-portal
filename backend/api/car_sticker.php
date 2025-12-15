@@ -1,6 +1,6 @@
 <?php
 session_start();
-$local = "http://localhost:3000";;
+$local = "http://localhost:3000";
 header("Access-Control-Allow-Origin: $local");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type");
