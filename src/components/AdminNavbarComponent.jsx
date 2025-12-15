@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from '../css/adminnavbarstyle.module.css';
 import { Link, NavLink } from 'react-router-dom';
-import icon from "../assets/icon.png";
+import icon from "../assets/admin_logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 

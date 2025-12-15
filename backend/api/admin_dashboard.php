@@ -48,6 +48,8 @@ $stmtStickers->close();
 
 $conn->close();
 
+
+
 echo json_encode([
     "totalUsers" => $totalUsers,
     "pendingReservations" => $pendingReservations,
