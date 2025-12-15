@@ -40,13 +40,6 @@ $resultStickers = $stmtStickers->get_result();
 $pendingStickers = $resultStickers->fetch_assoc()["pending_stickers"];
 $stmtStickers->close();
 
-<<<<<<< HEAD
-$conn->close();
-
-
-
-=======
->>>>>>> 5c7841134108f27ecbbc8005764abf6c86760bec
 echo json_encode([
     "total_users" => $totalUsers,
     "pending_reservations" => $pendingReservations,
