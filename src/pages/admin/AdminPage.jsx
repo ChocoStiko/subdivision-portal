@@ -43,7 +43,6 @@ function AdminPage(){
             <Container>
 
 
-<<<<<<< HEAD
           <div className={styles.title_card}>
                 <h1>Welcome, Admin!</h1>
                 <p>This is the WWHS Portal Admin Dashboard. Let's get started!</p>
@@ -92,24 +91,6 @@ function AdminPage(){
                 </div>
               </div>
 
-=======
-          <div className={styles.admin_cards}>
-            <div className={styles.card}>
-              <h5>Total Users</h5>
-              <h2>{stats.total_users}</h2>
-            </div>
-
-            <div className={styles.card}>
-              <h5>Pending Reservations</h5>
-              <h2>{stats.pending_reservations}</h2>
-            </div>
-
-            <div className={styles.card}>
-              <h5>Pending Car Stickers</h5>
-              <h2>{stats.pending_stickers}</h2>
-            </div>
-          </div>
->>>>>>> 5c7841134108f27ecbbc8005764abf6c86760bec
 
         </Container>
       </div>
