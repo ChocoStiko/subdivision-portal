@@ -9,6 +9,7 @@ function AccountPage() {
     const [reservations, setReservations] = useState([]);
     const [applications, setApplications] = useState([]);
     const [error, setError] = useState('');
+    const [msg, setMsg] = useState('');
     const [currentPageRes, setCurrentPageRes] = useState(1);
     const [currentPageApp, setCurrentPageApp] = useState(1);
     const itemsPerPage = 5;
@@ -72,8 +73,31 @@ function AccountPage() {
         }
     };
 
+    const handleDeleteSticker = async (empid) => {
+        if (!window.confirm("Delete this application?")) return;
+        setMsg("");
+        try {
+            const res = await api.post("/delete_car_sticker.php", { empid });
+            setMsg(res.data.message || "Deleted");
+            setApplications(prev => prev.filter(u => u.empid !== empid));
+        } catch (err) {
+            console.error(err);
+            setMsg("Delete failed");
+        }
+    };
 
-
+        const handleDeleteReservation = async (uid) => {
+        if (!window.confirm("Delete this reservation?")) return;
+        setMsg("");
+        try {
+            const res = await api.post("/delete_reservation.php", { uid });
+            setMsg(res.data.message || "Deleted");
+            setReservations(prev => prev.filter(u => u.uid !== uid));
+        } catch (err) {
+            console.error(err);
+            setMsg("Delete failed");
+        }
+    };
 
     const indexOfLastRes = currentPageRes * itemsPerPage;
     const indexOfFirstRes = indexOfLastRes - itemsPerPage;
@@ -127,10 +151,25 @@ function AccountPage() {
                                             <td>{res.time_to}</td>
                                             <td style={getStatusStyle(res.status)}>{res.status || 'N/A'}</td>
                                             <td>
-                                                {res.status === 'pending' && (
-                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelReservation(res.uid, 'cancelled')}>
+                                                {res.status === 'pending' ? (
+                                                    <>
+                                                    <button 
+                                                    className="btn btn-danger btn-sm" 
+                                                    onClick={() => handleCancelReservation(res.uid, 'cancelled')}>
                                                         Cancel
                                                     </button>
+                                                    </>
+                                                ):(
+                                                    <>
+                                                    
+                                                    <button
+                                                    className="btn btn-sm me-2 text-danger fw-bold"
+                                                    onClick={() => handleDeleteReservation(res.uid)}
+                                                        >
+                                                        Delete
+                                                    </button>
+                                                    
+                                                    </>
                                                 )}
                                             </td>
                                         </tr>
@@ -185,17 +224,35 @@ function AccountPage() {
                                             <td>{app.vehicle_color}</td>
                                             <td style={getStatusStyle(app.status)}>{app.status || 'N/A'}</td>
                                             <td>
-                                                {app.status === 'pending' && (
-                                                    <button className="btn btn-danger btn-sm" onClick={() => handleCancelCarSticker(app.empid, 'cancelled')}>
-                                                        Cancel
-                                                    </button>
-                                                )}
-                                            </td>
-                                            <td>
-                                                {app.status === 'rejected' && (
-                                                    <button className="btn btn-warning btn-sm" onClick={() => redirect()}>
-                                                        Resubmit
-                                                    </button>
+                                                {app.status === 'pending' ? (
+                                                    <>
+                                                        <button 
+                                                            className="btn btn-danger btn-sm" 
+                                                            onClick={() => handleCancelCarSticker(app.empid, 'cancelled')}>
+                                                                Cancel
+                                                        </button>    
+                                                    </>
+
+                                                ):(
+                                                    <>
+                                                        <td>
+                                                            {app.status === 'rejected' && (
+                                                                <button 
+                                                                    className="btn btn-warning btn-sm" 
+                                                                    onClick={() => redirect()}>
+                                                                    Resubmit
+                                                                </button>
+                                                                )}
+
+                                                                <button
+                                                                    className="btn btn-sm me-2 text-danger fw-bold"
+                                                                    onClick={() => handleDeleteSticker(app.empid)}
+                                                                            >
+                                                                        Delete
+                                                                </button>
+                                                        </td>
+                                                    </>
+
                                                 )}
                                             </td>
                                         </tr>
