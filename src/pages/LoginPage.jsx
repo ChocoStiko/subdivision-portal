@@ -31,10 +31,8 @@ function LoginPage(){
       console.log("response", res.data);
 
 
-      //const matchedUser = user.find(u => u.email === email && u.password === password);
-
       if (res.data.valid) {
-        sessionStorage.setItem("loggedInUser", email);
+        sessionStorage.setItem("loggedInUser", JSON.stringify(res.data.user));
         navigate("../userhome");
       }
 

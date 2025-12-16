@@ -15,7 +15,7 @@ $email = $input["email"];
 $password = $input["password"];
 
 
-$stmt = $conn->prepare("SELECT email, password FROM users WHERE email = ?");
+$stmt = $conn->prepare("SELECT email, first_name, last_name, password FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -29,11 +29,15 @@ $user = $result->fetch_assoc();
 
 
 if (password_verify($password, $user["password"])) {
-    $_SESSION['email'] = $email;
+    $_SESSION['user'] = [
+        "email" => $user["email"],
+        "first_name" => $user["first_name"],
+        "last_name" => $user["last_name"]
+    ];
     echo json_encode([
         "message" => "Login successful",
         "email" => $user["email"],
-        "session" => $_SESSION,
+        "user" => $_SESSION['user'],
         "valid" => true,
     ]);
 } else {

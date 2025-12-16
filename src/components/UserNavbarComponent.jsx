@@ -2,9 +2,19 @@ import logo from "../assets/wwhs_logo.png";
 import userIcon from "../assets/user.svg";
 import "../styles.css";
 import { Link, NavLink } from "react-router-dom";
+import api from "../api/axiosConfig";
+import { useEffect, useState } from "react";
 
 
 function UserNavbarComponent() {
+  const [username, setUsername] = useState(null);
+
+  useEffect(() => {
+    const storedName = sessionStorage.getItem("loggedInUser");
+    setUsername(JSON.parse(storedName));
+  }, []);
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
       <div className="container-fluid">
@@ -56,8 +66,14 @@ function UserNavbarComponent() {
           </div>
         </div>
 
+        <div className="d-flex align-items-center ms-auto">
+            <div className="username">
+              <p className="mb-0 fw-semibold">
+                {username ? `${username.first_name} ${username.last_name}` : ""}
+              </p>
+            </div>
 
-        <div className="dropdown user-dropdown ms-auto me-1">
+                    <div className="dropdown user-dropdown ms-auto me-1">
           <button className="btn user-button" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={userIcon} alt="User Icon" width="30" height="30" className="d-inline-block align-text-top"/>
           </button>
@@ -83,10 +99,10 @@ function UserNavbarComponent() {
           </ul>
         </div>
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
-        >
+        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button>          
+        </div>
       </div>
     </nav>
   );
