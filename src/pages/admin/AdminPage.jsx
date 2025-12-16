@@ -44,16 +44,16 @@ function AdminPage(){
 
 
           <div className={styles.title_card}>
+            <div className={styles.title_content}>
                 <h1>Welcome, Admin!</h1>
                 <p>This is the WWHS Portal Admin Dashboard. Let's get started!</p>
               </div>
-
-              <img
-                src={adminLogo}
-                alt="Admin illustration"
-                className={styles.admin_logo}
-              />
-
+                <img
+                  src={adminLogo}
+                  alt="Admin illustration"
+                  className={styles.admin_logo}
+                />
+          </div>
 
 
               <div className={styles.admin_cards}>

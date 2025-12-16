@@ -41,7 +41,9 @@ function PopupReserveComponent({type}){
         try{
             setSubmitting(true);
 
-            const res = await api.post("/reservation.php", payload);
+            const res = await api.post("/reservation.php", payload, {
+                withCredentials: true
+            });
 
             const ok = res?.data?.success ?? res?.data?.ok ?? (res?.status === 200);
             const serverMsg = res?.data?.message ?? res?.data?.msg ?? "No message from server";

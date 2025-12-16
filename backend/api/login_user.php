@@ -30,9 +30,9 @@ $user = $result->fetch_assoc();
 
 if (password_verify($password, $user["password"])) {
     $_SESSION['user'] = [
-        "email" => $user["email"],
         "first_name" => $user["first_name"],
-        "last_name" => $user["last_name"]
+        "last_name" => $user["last_name"],
+        "email" => $user["email"]
     ];
     echo json_encode([
         "message" => "Login successful",

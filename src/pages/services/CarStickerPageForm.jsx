@@ -10,7 +10,6 @@ import api from "../../api/axiosConfig";
 
 function CarStickerPageForm(){
     const [, setId] = useState('');
-    const email = sessionStorage.getItem('loggedInUser');
     const [homeownerName, setHomeownerName] = useState('');
     const [address, setAddress] = useState('');
     const [licenseNum, setLicenseNum] = useState('');
@@ -28,6 +27,9 @@ function CarStickerPageForm(){
         const handleSubmit = async (e) => {
             const id = Date.now();
 
+            const user = JSON.parse(sessionStorage.getItem("loggedInUser"));
+            const email = user.email; 
+
             const payload = {
                 id: id,
                 email: email,
@@ -43,7 +45,7 @@ function CarStickerPageForm(){
             };
         e.preventDefault();
 
-        if (!email | !address | !licenseNum) {
+        if (!email || !address || !licenseNum) {
             return;
         }
         

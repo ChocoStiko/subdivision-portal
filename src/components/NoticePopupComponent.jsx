@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../css/servicestyles.module.css';
@@ -8,10 +8,19 @@ import { useNavigate } from 'react-router-dom';
 
 function NoticePopupComponent({formId}){
     const [show, setShow] = useState(false);
-    const [showMsg, setShowMsg] = useState(false);
+    const [email, setEmail] = useState('');
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
+
+
+    useEffect(() => {
+        const user = sessionStorage.getItem("loggedInUser");
+        const storedEmail = JSON.parse(user);
+
+        setEmail(storedEmail.email);
+    }, [])
+
 
     const handleClick = () => {
     const form = document.getElementById(formId);
@@ -35,7 +44,7 @@ function NoticePopupComponent({formId}){
                 <Modal.Title className={styles.form_title}>Application sent</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                        <p>A confirmation will be sent at user@email.com</p>
+                        <p>A confirmation will be sent at <strong>{email}</strong></p>
                 <Modal.Footer className={styles.reserve_footer}>       
                 <Button variant="primary" className={styles.reserve_btn} onClick={() => navigate("/userhome")}>Close</Button>
                 </Modal.Footer>

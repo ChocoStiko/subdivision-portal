@@ -14,9 +14,6 @@ function AccountPage() {
 
     const userId = sessionStorage.getItem('loggedInUser'); 
 
-    
-
-    console.log(userId);
 
     useEffect(() => {
         if (userId) { 
