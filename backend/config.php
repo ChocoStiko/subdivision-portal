@@ -1,5 +1,5 @@
 <?php
-$servername = "webdb.chocostiko-lobby.com";
+$servername = "mysql.chocostiko-lobby.com";
 $port = 3307;
 $username = "root";
 $password = "Angcanan123";
