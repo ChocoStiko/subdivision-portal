@@ -67,14 +67,14 @@ function UserNavbarComponent() {
         </div>
 
         <div className="d-flex align-items-center ms-auto">
+
+                    <div className="dropdown user-dropdown ms-auto me-1">
+          <button className="btn user-button d-flex" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
             <div className="username">
               <p className="mb-0 fw-semibold">
                 {username ? `${username.first_name} ${username.last_name}` : ""}
               </p>
             </div>
-
-                    <div className="dropdown user-dropdown ms-auto me-1">
-          <button className="btn user-button" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={userIcon} alt="User Icon" width="30" height="30" className="d-inline-block align-text-top"/>
           </button>
 
