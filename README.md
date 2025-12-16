@@ -9,7 +9,9 @@ This is a project for the Website Development 2 Subject in DLSU-Dasmarinas. It i
 
 This website is designed to offer residents of the Windward Hills Subdivision (WWHS) services for their community and to show visitors a glimpse of the subdivision.
 
-It is a responsive and modern platform that provides an intuitive and clean interface, featuring a design with an orange, green, and white color palette that represents the vibrant community of the WWHS (insert color hex codes: #ff8a00 for yellow, #347433 for green, #FFFFFF for white). The website is interactive, with a fully implemented backend that you can view in the **Technologies Used** section of this README file.
+It is a responsive and modern platform that provides an intuitive and clean interface, featuring a design with an orange, green, and white color palette that represents the vibrant community of the WWHS (insert color hex codes: #ff8a00 for yellow, #347433 for green, #FFFFFF for white). The system is built using **ReactJS for the frontend** and a **PHP–MySQL backend**, enabling full CRUD operations for users, reservations, vehicle stickers, and announcements. The website is interactive, with a fully implemented backend that you can view in the **Technologies Used** section of this README file.
+
+The system uses a relational MySQL database to store user accounts, reservations, vehicle sticker applications, and administrator data. Passwords are stored using hashing for security, Action fields allow admins to approve or reject requests. The database is accessed through PHP REST API endpoints, consumed by the ReactJS frontend via Axios.
 
 ## Pages
 - **Guest Page**:
@@ -52,9 +54,8 @@ It is a responsive and modern platform that provides an intuitive and clean inte
 
 ## Technologies Used
 - **Front End**: HTML, CSS, Bootstrap, JS, ReactJS
-- **Back End**: NodeJS, API
-- **Storage**: SheetDB.io, CRUD Operations
-- **Tools**: Visual Studio Code
+- **Back End**: PHP, MySQL
+- **Tools**: Visual Studio Code, XAMPP, phpMyAdmin, Git & GitHub
 
 ## Authors
 - Elhjun Angelo S. Angcanan, BIT33, DLSU-D
