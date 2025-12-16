@@ -9,7 +9,7 @@ header("Content-Type: application/json");
 
 require_once "../config.php";
 
-$email = $_SESSION["email"] ?? null;
+$email = $_SESSION["user"]["email"] ?? null;
 
 if (!$email) {
     echo json_encode([

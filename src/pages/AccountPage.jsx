@@ -3,6 +3,7 @@ import styles from '../css/accountpage.module.css';
 import UserNavbarComponent from "../components/UserNavbarComponent";
 import { useState, useEffect } from 'react';
 import api from '../api/axiosConfig'; 
+import { redirect } from 'react-router-dom';
 
 function AccountPage() {
     const [reservations, setReservations] = useState([]);
@@ -192,7 +193,7 @@ function AccountPage() {
                                             </td>
                                             <td>
                                                 {app.status === 'rejected' && (
-                                                    <button className="btn btn-warning btn-sm">
+                                                    <button className="btn btn-warning btn-sm" onClick={() => redirect()}>
                                                         Resubmit
                                                     </button>
                                                 )}

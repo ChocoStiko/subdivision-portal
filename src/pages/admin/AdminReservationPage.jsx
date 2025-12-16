@@ -42,13 +42,27 @@ function AdminReservationPage(){
       }
   };
 
+  const handleDelete = async (uid) => {
+  if (!window.confirm("Delete this reservation?")) return;
+  setMsg("");
+  try {
+    const res = await api.post("/delete_reservation.php", { uid });
+    setMsg(res.data.message || "Deleted");
+    setUsers(prev => prev.filter(u => u.uid !== uid));
+  } catch (err) {
+    console.error(err);
+    setMsg("Delete failed");
+  }
+};
+
+
+
   const handleAction = async (uid, action) => {
     try {
     const res = await api.post("/update_reservation_status.php", {
       uid,
       status: action
     });
-
     setMsg(res.data.message || "Status updated");
 
     setUsers(prev =>
@@ -65,6 +79,7 @@ function AdminReservationPage(){
     finally {
     setLoading(false);
   }
+  
 
   };
 
@@ -178,14 +193,22 @@ function AdminReservationPage(){
                         Approve
                       </button>
                       <button
-                        className="btn btn-danger btn-sm"
+                        className="btn btn-danger btn-sm me-2"
                         onClick={() => handleAction(user.uid, 'rejected')}
                       >
                         Reject
                       </button>
                     </>
                   ) : (
-                    <></>
+                    <>
+                      <button
+                        className="btn btn-sm me-2 text-danger fw-bold"
+                        onClick={() => handleDelete(user.uid)}
+                      >
+                        Delete
+                      </button>
+                    
+                    </>
                   )}
                   </td>
             </tr>

@@ -3,6 +3,7 @@ import styles from '../../css/adminstyles.module.css';
 import AdminNavbarComponent from '../../components/AdminNavbarComponent';
 import { useState, useEffect } from 'react';
 import api from '../../api/axiosConfig';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +15,7 @@ function AdminVehicleStickerPage(){
   const [msg, setMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
   const applicationsPerPage = 5;
 
   //const apiUrl = 'http://localhost/api/get_applications.php';
@@ -34,6 +36,19 @@ function AdminVehicleStickerPage(){
       setLoading(false);
     }
   };
+
+  const handleDelete = async (empid) => {
+  if (!window.confirm("Delete this reservation?")) return;
+  setMsg("");
+  try {
+    const res = await api.post("/delete_car_sticker.php", { empid });
+    setMsg(res.data.message || "Deleted");
+    setApplications(prev => prev.filter(app => app.empid !== empid));
+  } catch (err) {
+    console.error(err);
+    setMsg("Delete failed");
+  }
+};
 
   const handleAction = async (empid, action) => {
      try {
@@ -126,7 +141,14 @@ function AdminVehicleStickerPage(){
                         </div>
                       </>
                     ) : (
-                      <></>
+                      <>
+                          <button
+                            className="btn btn-sm me-2 text-danger fw-bold"
+                            onClick={() => navigate("../car_sticker")}
+                          >
+                            Delete
+                          </button>
+                      </>
                     )}
                   </td>
                 </tr>
