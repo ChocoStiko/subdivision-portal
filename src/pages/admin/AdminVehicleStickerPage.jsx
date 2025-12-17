@@ -144,7 +144,7 @@ function AdminVehicleStickerPage(){
                       <>
                           <button
                             className="btn btn-sm me-2 text-danger fw-bold"
-                            onClick={() => navigate("../car_sticker")}
+                            onClick={() => handleDelete(user.empid)}
                           >
                             Delete
                           </button>
